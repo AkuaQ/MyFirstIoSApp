@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376CF5E323ED39520030C871 /* UIButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF5E223ED39520030C871 /* UIButtonAnimation.swift */; };
 		3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCDF23EBB51400693C03 /* AppDelegate.swift */; };
 		3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE123EBB51400693C03 /* SceneDelegate.swift */; };
 		3794CCE423EBB51400693C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE323EBB51400693C03 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		376CF5E223ED39520030C871 /* UIButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonAnimation.swift; sourceTree = "<group>"; };
 		3794CCDC23EBB51400693C03 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCDF23EBB51400693C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794CCE123EBB51400693C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				3794CCE823EBB51400693C03 /* Assets.xcassets */,
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,
 				3794CCED23EBB51400693C03 /* Info.plist */,
+				376CF5E223ED39520030C871 /* UIButtonAnimation.swift */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376CF5E323ED39520030C871 /* UIButtonAnimation.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
 				3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
