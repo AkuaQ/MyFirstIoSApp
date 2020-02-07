@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="landscape" appearance="dark"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,46 +12,55 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eberhard-grossgasteiger-XAxEp-NKBiQ-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-bd-gk2">
-                                <rect key="frame" x="20" y="0.0" width="696.00000000000011" height="414"/>
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-6a-iVp">
-                                <rect key="frame" x="225.66666666666663" y="118.33333333333334" width="285" height="257.33333333333326"/>
+                                <rect key="frame" x="-78" y="215.99999999999997" width="570" height="464.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a sign in method below:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IH-Et-E1S">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="570" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyB-dk-LZj" userLabel="FirstButton">
-                                        <rect key="frame" x="0.0" y="30.333333333333329" width="285" height="69"/>
+                                        <rect key="frame" x="0.0" y="30.333333333333343" width="570" height="138"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Facebook" backgroundImage="FB">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="firstButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x3Z-TU-buU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJy-FE-g3t" userLabel="SecondButton">
-                                        <rect key="frame" x="0.0" y="109.33333333333331" width="285" height="69"/>
+                                        <rect key="frame" x="0.0" y="178.33333333333331" width="570" height="138"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Google" backgroundImage="Google">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FDi-VB-Ja4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSt-eO-fz6" userLabel="ThirdButton">
-                                        <rect key="frame" x="0.0" y="188.33333333333337" width="285" height="69"/>
+                                        <rect key="frame" x="0.0" y="326.33333333333337" width="570" height="138"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Email" backgroundImage="Email">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="thirdButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gT5-8i-TBN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Find" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-E9-Ncp">
-                                <rect key="frame" x="309.33333333333331" y="18" width="117.33333333333331" height="96"/>
+                                <rect key="frame" x="148.33333333333334" y="144" width="117.33333333333334" height="96"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -74,6 +83,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="firstButton" destination="VyB-dk-LZj" id="prq-SB-XtO"/>
+                        <outlet property="secondButton" destination="sJy-FE-g3t" id="RT7-HR-hH9"/>
+                        <outlet property="thirdButton" destination="xSt-eO-fz6" id="3GL-0J-Pi2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
