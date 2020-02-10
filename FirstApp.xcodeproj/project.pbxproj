@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		376CF5E323ED39520030C871 /* UIButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF5E223ED39520030C871 /* UIButtonAnimation.swift */; };
+		376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62923F143B50030C871 /* LoginEmailViewController.swift */; };
+		376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62B23F146950030C871 /* SignUpEmailViewController.swift */; };
+		376CF62E23F147380030C871 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62D23F147380030C871 /* SignUpViewController.swift */; };
 		3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCDF23EBB51400693C03 /* AppDelegate.swift */; };
 		3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE123EBB51400693C03 /* SceneDelegate.swift */; };
 		3794CCE423EBB51400693C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE323EBB51400693C03 /* ViewController.swift */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		376CF5E223ED39520030C871 /* UIButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonAnimation.swift; sourceTree = "<group>"; };
+		376CF62923F143B50030C871 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
+		376CF62B23F146950030C871 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		376CF62D23F147380030C871 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3794CCDC23EBB51400693C03 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCDF23EBB51400693C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794CCE123EBB51400693C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		376CF62623F1429B0030C871 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				376CF62D23F147380030C871 /* SignUpViewController.swift */,
+				376CF62923F143B50030C871 /* LoginEmailViewController.swift */,
+				376CF62B23F146950030C871 /* SignUpEmailViewController.swift */,
+				3794CCE323EBB51400693C03 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3794CCD323EBB51400693C03 = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +100,7 @@
 			children = (
 				3794CCDF23EBB51400693C03 /* AppDelegate.swift */,
 				3794CCE123EBB51400693C03 /* SceneDelegate.swift */,
-				3794CCE323EBB51400693C03 /* ViewController.swift */,
+				376CF62623F1429B0030C871 /* ViewControllers */,
 				3794CCE523EBB51400693C03 /* Main.storyboard */,
 				3794CCE823EBB51400693C03 /* Assets.xcassets */,
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,
@@ -204,9 +221,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				376CF5E323ED39520030C871 /* UIButtonAnimation.swift in Sources */,
+				376CF62E23F147380030C871 /* SignUpViewController.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
 				3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */,
+				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
+				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
