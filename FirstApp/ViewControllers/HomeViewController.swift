@@ -1,21 +1,20 @@
 //
-//  SignUpViewController.swift
+//  HomeViewController.swift
 //  FirstApp
 //
-//  Created by Akua Afrane-Okese on 2020/02/10.
+//  Created by Akua Afrane-Okese on 2020/02/11.
 //  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
 //
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
     /*
     // MARK: - Navigation
 
