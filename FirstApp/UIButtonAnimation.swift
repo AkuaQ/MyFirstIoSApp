@@ -1,12 +1,4 @@
-//
-//  UIButtonAnimation.swift
-//  FirstApp
-//
-//  Created by Akua Afrane-Okese on 2020/02/07.
-//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
-//
-
-import Foundation
+//import Foundation
 import UIKit
 
 extension UIButton {

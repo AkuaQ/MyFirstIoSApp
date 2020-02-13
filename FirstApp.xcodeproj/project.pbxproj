@@ -15,6 +15,7 @@
 		376CF63023F27D4A0030C871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */; };
 		376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63123F27FCA0030C871 /* HomeViewController.swift */; };
 		376CF63423F281840030C871 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63323F281840030C871 /* Constants.swift */; };
+		376CF6C523F56CA90030C871 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF6C423F56CA90030C871 /* Utilities.swift */; };
 		3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCDF23EBB51400693C03 /* AppDelegate.swift */; };
 		3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE123EBB51400693C03 /* SceneDelegate.swift */; };
 		3794CCE423EBB51400693C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE323EBB51400693C03 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		376CF63123F27FCA0030C871 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		376CF63323F281840030C871 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		376CF6C423F56CA90030C871 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3794CCDC23EBB51400693C03 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCDF23EBB51400693C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794CCE123EBB51400693C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				3794CCED23EBB51400693C03 /* Info.plist */,
 				376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */,
 				376CF5E223ED39520030C871 /* UIButtonAnimation.swift */,
+				376CF6C423F56CA90030C871 /* Utilities.swift */,
 				376CF63323F281840030C871 /* Constants.swift */,
 			);
 			path = FirstApp;
@@ -355,6 +358,7 @@
 				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,
+				376CF6C523F56CA90030C871 /* Utilities.swift in Sources */,
 				376CF63423F281840030C871 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
