@@ -5,8 +5,12 @@ class LoginEmailViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var googleButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        facebookButton.layer.cornerRadius = facebookButton.frame.width/2
+        googleButton.layer.cornerRadius = googleButton.frame.width/2
     }
     @IBAction func loginTapped(_ sender: Any) {
         //Create cleaned versions of the text field
