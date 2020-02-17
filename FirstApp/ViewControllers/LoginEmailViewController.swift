@@ -7,26 +7,69 @@ class LoginEmailViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpElements()
+    }
+
+    func setUpElements() {
+        //Hide the error label
+        errorLabel.alpha = 0
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(loginButton)
         facebookButton.layer.cornerRadius = facebookButton.frame.width/2
         googleButton.layer.cornerRadius = googleButton.frame.width/2
     }
+
+    //Check the fields and validate that the data is correct.
+    //If everything is correct, this method returns nil.
+    //Otherwise, it returns the error message
+    func validateField() -> String? {
+        //Check that all fields are filled in
+        let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if email == "" {
+            Utilities.styleErrorTextField(emailTextField)
+            return "Please fill in all fields"
+        }
+        if password == "" {
+            Utilities.styleErrorTextField(passwordTextField)
+            return "Please fill in all fields"
+        }        //Check if password secure
+        return nil
+    }
+
     @IBAction func loginTapped(_ sender: Any) {
-        //Create cleaned versions of the text field
-        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        //Signing in the user
-        Auth.auth().signIn(withEmail: email, password: password) { (_ result, error) in
-            //Check for errors
-            if error != nil {
-                //Cannot sign in
-            }
-            else {
-                self.transitionToHome()
+        setUpElements()
+        let error = validateField()
+        if error != nil {
+            //There's something wrong with the fields, show the error message
+            showError(error!)
+        } else {
+            //Create cleaned versions of the text field
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            //Signing in the user
+            Auth.auth().signIn(withEmail: email, password: password) { (_ result, error) in
+                //Check for errors
+                if error != nil {
+                    //Cannot sign in
+                    self.showError("Incorrect email or password")
+                } else {
+                    self.transitionToHome()
+                }
             }
         }
     }
+
+    func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+
     func transitionToHome() {
         let homeViewController = storyboard?
             .instantiateViewController(identifier: Constants.Storyboard
