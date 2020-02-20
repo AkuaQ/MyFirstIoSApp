@@ -495,7 +495,7 @@
         <!--Home View Controller-->
         <scene sceneID="7dS-6C-iWW">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="eWZ-fv-AiR" customClass="HomeViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="eWZ-fv-AiR" customClass="HomeViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVR-2O-4Hr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -583,10 +583,10 @@
             </objects>
             <point key="canvasLocation" x="2643.4782608695655" y="166.30434782608697"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="VrH-1T-NaQ">
             <objects>
-                <viewController id="ezr-2x-5nj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetailViewController" id="ezr-2x-5nj" customClass="RecipeDetailViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2P0-sC-Sqa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -630,6 +630,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lbj-xJ-EGm"/>
                     </view>
+                    <connections>
+                        <outlet property="recipeImageView" destination="OsM-dK-h3D" id="RMW-C8-RPc"/>
+                        <outlet property="titleLabel" destination="6bo-a5-xch" id="B3B-jX-GXZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfc-Ia-Oea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
