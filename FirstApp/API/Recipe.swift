@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SwiftForFoodResults: Decodable {
+struct FoodResults: Decodable {
     var resultCount: [FoodDetails]
 
     enum CodingKeys: String, CodingKey {
@@ -17,7 +17,7 @@ struct SwiftForFoodResults: Decodable {
 }
 
 struct FoodResponse: Decodable {
-    var foods: SwiftForFoodResults
+    var foods: FoodResults
 }
 
 struct FoodDetails: Decodable {
