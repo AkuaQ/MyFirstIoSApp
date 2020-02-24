@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeSearchBar.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
 }
 
@@ -28,6 +29,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             as? RecipeDetailViewController
         let foods = foodList[indexPath.row]
         detailViewController?.recipeTitle = foods.title
+        detailViewController?.recipeIngredients = foods.ingredients
+        detailViewController?.website = foods.href
+        if !(foods.thumbnail == "") {
+            detailViewController?.image = foods.thumbnail
+        } else {
+            detailViewController?.image = "noImage"
+        }
+
         view.window?.rootViewController = detailViewController
         view.window?.makeKeyAndVisible()
     }
@@ -41,6 +50,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 fatalError() }
         let foods = foodList[indexPath.row]
         cell.titleLabel.text = foods.title
+        cell.ingredientsLabel.text = foods.ingredients
         if !(foods.thumbnail == "") {
             guard let url = URL(string: foods.thumbnail) else {fatalError()}
             cell.recipeImageView.downloadImage(from: url)
@@ -54,7 +64,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = recipeSearchBar.text else {return}
-        let foodRequest = FoodRequest(countryCode: searchBarText)
+        let foodRequest = FoodRequest(foodQuery: searchBarText)
         foodRequest.getSearchResult { [weak self] result in
             for identifier in result {
                 self?.foodList.append(identifier)

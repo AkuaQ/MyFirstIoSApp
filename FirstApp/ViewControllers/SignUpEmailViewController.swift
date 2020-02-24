@@ -13,6 +13,7 @@ class SignUpEmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        self.hideKeyboardWhenTappedAround()
     }
 
     func setUpElements() {

@@ -1,6 +1,19 @@
 import UIKit
 import FirebaseAuth
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class LoginEmailViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -12,6 +25,7 @@ class LoginEmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        self.hideKeyboardWhenTappedAround()
     }
 
     func setUpElements() {
