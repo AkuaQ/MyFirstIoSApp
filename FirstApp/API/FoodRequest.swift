@@ -9,7 +9,7 @@
 import Foundation
 
 struct FoodRequest {
-    var countryCode: String
+    var foodQuery: String
 
     let defaultSession = URLSession(configuration: .default)
 
@@ -18,9 +18,10 @@ struct FoodRequest {
     func getSearchResult(completionHandler: @escaping([FoodDetails]) -> Void) {
        dataTask?.cancel()
 
-        let resourceString = "http://www.recipepuppy.com/api/?q=\(countryCode)"
+        let resourceString = "http://www.recipepuppy.com/api/?"
+        let resourceQuery = "i=\(foodQuery)"
 
-        guard let resourceURL = URL(string: resourceString) else {fatalError()}
+        guard let resourceURL = URL(string: resourceString + resourceQuery) else {fatalError()}
         let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, response, error in
 
             if let error = error {
