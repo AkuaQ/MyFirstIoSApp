@@ -11,6 +11,7 @@ target 'FirstApp' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Core'
+pod 'Gradi', :path => '/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstApp/Gradi'
 
   target 'FirstAppTests' do
     inherit! :search_paths

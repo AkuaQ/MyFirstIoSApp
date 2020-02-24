@@ -1,5 +1,5 @@
 import UIKit
-
+import Gradi
 class ViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
