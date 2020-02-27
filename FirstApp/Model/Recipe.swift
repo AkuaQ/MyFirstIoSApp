@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FoodResults: Decodable {
+/*struct FoodResults: Decodable {
     var resultCount: [FoodDetails]
 
     enum CodingKeys: String, CodingKey {
@@ -25,4 +25,4 @@ struct FoodDetails: Decodable {
     var ingredients: String
     var href: String
     var thumbnail: String
-}
+}*/
