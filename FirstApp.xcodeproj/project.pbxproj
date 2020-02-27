@@ -21,6 +21,8 @@
 		3794CCE923EBB51400693C03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCE823EBB51400693C03 /* Assets.xcassets */; };
 		3794CCEC23EBB51400693C03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */; };
 		3794CCF723EBB51500693C03 /* FirstAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCF623EBB51500693C03 /* FirstAppTests.swift */; };
+		3796271924084F29004C2BDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271824084F29004C2BDE /* User.swift */; };
+		3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271A24084F9B004C2BDE /* UserViewModel.swift */; };
 		37B2F36323FC2183009C1FC1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F36223FC2183009C1FC1 /* Recipe.swift */; };
 		37B2F36723FC220F009C1FC1 /* FoodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F36623FC220F009C1FC1 /* FoodRequest.swift */; };
 		37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		3794CCF223EBB51500693C03 /* FirstAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCF623EBB51500693C03 /* FirstAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppTests.swift; sourceTree = "<group>"; };
 		3794CCF823EBB51500693C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3796271824084F29004C2BDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3796271A24084F9B004C2BDE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = FirstApp/Model/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		37B2F36223FC2183009C1FC1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		37B2F36623FC220F009C1FC1 /* FoodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRequest.swift; sourceTree = "<group>"; };
 		37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			children = (
 				37B2F36223FC2183009C1FC1 /* Recipe.swift */,
 				376CF63323F281840030C871 /* Constants.swift */,
+				3796271824084F29004C2BDE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 		374F4DDB24063F970074E2DB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3796271A24084F9B004C2BDE /* UserViewModel.swift */,
 			);
 			name = ViewModel;
 			path = ../Pods/Dev_Pod/ViewModel;
@@ -381,10 +387,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3796271924084F29004C2BDE /* User.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
 				37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */,
 				376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */,
 				3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */,
+				3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */,
 				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,

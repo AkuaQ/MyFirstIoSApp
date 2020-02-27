@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -67,14 +66,12 @@ class LoginEmailViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Signing in the user
-            Auth.auth().signIn(withEmail: email, password: password) { (_ result, error) in
-                //Check for errors
-                if error != nil {
-                    //Cannot sign in
-                    self.showError("Incorrect email or password")
-                } else {
-                    self.transitionToHome()
-                }
+            let userModel = UserViewModel()
+            let accountError = userModel.loginUser(with: email, and: password)
+            if accountError == "" {
+                self.transitionToHome()
+            } else {
+                showError(accountError)
             }
         }
     }

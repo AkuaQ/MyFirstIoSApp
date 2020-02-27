@@ -1,6 +1,4 @@
 import UIKit
-import FirebaseAuth
-import Firebase
 
 class SignUpEmailViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -75,26 +73,14 @@ class SignUpEmailViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Create the user
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                //Check for errors
-                if err != nil {
-                    //There was an error creating the user
-                } else {
-                    //User was created successfully, now store the first name and last name
-                    let database = Firestore.firestore()
-                    database.collection("users").addDocument(data: ["firstname":
-                        firstName, "lastname": lastName,
-                                   "uid": result!.user.uid]) { (error) in
-                        //if not nil then there was an error with creating first name and last name
-                        if error != nil {
-                            //Show error message
-                            self.showError("Error saving user data")
-                        }
-                    }
-                }
+            let userCreate = UserViewModel()
+            let accountError = userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password)
+            if accountError == "" {
+                //Transition to the home screen
+                self.transitionToHome()
+            } else {
+                showError(accountError)
             }
-            //Transition to the home screen
-            self.transitionToHome()
         }
     }
 
