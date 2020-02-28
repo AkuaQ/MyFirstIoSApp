@@ -16,13 +16,6 @@ struct User {
     public var email: String
     public var password: String
 
-    mutating func signUp (with firstName: String, lastName: String, email: String, and password: String) {
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
-        self.password = password
-    }
-
     func addUser(with firstName: String, lastName: String, email: String, and password: String) -> String {
         var errorMessage = ""
         Auth.auth().createUser(withEmail: email, password: password) { (result, err) in

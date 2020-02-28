@@ -50,10 +50,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             as? CellTableViewCell else {
                 fatalError() }
         let foods = foodList[indexPath.row]
-        cell.titleLabel.text = foods.title
-        cell.ingredientsLabel.text = foods.ingredients
+        cell.titleLabel.text = foodList[indexPath.row].title
+        cell.ingredientsLabel.text = foodList[indexPath.row].ingredients
         if !(foods.thumbnail == "") {
-            guard let url = URL(string: foods.thumbnail) else {fatalError()}
+            guard let url = URL(string: foodList[indexPath.row].thumbnail) else {fatalError()}
             cell.recipeImageView.downloadImage(from: url)
         } else {
             cell.recipeImageView.image = UIImage(named: "noImage")
