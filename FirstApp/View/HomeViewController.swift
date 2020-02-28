@@ -49,10 +49,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as? CellTableViewCell else {
                 fatalError() }
-        let foods = foodList[indexPath.row]
         cell.titleLabel.text = foodList[indexPath.row].title
         cell.ingredientsLabel.text = foodList[indexPath.row].ingredients
-        if !(foods.thumbnail == "") {
+        if !(foodList[indexPath.row].thumbnail == "") {
             guard let url = URL(string: foodList[indexPath.row].thumbnail) else {fatalError()}
             cell.recipeImageView.downloadImage(from: url)
         } else {
