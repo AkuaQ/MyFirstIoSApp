@@ -1,4 +1,5 @@
 import UIKit
+import Dev_Pod
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -48,11 +49,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as? CellTableViewCell else {
                 fatalError() }
-        let foods = foodList[indexPath.row]
-        cell.titleLabel.text = foods.title
-        cell.ingredientsLabel.text = foods.ingredients
-        if !(foods.thumbnail == "") {
-            guard let url = URL(string: foods.thumbnail) else {fatalError()}
+        cell.titleLabel.text = foodList[indexPath.row].title
+        cell.ingredientsLabel.text = foodList[indexPath.row].ingredients
+        if !(foodList[indexPath.row].thumbnail == "") {
+            guard let url = URL(string: foodList[indexPath.row].thumbnail) else {fatalError()}
             cell.recipeImageView.downloadImage(from: url)
         } else {
             cell.recipeImageView.image = UIImage(named: "noImage")
@@ -66,9 +66,7 @@ extension HomeViewController: UISearchBarDelegate {
         guard let searchBarText = recipeSearchBar.text else {return}
         let foodRequest = FoodRequest(foodQuery: searchBarText)
         foodRequest.getSearchResult { [weak self] result in
-            for identifier in result {
-                self?.foodList.append(identifier)
-            }
+            self?.foodList = result
         }
     }
 }
