@@ -12,8 +12,6 @@
 		376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62B23F146950030C871 /* SignUpEmailViewController.swift */; };
 		376CF63023F27D4A0030C871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */; };
 		376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63123F27FCA0030C871 /* HomeViewController.swift */; };
-		376CF63423F281840030C871 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63323F281840030C871 /* Constants.swift */; };
-		376CF6C523F56CA90030C871 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF6C423F56CA90030C871 /* Utilities.swift */; };
 		3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCDF23EBB51400693C03 /* AppDelegate.swift */; };
 		3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE123EBB51400693C03 /* SceneDelegate.swift */; };
 		3794CCE423EBB51400693C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE323EBB51400693C03 /* ViewController.swift */; };
@@ -47,8 +45,6 @@
 		376CF62B23F146950030C871 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
 		376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		376CF63123F27FCA0030C871 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		376CF63323F281840030C871 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		376CF6C423F56CA90030C871 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3794CCDC23EBB51400693C03 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCDF23EBB51400693C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794CCE123EBB51400693C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +87,6 @@
 		374F4DDA24063E9B0074E2DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				376CF63323F281840030C871 /* Constants.swift */,
 				3796271824084F29004C2BDE /* User.swift */,
 			);
 			path = Model;
@@ -115,7 +110,6 @@
 				3794CCE323EBB51400693C03 /* ViewController.swift */,
 				37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */,
 				37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */,
-				376CF6C423F56CA90030C871 /* Utilities.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,7 +142,6 @@
 				3794CCE123EBB51400693C03 /* SceneDelegate.swift */,
 				374F4DDA24063E9B0074E2DB /* Model */,
 				376CF62623F1429B0030C871 /* View */,
-				37B2F36123FC2161009C1FC1 /* API */,
 				3794CCE523EBB51400693C03 /* Main.storyboard */,
 				3794CCE823EBB51400693C03 /* Assets.xcassets */,
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,
@@ -165,13 +158,6 @@
 				3794CCF823EBB51500693C03 /* Info.plist */,
 			);
 			path = FirstAppTests;
-			sourceTree = "<group>";
-		};
-		37B2F36123FC2161009C1FC1 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
@@ -390,9 +376,7 @@
 				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,
-				376CF6C523F56CA90030C871 /* Utilities.swift in Sources */,
 				37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */,
-				376CF63423F281840030C871 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

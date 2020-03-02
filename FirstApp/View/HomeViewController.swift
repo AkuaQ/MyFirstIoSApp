@@ -66,9 +66,7 @@ extension HomeViewController: UISearchBarDelegate {
         guard let searchBarText = recipeSearchBar.text else {return}
         let foodRequest = FoodRequest(foodQuery: searchBarText)
         foodRequest.getSearchResult { [weak self] result in
-            for identifier in result {
-                self?.foodList.append(identifier)
-            }
+            self?.foodList = result
         }
     }
 }
