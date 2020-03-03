@@ -24,7 +24,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         self.view.addSubview(self.webView)
         webView.load(URLRequest(url: url))
-    
+
         // add activity
         self.webView.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
