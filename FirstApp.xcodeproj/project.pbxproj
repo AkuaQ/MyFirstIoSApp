@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		11A6ECF118B635FAF9ECE6C4 /* Pods_FirstAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126CB083A5756537CEA47B51 /* Pods_FirstAppTests.framework */; };
+		3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */; };
 		376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62923F143B50030C871 /* LoginEmailViewController.swift */; };
 		376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62B23F146950030C871 /* SignUpEmailViewController.swift */; };
-		376CF62E23F147380030C871 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62D23F147380030C871 /* SignUpViewController.swift */; };
 		376CF63023F27D4A0030C871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */; };
 		376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63123F27FCA0030C871 /* HomeViewController.swift */; };
-		376CF63423F281840030C871 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63323F281840030C871 /* Constants.swift */; };
-		376CF6C523F56CA90030C871 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF6C423F56CA90030C871 /* Utilities.swift */; };
 		3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCDF23EBB51400693C03 /* AppDelegate.swift */; };
 		3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE123EBB51400693C03 /* SceneDelegate.swift */; };
 		3794CCE423EBB51400693C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE323EBB51400693C03 /* ViewController.swift */; };
@@ -22,8 +20,8 @@
 		3794CCE923EBB51400693C03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCE823EBB51400693C03 /* Assets.xcassets */; };
 		3794CCEC23EBB51400693C03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */; };
 		3794CCF723EBB51500693C03 /* FirstAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCF623EBB51500693C03 /* FirstAppTests.swift */; };
-		37B2F36323FC2183009C1FC1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F36223FC2183009C1FC1 /* Recipe.swift */; };
-		37B2F36723FC220F009C1FC1 /* FoodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F36623FC220F009C1FC1 /* FoodRequest.swift */; };
+		3796271924084F29004C2BDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271824084F29004C2BDE /* User.swift */; };
+		3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271A24084F9B004C2BDE /* UserViewModel.swift */; };
 		37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */; };
 		37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */; };
 		7EEEE89CE2103410687BF957 /* Pods_FirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B222FD863115133B4D4EB /* Pods_FirstApp.framework */; };
@@ -44,13 +42,11 @@
 		126CB083A5756537CEA47B51 /* Pods_FirstAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D8943666E49A28A3422C91 /* Pods-FirstAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FirstAppTests/Pods-FirstAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C0ABE5321EBD28D58BFC757 /* Pods-FirstAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAppTests.release.xcconfig"; path = "Target Support Files/Pods-FirstAppTests/Pods-FirstAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		376CF62923F143B50030C871 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
 		376CF62B23F146950030C871 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
-		376CF62D23F147380030C871 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		376CF63123F27FCA0030C871 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		376CF63323F281840030C871 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		376CF6C423F56CA90030C871 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3794CCDC23EBB51400693C03 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCDF23EBB51400693C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794CCE123EBB51400693C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +58,8 @@
 		3794CCF223EBB51500693C03 /* FirstAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCF623EBB51500693C03 /* FirstAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppTests.swift; sourceTree = "<group>"; };
 		3794CCF823EBB51500693C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37B2F36223FC2183009C1FC1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		37B2F36623FC220F009C1FC1 /* FoodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRequest.swift; sourceTree = "<group>"; };
+		3796271824084F29004C2BDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3796271A24084F9B004C2BDE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = FirstApp/Model/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		684B222FD863115133B4D4EB /* Pods_FirstApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,17 +86,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		376CF62623F1429B0030C871 /* ViewControllers */ = {
+		374F4DDA24063E9B0074E2DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3796271824084F29004C2BDE /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		374F4DDB24063F970074E2DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3796271A24084F9B004C2BDE /* UserViewModel.swift */,
+			);
+			name = ViewModel;
+			path = ../Pods/Dev_Pod/ViewModel;
+			sourceTree = "<group>";
+		};
+		376CF62623F1429B0030C871 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				376CF63123F27FCA0030C871 /* HomeViewController.swift */,
-				376CF62D23F147380030C871 /* SignUpViewController.swift */,
 				376CF62923F143B50030C871 /* LoginEmailViewController.swift */,
 				376CF62B23F146950030C871 /* SignUpEmailViewController.swift */,
 				3794CCE323EBB51400693C03 /* ViewController.swift */,
+				37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */,
 				37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */,
+				3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */,
 			);
-			path = ViewControllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 		3794CCD323EBB51400693C03 = {
@@ -126,18 +140,16 @@
 		3794CCDE23EBB51400693C03 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				374F4DDB24063F970074E2DB /* ViewModel */,
 				3794CCDF23EBB51400693C03 /* AppDelegate.swift */,
 				3794CCE123EBB51400693C03 /* SceneDelegate.swift */,
-				376CF62623F1429B0030C871 /* ViewControllers */,
-				37B2F36123FC2161009C1FC1 /* API */,
+				374F4DDA24063E9B0074E2DB /* Model */,
+				376CF62623F1429B0030C871 /* View */,
 				3794CCE523EBB51400693C03 /* Main.storyboard */,
 				3794CCE823EBB51400693C03 /* Assets.xcassets */,
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,
 				3794CCED23EBB51400693C03 /* Info.plist */,
 				376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */,
-				376CF6C423F56CA90030C871 /* Utilities.swift */,
-				376CF63323F281840030C871 /* Constants.swift */,
-				37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -149,15 +161,6 @@
 				3794CCF823EBB51500693C03 /* Info.plist */,
 			);
 			path = FirstAppTests;
-			sourceTree = "<group>";
-		};
-		37B2F36123FC2161009C1FC1 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				37B2F36223FC2183009C1FC1 /* Recipe.swift */,
-				37B2F36623FC220F009C1FC1 /* FoodRequest.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
@@ -367,19 +370,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				376CF62E23F147380030C871 /* SignUpViewController.swift in Sources */,
+				3796271924084F29004C2BDE /* User.swift in Sources */,
+				3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
 				37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */,
 				376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */,
 				3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */,
+				3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */,
 				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,
-				376CF6C523F56CA90030C871 /* Utilities.swift in Sources */,
-				37B2F36723FC220F009C1FC1 /* FoodRequest.swift in Sources */,
 				37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */,
-				376CF63423F281840030C871 /* Constants.swift in Sources */,
-				37B2F36323FC2183009C1FC1 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
