@@ -37,7 +37,6 @@ class RecipeDetailViewController: UIViewController {
         let webViewController = storyboard?.instantiateViewController(identifier:
         "WebViewController") as? WebViewController
         webViewController?.website = website
-        view.window?.rootViewController = webViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(webViewController!, animated: true)
     }
 }

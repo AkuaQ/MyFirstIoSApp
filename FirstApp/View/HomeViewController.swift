@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeSearchBar.delegate = self
@@ -23,7 +23,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = storyboard?.instantiateViewController(identifier:
             Constants.Storyboard.recipeDetailViewController)
@@ -37,14 +37,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             detailViewController?.image = "noImage"
         }
-
-        view.window?.rootViewController = detailViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodList.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as? CellTableViewCell else {
