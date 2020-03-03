@@ -56,8 +56,17 @@ class LoginEmailViewController: UIViewController {
         return nil
     }
 
-    @IBAction func loginTapped(_ sender: Any) {
+    @IBAction func loginTapped(_ sender: UIButton) {
         setUpElements()
+        UIButton.animate(withDuration: 0.2,
+                         animations: {
+                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
+        },
+                         completion: { _ in
+                            UIButton.animate(withDuration: 0.2, animations: {
+                                sender.transform = CGAffineTransform.identity
+                            })
+        })
         let error = validateField()
         if error != nil {
             //There's something wrong with the fields, show the error message

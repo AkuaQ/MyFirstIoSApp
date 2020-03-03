@@ -34,6 +34,10 @@ class RecipeDetailViewController: UIViewController {
     }
 
     @IBAction func linkButtonTapped(_ sender: Any) {
-        UIApplication.shared.open(URL(string: website)!, options: [:], completionHandler: nil)
+        let webViewController = storyboard?.instantiateViewController(identifier:
+        "WebViewController") as? WebViewController
+        webViewController?.website = website
+        view.window?.rootViewController = webViewController
+        view.window?.makeKeyAndVisible()
     }
 }
