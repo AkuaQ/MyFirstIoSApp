@@ -8,17 +8,17 @@ class SignUpEmailViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
         self.hideKeyboardWhenTappedAround()
     }
-    
+
     func setUpElements() {
         //Hide the error label
         errorLabel.alpha = 0
-        
+
         //Style the elements
         Utilities.styleTextField(firstNameTextField)
         Utilities.styleTextField(lastNameTextField)
@@ -26,7 +26,7 @@ class SignUpEmailViewController: UIViewController {
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
     }
-    
+
     //Check the fields and validate that the data is correct.
     //If everything is correct, this method returns nil.
     //Otherwise, it returns the error message
@@ -60,7 +60,7 @@ class SignUpEmailViewController: UIViewController {
         }
         return nil
     }
-    
+
     @IBAction func signUpTapped(_ sender: Any) {
         setUpElements()
         let error = validateField()
@@ -84,12 +84,12 @@ class SignUpEmailViewController: UIViewController {
             }
         }
     }
-    
+
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    
+
     func transitionToHome() {
         let homeViewController = storyboard?.instantiateViewController(identifier:
             Constants.Storyboard.homeViewController)

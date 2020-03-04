@@ -8,7 +8,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -21,13 +21,13 @@ class LoginEmailViewController: UIViewController {
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
         self.hideKeyboardWhenTappedAround()
     }
-    
+
     func setUpElements() {
         //Hide the error label
         errorLabel.alpha = 0
@@ -37,7 +37,7 @@ class LoginEmailViewController: UIViewController {
         facebookButton.layer.cornerRadius = facebookButton.frame.width/2
         googleButton.layer.cornerRadius = googleButton.frame.width/2
     }
-    
+
     //Check the fields and validate that the data is correct.
     //If everything is correct, this method returns nil.
     //Otherwise, it returns the error message
@@ -55,7 +55,7 @@ class LoginEmailViewController: UIViewController {
         }        //Check if password secure
         return nil
     }
-    
+
     @IBAction func loginTapped(_ sender: UIButton) {
         setUpElements()
         UIButton.animate(withDuration: 0.2,
@@ -85,12 +85,12 @@ class LoginEmailViewController: UIViewController {
             }
         }
     }
-    
+
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    
+
     func transitionToHome() {
         let homeViewController = storyboard?
             .instantiateViewController(identifier: Constants.Storyboard

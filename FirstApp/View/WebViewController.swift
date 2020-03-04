@@ -15,7 +15,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     var website = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         super.viewDidLoad()
         let web = website
         let url = URL(string: web)!
@@ -24,18 +24,18 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         self.view.addSubview(self.webView)
         webView.load(URLRequest(url: url))
-        
+
         // add activity
         self.webView.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
         self.webView.navigationDelegate = self
         self.activityIndicator.hidesWhenStopped = true
     }
-    
+
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
     }
-    
+
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         activityIndicator.stopAnimating()
     }
