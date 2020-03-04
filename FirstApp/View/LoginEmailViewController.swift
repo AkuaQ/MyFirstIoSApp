@@ -94,9 +94,8 @@ class LoginEmailViewController: UIViewController {
     func transitionToHome() {
         let homeViewController = storyboard?
             .instantiateViewController(identifier: Constants.Storyboard
-            .homeViewController)
+                .homeViewController)
             as? HomeViewController
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(homeViewController!, animated: true)
     }
 }
