@@ -75,12 +75,13 @@ class SignUpEmailViewController: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Create the user
             let userCreate = UserViewModel()
-            let accountError = userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password)
-            if accountError == "" {
-                //Transition to the home screen
-                self.transitionToHome()
-            } else {
-                showError(accountError)
+            userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password) {(result) in
+                if result == "" {
+                    //Transition to the home screen
+                    self.transitionToHome()
+                } else {
+                    self.showError(result)
+                }
             }
         }
     }
