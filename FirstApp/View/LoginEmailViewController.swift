@@ -68,11 +68,12 @@ class LoginEmailViewController: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Signing in the user
             let userModel = UserViewModel()
-            let accountError = userModel.loginUser(with: email, and: password)
-            if accountError == "" {
-                self.transitionToHome()
-            } else {
-                showError(accountError)
+            userModel.loginUser(with: email, and: password) {(result) in
+                if result == "" {
+                    self.transitionToHome()
+                } else {
+                    self.showError(result)
+                }
             }
         }
     }
