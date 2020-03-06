@@ -37,9 +37,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             detailViewController?.image = "noImage"
         }
-
-        view.window?.rootViewController = detailViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodList.count

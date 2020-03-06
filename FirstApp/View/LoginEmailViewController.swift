@@ -77,11 +77,12 @@ class LoginEmailViewController: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Signing in the user
             let userModel = UserViewModel()
-            let accountError = userModel.loginUser(with: email, and: password)
-            if accountError == "" {
-                self.transitionToHome()
-            } else {
-                showError(accountError)
+            userModel.loginUser(with: email, and: password) {(result) in
+                if result == "" {
+                    self.transitionToHome()
+                } else {
+                    self.showError(result)
+                }
             }
         }
     }
@@ -94,9 +95,8 @@ class LoginEmailViewController: UIViewController {
     func transitionToHome() {
         let homeViewController = storyboard?
             .instantiateViewController(identifier: Constants.Storyboard
-            .homeViewController)
+                .homeViewController)
             as? HomeViewController
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(homeViewController!, animated: true)
     }
 }

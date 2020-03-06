@@ -75,12 +75,13 @@ class SignUpEmailViewController: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Create the user
             let userCreate = UserViewModel()
-            let accountError = userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password)
-            if accountError == "" {
-                //Transition to the home screen
-                self.transitionToHome()
-            } else {
-                showError(accountError)
+            userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password) {(result) in
+                if result == "" {
+                    //Transition to the home screen
+                    self.transitionToHome()
+                } else {
+                    self.showError(result)
+                }
             }
         }
     }
@@ -94,7 +95,6 @@ class SignUpEmailViewController: UIViewController {
         let homeViewController = storyboard?.instantiateViewController(identifier:
             Constants.Storyboard.homeViewController)
             as? HomeViewController
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(homeViewController!, animated: true)
     }
 }

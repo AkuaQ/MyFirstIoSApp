@@ -9,15 +9,18 @@
 import Foundation
 
 struct UserViewModel {
-    func addUser(with firstName: String, lastName: String, email: String, and password: String) -> String {
+    func addUser(with firstName: String, lastName: String, email: String,
+                 and password: String, complete: @escaping ( _ error: String) -> Void) {
         let user = User(firstName: firstName, lastName: lastName, email: email, password: password)
-        let errorMessage = user.addUser(with: firstName, lastName: lastName, email: email, and: password)
-        return errorMessage
+        user.addUser(with: firstName, lastName: lastName, email: email, and: password) {(errorMessage) in
+            complete(errorMessage)
+        }
     }
 
-    func loginUser(with email: String, and password: String) -> String {
+    func loginUser(with email: String, and password: String, complete: @escaping ( _ error: String) -> Void) {
         let user = User(firstName: "", lastName: "", email: email, password: password)
-        let errorMessage = user.loginUser(with: email, and: password)
-        return errorMessage
+        user.loginUser(with: email, and: password) { ( errorMessage) in
+            complete(errorMessage)
+        }
     }
 }
