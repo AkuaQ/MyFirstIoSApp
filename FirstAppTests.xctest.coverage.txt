@@ -1,0 +1,119 @@
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/FirstAppTests.swift:
+    1|       |//
+    2|       |//  FirstAppTests.swift
+    3|       |//  FirstAppTests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/02/06.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import XCTest
+   10|       |@testable import FirstApp
+   11|       |
+   12|       |class FirstAppTests: XCTestCase {
+   13|       |
+   14|      2|    override func setUp() {
+   15|      2|        // Put setup code here. This method is called before the invocation of each test method in the class.
+   16|      2|    }
+   17|       |
+   18|      2|    override func tearDown() {
+   19|      2|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   20|      2|    }
+   21|       |
+   22|      1|    func testExample() {
+   23|      1|        // This is an example of a functional test case.
+   24|      1|        // Use XCTAssert and related functions to verify your tests produce the correct results.
+   25|      1|    }
+   26|       |
+   27|      1|    func testPerformanceExample() {
+   28|      1|        // This is an example of a performance test case.
+   29|     10|        self.measure {
+   30|     10|            // Put the code you want to measure the time of here.
+   31|     10|        }
+   32|      1|    }
+   33|       |
+   34|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/UserModelUnitTests.swift:
+    1|       |//
+    2|       |//  UserModelUnitTests.swift
+    3|       |//  FirstAppTests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/03/06.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import XCTest
+   10|       |@testable import FirstApp
+   11|       |
+   12|       |class UserModelUnitTests: XCTestCase {
+   13|       |
+   14|       |    var user: User!
+   15|      3|    override func setUp() {
+   16|      3|        user = User(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
+   17|      3|    }
+   18|       |
+   19|      3|    override func tearDown() {
+   20|      3|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   21|      3|    }
+   22|       |
+   23|      1|    func testGivenSignUpValuesReturnSuccess() {
+   24|      1|        let closure = user.addUser(with: user.firstName, lastName: user.lastName, email: user.email, and: user.password) {(result) in
+   25|      0|        }
+   26|      1|        XCTAssertNotNil(closure)
+   27|      1|    }
+   28|      1|    func testGivenLoginValuesReturnSuccess() {
+   29|      1|        let closure = user.loginUser(with: user.email, and: user.password) {(result) in
+   30|      0|        }
+   31|      1|        XCTAssertNotNil(closure)
+   32|      1|    }
+   33|       |
+   34|      1|    func testPerformanceExample() {
+   35|      1|        // This is an example of a performance test case.
+   36|     10|        self.measure {
+   37|     10|            // Put the code you want to measure the time of here.
+   38|     10|        }
+   39|      1|    }
+   40|       |
+   41|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/UtilitiesUnitTests.swift:
+    1|       |//
+    2|       |//  UtilitiesUnitTests.swift
+    3|       |//  FirstAppTests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/03/06.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import XCTest
+   10|       |@testable import FirstApp
+   11|       |@testable import Dev_Pod
+   12|       |
+   13|       |class UtilitiesUnitTests: XCTestCase {
+   14|       |
+   15|      3|    override func setUp() {
+   16|      3|        // Put setup code here. This method is called before the invocation of each test method in the class.
+   17|      3|    }
+   18|       |
+   19|      3|    override func tearDown() {
+   20|      3|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   21|      3|    }
+   22|       |
+   23|      1|    func testGivenIncorrectPasswordReturnFalse() {
+   24|      1|        XCTAssertFalse(Constants.isPasswordValid(""))
+   25|      1|    }
+   26|       |
+   27|      1|    func testGivenCorrectPasswordReturnTrue() {
+   28|      1|        XCTAssertTrue(Constants.isPasswordValid("HelloWorld@"))
+   29|      1|    }
+   30|       |
+   31|      1|    func testPerformanceExample() {
+   32|      1|        // This is an example of a performance test case.
+   33|     10|        self.measure {
+   34|     10|            // Put the code you want to measure the time of here.
+   35|     10|        }
+   36|      1|    }
+   37|       |
+   38|       |}
+

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		11A6ECF118B635FAF9ECE6C4 /* Pods_FirstAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126CB083A5756537CEA47B51 /* Pods_FirstAppTests.framework */; };
+		375E7B7224122FD800536863 /* UtilitiesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */; };
+		375E7B742412373D00536863 /* UserModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B732412373D00536863 /* UserModelUnitTests.swift */; };
 		3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */; };
 		376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62923F143B50030C871 /* LoginEmailViewController.swift */; };
 		376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62B23F146950030C871 /* SignUpEmailViewController.swift */; };
@@ -42,6 +44,8 @@
 		126CB083A5756537CEA47B51 /* Pods_FirstAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D8943666E49A28A3422C91 /* Pods-FirstAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FirstAppTests/Pods-FirstAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C0ABE5321EBD28D58BFC757 /* Pods-FirstAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAppTests.release.xcconfig"; path = "Target Support Files/Pods-FirstAppTests/Pods-FirstAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesUnitTests.swift; sourceTree = "<group>"; };
+		375E7B732412373D00536863 /* UserModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelUnitTests.swift; sourceTree = "<group>"; };
 		3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		376CF62923F143B50030C871 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
 		376CF62B23F146950030C871 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				3794CCF623EBB51500693C03 /* FirstAppTests.swift */,
 				3794CCF823EBB51500693C03 /* Info.plist */,
+				375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */,
+				375E7B732412373D00536863 /* UserModelUnitTests.swift */,
 			);
 			path = FirstAppTests;
 			sourceTree = "<group>";
@@ -388,6 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375E7B7224122FD800536863 /* UtilitiesUnitTests.swift in Sources */,
+				375E7B742412373D00536863 /* UserModelUnitTests.swift in Sources */,
 				3794CCF723EBB51500693C03 /* FirstAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
