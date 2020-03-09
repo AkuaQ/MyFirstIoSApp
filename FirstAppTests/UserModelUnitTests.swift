@@ -11,9 +11,9 @@ import XCTest
 
 class UserModelUnitTests: XCTestCase {
 
-    var user: User!
+    var repo: UserModelProtocol!
     override func setUp() {
-        user = User(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
+        repo = User(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
     }
 
     override func tearDown() {
@@ -21,12 +21,13 @@ class UserModelUnitTests: XCTestCase {
     }
 
     func testGivenSignUpValuesReturnSuccess() {
-        let closure = user.addUser(with: user.firstName, lastName: user.lastName, email: user.email, and: user.password) {(result) in
+        let closure = repo.addUser(with: "TestName",
+                                   lastName: "TestSurname", email: "TestEmail", and: "Test&Password") {(result) in
         }
         XCTAssertNotNil(closure)
     }
     func testGivenLoginValuesReturnSuccess() {
-        let closure = user.loginUser(with: user.email, and: user.password) {(result) in
+        let closure = repo.loginUser(with: "TestEmail", and: "Test&Password") {(result) in
         }
         XCTAssertNotNil(closure)
     }
