@@ -22,12 +22,14 @@ class UserModelUnitTests: XCTestCase {
 
     func testGivenSignUpValuesReturnSuccess() {
         let closure = repo.addUser(with: "TestName",
-                                   lastName: "TestSurname", email: "TestEmail", and: "Test&Password") {(result) in
+                                   lastName: "TestSurname", email: "TestEmail", and: "Test&Password") {result in
+                                    print(result)
         }
         XCTAssertNotNil(closure)
     }
     func testGivenLoginValuesReturnSuccess() {
-        let closure = repo.loginUser(with: "TestEmail", and: "Test&Password") {(result) in
+        let closure = repo.loginUser(with: "TestEmail", and: "Test&Password") {result in
+             print(result)
         }
         XCTAssertNotNil(closure)
     }
