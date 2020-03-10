@@ -26,6 +26,15 @@ class RecipeViewModelServiceTests: XCTestCase {
             XCTAssertEqual(searchResultTitle, "Delicious Fish Curry Recipe")
         }
     }
+    
+    func testGivenSearchCredsReturnSearchResultTitleFailure() {
+        var searchResultTitle = ""
+        let foodRequest = FoodRequest(foodQuery: "fishy")
+        foodRequest.getSearchResult {(result) in
+                        searchResultTitle = result[0].title
+            XCTAssertNotEqual(searchResultTitle, "Fish Marinade for People Who Hate Fish")
+        }
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
