@@ -1,0 +1,1689 @@
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/BookWyrm/Pods/SWXMLHash/Source/SWXMLHash+TypeConversion.swift:
+    1|       |//
+    2|       |//  SWXMLHash+TypeConversion.swift
+    3|       |//  SWXMLHash
+    4|       |//
+    5|       |//  Copyright (c) 2016 Maciek Grzybowskio
+    6|       |//
+    7|       |//  Permission is hereby granted, free of charge, to any person obtaining a copy
+    8|       |//  of this software and associated documentation files (the "Software"), to deal
+    9|       |//  in the Software without restriction, including without limitation the rights
+   10|       |//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   11|       |//  copies of the Software, and to permit persons to whom the Software is
+   12|       |//  furnished to do so, subject to the following conditions:
+   13|       |//
+   14|       |//  The above copyright notice and this permission notice shall be included in
+   15|       |//  all copies or substantial portions of the Software.
+   16|       |//
+   17|       |//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   18|       |//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   19|       |//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   20|       |//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   21|       |//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   22|       |//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   23|       |//  THE SOFTWARE.
+   24|       |//
+   25|       |
+   26|       |// swiftlint:disable line_length
+   27|       |// swiftlint:disable file_length
+   28|       |
+   29|       |import Foundation
+   30|       |
+   31|       |// MARK: - XMLIndexerDeserializable
+   32|       |
+   33|       |/// Provides XMLIndexer deserialization / type transformation support
+   34|       |public protocol XMLIndexerDeserializable {
+   35|       |    /// Method for deserializing elements from XMLIndexer
+   36|       |    static func deserialize(_ element: XMLIndexer) throws -> Self
+   37|       |}
+   38|       |
+   39|       |/// Provides XMLIndexer deserialization / type transformation support
+   40|       |public extension XMLIndexerDeserializable {
+   41|       |    /**
+   42|       |    A default implementation that will throw an error if it is called
+   43|       |
+   44|       |    - parameters:
+   45|       |        - element: the XMLIndexer to be deserialized
+   46|       |    - throws: an XMLDeserializationError.implementationIsMissing if no implementation is found
+   47|       |    - returns: this won't ever return because of the error being thrown
+   48|       |    */
+   49|      0|    static func deserialize(_ element: XMLIndexer) throws -> Self {
+   50|      0|        throw XMLDeserializationError.implementationIsMissing(
+   51|      0|            method: "XMLIndexerDeserializable.deserialize(element: XMLIndexer)")
+   52|      0|    }
+   53|       |}
+   54|       |
+   55|       |// MARK: - XMLElementDeserializable
+   56|       |
+   57|       |/// Provides XMLElement deserialization / type transformation support
+   58|       |public protocol XMLElementDeserializable {
+   59|       |    /// Method for deserializing elements from XMLElement
+   60|       |    static func deserialize(_ element: XMLElement) throws -> Self
+   61|       |}
+   62|       |
+   63|       |/// Provides XMLElement deserialization / type transformation support
+   64|       |public extension XMLElementDeserializable {
+   65|       |    /**
+   66|       |    A default implementation that will throw an error if it is called
+   67|       |
+   68|       |    - parameters:
+   69|       |        - element: the XMLElement to be deserialized
+   70|       |    - throws: an XMLDeserializationError.implementationIsMissing if no implementation is found
+   71|       |    - returns: this won't ever return because of the error being thrown
+   72|       |    */
+   73|      0|    static func deserialize(_ element: XMLElement) throws -> Self {
+   74|      0|        throw XMLDeserializationError.implementationIsMissing(
+   75|      0|            method: "XMLElementDeserializable.deserialize(element: XMLElement)")
+   76|      0|    }
+   77|       |}
+   78|       |
+   79|       |// MARK: - XMLAttributeDeserializable
+   80|       |
+   81|       |/// Provides XMLAttribute deserialization / type transformation support
+   82|       |public protocol XMLAttributeDeserializable {
+   83|       |    static func deserialize(_ attribute: XMLAttribute) throws -> Self
+   84|       |}
+   85|       |
+   86|       |/// Provides XMLAttribute deserialization / type transformation support
+   87|       |public extension XMLAttributeDeserializable {
+   88|       |    /**
+   89|       |     A default implementation that will throw an error if it is called
+   90|       |
+   91|       |     - parameters:
+   92|       |         - attribute: The XMLAttribute to be deserialized
+   93|       |     - throws: an XMLDeserializationError.implementationIsMissing if no implementation is found
+   94|       |     - returns: this won't ever return because of the error being thrown
+   95|       |     */
+   96|      0|    static func deserialize(attribute: XMLAttribute) throws -> Self {
+   97|      0|        throw XMLDeserializationError.implementationIsMissing(
+   98|      0|            method: "XMLAttributeDeserializable(element: XMLAttribute)")
+   99|      0|    }
+  100|       |}
+  101|       |
+  102|       |// MARK: - XMLIndexer Extensions
+  103|       |
+  104|       |public extension XMLIndexer {
+  105|       |
+  106|       |    // MARK: - XMLAttributeDeserializable
+  107|       |
+  108|       |    /**
+  109|       |     Attempts to deserialize the value of the specified attribute of the current XMLIndexer
+  110|       |     element to `T`
+  111|       |
+  112|       |     - parameter attr: The attribute to deserialize
+  113|       |     - throws: an XMLDeserializationError if there is a problem with deserialization
+  114|       |     - returns: The deserialized `T` value
+  115|       |     */
+  116|      0|    func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) throws -> T {
+  117|      0|        switch self {
+  118|      0|        case .element(let element):
+  119|      0|            return try element.value(ofAttribute: attr)
+  120|      0|        case .stream(let opStream):
+  121|      0|            return try opStream.findElements().value(ofAttribute: attr)
+  122|      0|        default:
+  123|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  124|      0|        }
+  125|      0|    }
+  126|       |
+  127|       |    /**
+  128|       |     Attempts to deserialize the value of the specified attribute of the current XMLIndexer
+  129|       |     element to `T?`
+  130|       |
+  131|       |     - parameter attr: The attribute to deserialize
+  132|       |     - returns: The deserialized `T?` value, or nil if the attribute does not exist
+  133|       |     */
+  134|      0|    func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) -> T? {
+  135|      0|        switch self {
+  136|      0|        case .element(let element):
+  137|      0|            return element.value(ofAttribute: attr)
+  138|      0|        case .stream(let opStream):
+  139|      0|            return opStream.findElements().value(ofAttribute: attr)
+  140|      0|        default:
+  141|      0|            return nil
+  142|      0|        }
+  143|      0|    }
+  144|       |
+  145|       |    /**
+  146|       |     Attempts to deserialize the value of the specified attribute of the current XMLIndexer
+  147|       |     element to `[T]`
+  148|       |
+  149|       |     - parameter attr: The attribute to deserialize
+  150|       |     - throws: an XMLDeserializationError if there is a problem with deserialization
+  151|       |     - returns: The deserialized `[T]` value
+  152|       |     */
+  153|      0|    func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) throws -> [T] {
+  154|      0|        switch self {
+  155|      0|        case .list(let elements):
+  156|      0|            return try elements.map { try $0.value(ofAttribute: attr) }
+  157|      0|        case .element(let element):
+  158|      0|            return try [element].map { try $0.value(ofAttribute: attr) }
+  159|      0|        case .stream(let opStream):
+  160|      0|            return try opStream.findElements().value(ofAttribute: attr)
+  161|      0|        default:
+  162|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  163|      0|        }
+  164|      0|    }
+  165|       |
+  166|       |    /**
+  167|       |     Attempts to deserialize the value of the specified attribute of the current XMLIndexer
+  168|       |     element to `[T]?`
+  169|       |
+  170|       |     - parameter attr: The attribute to deserialize
+  171|       |     - throws: an XMLDeserializationError if there is a problem with deserialization
+  172|       |     - returns: The deserialized `[T]?` value
+  173|       |     */
+  174|      0|    func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) throws -> [T]? {
+  175|      0|        switch self {
+  176|      0|        case .list(let elements):
+  177|      0|            return try elements.map { try $0.value(ofAttribute: attr) }
+  178|      0|        case .element(let element):
+  179|      0|            return try [element].map { try $0.value(ofAttribute: attr) }
+  180|      0|        case .stream(let opStream):
+  181|      0|            return try opStream.findElements().value(ofAttribute: attr)
+  182|      0|        default:
+  183|      0|            return nil
+  184|      0|        }
+  185|      0|    }
+  186|       |
+  187|       |    /**
+  188|       |     Attempts to deserialize the value of the specified attribute of the current XMLIndexer
+  189|       |     element to `[T?]`
+  190|       |
+  191|       |     - parameter attr: The attribute to deserialize
+  192|       |     - throws: an XMLDeserializationError if there is a problem with deserialization
+  193|       |     - returns: The deserialized `[T?]` value
+  194|       |     */
+  195|      0|    func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) throws -> [T?] {
+  196|      0|        switch self {
+  197|      0|        case .list(let elements):
+  198|      0|            return elements.map { $0.value(ofAttribute: attr) }
+  199|      0|        case .element(let element):
+  200|      0|            return [element].map { $0.value(ofAttribute: attr) }
+  201|      0|        case .stream(let opStream):
+  202|      0|            return try opStream.findElements().value(ofAttribute: attr)
+  203|      0|        default:
+  204|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  205|      0|        }
+  206|      0|    }
+  207|       |
+  208|       |    // MARK: - XMLElementDeserializable
+  209|       |
+  210|       |    /**
+  211|       |    Attempts to deserialize the current XMLElement element to `T`
+  212|       |
+  213|       |    - throws: an XMLDeserializationError.nodeIsInvalid if the current indexed level isn't an Element
+  214|       |    - returns: the deserialized `T` value
+  215|       |    */
+  216|      0|    func value<T: XMLElementDeserializable>() throws -> T {
+  217|      0|        switch self {
+  218|      0|        case .element(let element):
+  219|      0|            return try T.deserialize(element)
+  220|      0|        case .stream(let opStream):
+  221|      0|            return try opStream.findElements().value()
+  222|      0|        default:
+  223|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  224|      0|        }
+  225|      0|    }
+  226|       |
+  227|       |    /**
+  228|       |    Attempts to deserialize the current XMLElement element to `T?`
+  229|       |
+  230|       |    - returns: the deserialized `T?` value
+  231|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  232|       |    */
+  233|      0|    func value<T: XMLElementDeserializable>() throws -> T? {
+  234|      0|        switch self {
+  235|      0|        case .element(let element):
+  236|      0|            return try T.deserialize(element)
+  237|      0|        case .stream(let opStream):
+  238|      0|            return try opStream.findElements().value()
+  239|      0|        default:
+  240|      0|            return nil
+  241|      0|        }
+  242|      0|    }
+  243|       |
+  244|       |    /**
+  245|       |    Attempts to deserialize the current XMLElement element to `[T]`
+  246|       |
+  247|       |    - returns: the deserialized `[T]` value
+  248|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  249|       |    */
+  250|      0|    func value<T: XMLElementDeserializable>() throws -> [T] {
+  251|      0|        switch self {
+  252|      0|        case .list(let elements):
+  253|      0|            return try elements.map { try T.deserialize($0) }
+  254|      0|        case .element(let element):
+  255|      0|            return try [element].map { try T.deserialize($0) }
+  256|      0|        case .stream(let opStream):
+  257|      0|            return try opStream.findElements().value()
+  258|      0|        default:
+  259|      0|            return []
+  260|      0|        }
+  261|      0|    }
+  262|       |
+  263|       |    /**
+  264|       |    Attempts to deserialize the current XMLElement element to `[T]?`
+  265|       |
+  266|       |    - returns: the deserialized `[T]?` value
+  267|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  268|       |    */
+  269|      0|    func value<T: XMLElementDeserializable>() throws -> [T]? {
+  270|      0|        switch self {
+  271|      0|        case .list(let elements):
+  272|      0|            return try elements.map { try T.deserialize($0) }
+  273|      0|        case .element(let element):
+  274|      0|            return try [element].map { try T.deserialize($0) }
+  275|      0|        case .stream(let opStream):
+  276|      0|            return try opStream.findElements().value()
+  277|      0|        default:
+  278|      0|            return nil
+  279|      0|        }
+  280|      0|    }
+  281|       |
+  282|       |    /**
+  283|       |    Attempts to deserialize the current XMLElement element to `[T?]`
+  284|       |
+  285|       |    - returns: the deserialized `[T?]` value
+  286|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  287|       |    */
+  288|      0|    func value<T: XMLElementDeserializable>() throws -> [T?] {
+  289|      0|        switch self {
+  290|      0|        case .list(let elements):
+  291|      0|            return try elements.map { try T.deserialize($0) }
+  292|      0|        case .element(let element):
+  293|      0|            return try [element].map { try T.deserialize($0) }
+  294|      0|        case .stream(let opStream):
+  295|      0|            return try opStream.findElements().value()
+  296|      0|        default:
+  297|      0|            return []
+  298|      0|        }
+  299|      0|    }
+  300|       |
+  301|       |    // MARK: - XMLIndexerDeserializable
+  302|       |
+  303|       |    /**
+  304|       |    Attempts to deserialize the current XMLIndexer element to `T`
+  305|       |
+  306|       |    - returns: the deserialized `T` value
+  307|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  308|       |    */
+  309|      0|    func value<T: XMLIndexerDeserializable>() throws -> T {
+  310|      0|        switch self {
+  311|      0|        case .element:
+  312|      0|            return try T.deserialize(self)
+  313|      0|        case .stream(let opStream):
+  314|      0|            return try opStream.findElements().value()
+  315|      0|        default:
+  316|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  317|      0|        }
+  318|      0|    }
+  319|       |
+  320|       |    /**
+  321|       |    Attempts to deserialize the current XMLIndexer element to `T?`
+  322|       |
+  323|       |    - returns: the deserialized `T?` value
+  324|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  325|       |    */
+  326|      0|    func value<T: XMLIndexerDeserializable>() throws -> T? {
+  327|      0|        switch self {
+  328|      0|        case .element:
+  329|      0|            return try T.deserialize(self)
+  330|      0|        case .stream(let opStream):
+  331|      0|            return try opStream.findElements().value()
+  332|      0|        default:
+  333|      0|            return nil
+  334|      0|        }
+  335|      0|    }
+  336|       |
+  337|       |    /**
+  338|       |    Attempts to deserialize the current XMLIndexer element to `[T]`
+  339|       |
+  340|       |    - returns: the deserialized `[T]` value
+  341|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  342|       |    */
+  343|      0|    func value<T>() throws -> [T] where T: XMLIndexerDeserializable {
+  344|      0|        switch self {
+  345|      0|        case .list(let elements):
+  346|      0|            return try elements.map { try T.deserialize( XMLIndexer($0) ) }
+  347|      0|        case .element(let element):
+  348|      0|            return try [element].map { try T.deserialize( XMLIndexer($0) ) }
+  349|      0|        case .stream(let opStream):
+  350|      0|            return try opStream.findElements().value()
+  351|      0|        default:
+  352|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  353|      0|        }
+  354|      0|    }
+  355|       |
+  356|       |    /**
+  357|       |    Attempts to deserialize the current XMLIndexer element to `[T]?`
+  358|       |
+  359|       |    - returns: the deserialized `[T]?` value
+  360|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  361|       |    */
+  362|      0|    func value<T: XMLIndexerDeserializable>() throws -> [T]? {
+  363|      0|        switch self {
+  364|      0|        case .list(let elements):
+  365|      0|            return try elements.map { try T.deserialize( XMLIndexer($0) ) }
+  366|      0|        case .element(let element):
+  367|      0|            return try [element].map { try T.deserialize( XMLIndexer($0) ) }
+  368|      0|        case .stream(let opStream):
+  369|      0|            return try opStream.findElements().value()
+  370|      0|        default:
+  371|      0|            return nil
+  372|      0|        }
+  373|      0|    }
+  374|       |
+  375|       |    /**
+  376|       |    Attempts to deserialize the current XMLIndexer element to `[T?]`
+  377|       |
+  378|       |    - returns: the deserialized `[T?]` value
+  379|       |    - throws: an XMLDeserializationError is there is a problem with deserialization
+  380|       |    */
+  381|      0|    func value<T: XMLIndexerDeserializable>() throws -> [T?] {
+  382|      0|        switch self {
+  383|      0|        case .list(let elements):
+  384|      0|            return try elements.map { try T.deserialize( XMLIndexer($0) ) }
+  385|      0|        case .element(let element):
+  386|      0|            return try [element].map { try T.deserialize( XMLIndexer($0) ) }
+  387|      0|        case .stream(let opStream):
+  388|      0|            return try opStream.findElements().value()
+  389|      0|        default:
+  390|      0|            throw XMLDeserializationError.nodeIsInvalid(node: self)
+  391|      0|        }
+  392|      0|    }
+  393|       |}
+  394|       |
+  395|       |// MARK: - XMLElement Extensions
+  396|       |
+  397|       |extension XMLElement {
+  398|       |
+  399|       |    /**
+  400|       |     Attempts to deserialize the specified attribute of the current XMLElement to `T`
+  401|       |
+  402|       |     - parameter attr: The attribute to deserialize
+  403|       |     - throws: an XMLDeserializationError if there is a problem with deserialization
+  404|       |     - returns: The deserialized `T` value
+  405|       |     */
+  406|      0|    public func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) throws -> T {
+  407|      0|        if let attr = self.attribute(by: attr) {
+  408|      0|            return try T.deserialize(attr)
+  409|      0|        } else {
+  410|      0|            throw XMLDeserializationError.attributeDoesNotExist(element: self, attribute: attr)
+  411|      0|        }
+  412|      0|    }
+  413|       |
+  414|       |    /**
+  415|       |     Attempts to deserialize the specified attribute of the current XMLElement to `T?`
+  416|       |
+  417|       |     - parameter attr: The attribute to deserialize
+  418|       |     - returns: The deserialized `T?` value, or nil if the attribute does not exist.
+  419|       |     */
+  420|      0|    public func value<T: XMLAttributeDeserializable>(ofAttribute attr: String) -> T? {
+  421|      0|        if let attr = self.attribute(by: attr) {
+  422|      0|            return try? T.deserialize(attr)
+  423|      0|        } else {
+  424|      0|            return nil
+  425|      0|        }
+  426|      0|    }
+  427|       |
+  428|       |    /**
+  429|       |     Gets the text associated with this element, or throws an exception if the text is empty
+  430|       |
+  431|       |     - throws: XMLDeserializationError.nodeHasNoValue if the element text is empty
+  432|       |     - returns: The element text
+  433|       |     */
+  434|      0|    internal func nonEmptyTextOrThrow() throws -> String {
+  435|      0|        let textVal = text
+  436|      0|        if !textVal.isEmpty {
+  437|      0|            return textVal
+  438|      0|        }
+  439|      0|
+  440|      0|        throw XMLDeserializationError.nodeHasNoValue
+  441|      0|    }
+  442|       |}
+  443|       |
+  444|       |// MARK: - XMLDeserializationError
+  445|       |
+  446|       |/// The error that is thrown if there is a problem with deserialization
+  447|       |public enum XMLDeserializationError: Error, CustomStringConvertible {
+  448|       |    case implementationIsMissing(method: String)
+  449|       |    case nodeIsInvalid(node: XMLIndexer)
+  450|       |    case nodeHasNoValue
+  451|       |    case typeConversionFailed(type: String, element: XMLElement)
+  452|       |    case attributeDoesNotExist(element: XMLElement, attribute: String)
+  453|       |    case attributeDeserializationFailed(type: String, attribute: XMLAttribute)
+  454|       |
+  455|       |// swiftlint:disable identifier_name
+  456|       |    @available(*, unavailable, renamed: "implementationIsMissing(method:)")
+  457|      0|    public static func ImplementationIsMissing(method: String) -> XMLDeserializationError {
+  458|      0|        fatalError("unavailable")
+  459|      0|    }
+  460|       |    @available(*, unavailable, renamed: "nodeHasNoValue(_:)")
+  461|      0|    public static func NodeHasNoValue(_: IndexOps) -> XMLDeserializationError {
+  462|      0|        fatalError("unavailable")
+  463|      0|    }
+  464|       |    @available(*, unavailable, renamed: "typeConversionFailed(_:)")
+  465|      0|    public static func TypeConversionFailed(_: IndexingError) -> XMLDeserializationError {
+  466|      0|        fatalError("unavailable")
+  467|      0|    }
+  468|       |    @available(*, unavailable, renamed: "attributeDoesNotExist(_:_:)")
+  469|      0|    public static func AttributeDoesNotExist(_ attr: String, _ value: String) throws -> XMLDeserializationError {
+  470|      0|        fatalError("unavailable")
+  471|      0|    }
+  472|       |    @available(*, unavailable, renamed: "attributeDeserializationFailed(_:_:)")
+  473|      0|    public static func AttributeDeserializationFailed(_ attr: String, _ value: String) throws -> XMLDeserializationError {
+  474|      0|        fatalError("unavailable")
+  475|      0|    }
+  476|       |// swiftlint:enable identifier_name
+  477|       |
+  478|       |    /// The text description for the error thrown
+  479|      0|    public var description: String {
+  480|      0|        switch self {
+  481|      0|        case .implementationIsMissing(let method):
+  482|      0|            return "This deserialization method is not implemented: \(method)"
+  483|      0|        case .nodeIsInvalid(let node):
+  484|      0|            return "This node is invalid: \(node)"
+  485|      0|        case .nodeHasNoValue:
+  486|      0|            return "This node is empty"
+  487|      0|        case .typeConversionFailed(let type, let node):
+  488|      0|            return "Can't convert node \(node) to value of type \(type)"
+  489|      0|        case .attributeDoesNotExist(let element, let attribute):
+  490|      0|            return "Element \(element) does not contain attribute: \(attribute)"
+  491|      0|        case .attributeDeserializationFailed(let type, let attribute):
+  492|      0|            return "Can't convert attribute \(attribute) to value of type \(type)"
+  493|      0|        }
+  494|      0|    }
+  495|       |}
+  496|       |
+  497|       |// MARK: - Common types deserialization
+  498|       |
+  499|       |extension String: XMLElementDeserializable, XMLAttributeDeserializable {
+  500|       |    /**
+  501|       |    Attempts to deserialize XML element content to a String
+  502|       |
+  503|       |    - parameters:
+  504|       |        - element: the XMLElement to be deserialized
+  505|       |    - throws: an XMLDeserializationError.typeConversionFailed if the element cannot be deserialized
+  506|       |    - returns: the deserialized String value
+  507|       |    */
+  508|      0|    public static func deserialize(_ element: XMLElement) -> String {
+  509|      0|        return element.text
+  510|      0|    }
+  511|       |
+  512|       |    /**
+  513|       |     Attempts to deserialize XML Attribute content to a String
+  514|       |
+  515|       |     - parameter attribute: the XMLAttribute to be deserialized
+  516|       |     - returns: the deserialized String value
+  517|       |     */
+  518|      0|    public static func deserialize(_ attribute: XMLAttribute) -> String {
+  519|      0|        return attribute.text
+  520|      0|    }
+  521|       |}
+  522|       |
+  523|       |extension Int: XMLElementDeserializable, XMLAttributeDeserializable {
+  524|       |    /**
+  525|       |    Attempts to deserialize XML element content to a Int
+  526|       |
+  527|       |    - parameters:
+  528|       |        - element: the XMLElement to be deserialized
+  529|       |    - throws: an XMLDeserializationError.typeConversionFailed if the element cannot be deserialized
+  530|       |    - returns: the deserialized Int value
+  531|       |    */
+  532|      0|    public static func deserialize(_ element: XMLElement) throws -> Int {
+  533|      0|        guard let value = Int(try element.nonEmptyTextOrThrow()) else {
+  534|      0|            throw XMLDeserializationError.typeConversionFailed(type: "Int", element: element)
+  535|      0|        }
+  536|      0|        return value
+  537|      0|    }
+  538|       |
+  539|       |    /**
+  540|       |     Attempts to deserialize XML attribute content to an Int
+  541|       |
+  542|       |     - parameter attribute: The XMLAttribute to be deserialized
+  543|       |     - throws: an XMLDeserializationError.attributeDeserializationFailed if the attribute cannot be
+  544|       |               deserialized
+  545|       |     - returns: the deserialized Int value
+  546|       |     */
+  547|      0|    public static func deserialize(_ attribute: XMLAttribute) throws -> Int {
+  548|      0|        guard let value = Int(attribute.text) else {
+  549|      0|            throw XMLDeserializationError.attributeDeserializationFailed(
+  550|      0|                type: "Int", attribute: attribute)
+  551|      0|        }
+  552|      0|        return value
+  553|      0|    }
+  554|       |}
+  555|       |
+  556|       |extension Double: XMLElementDeserializable, XMLAttributeDeserializable {
+  557|       |    /**
+  558|       |    Attempts to deserialize XML element content to a Double
+  559|       |
+  560|       |    - parameters:
+  561|       |        - element: the XMLElement to be deserialized
+  562|       |    - throws: an XMLDeserializationError.typeConversionFailed if the element cannot be deserialized
+  563|       |    - returns: the deserialized Double value
+  564|       |    */
+  565|      0|    public static func deserialize(_ element: XMLElement) throws -> Double {
+  566|      0|        guard let value = Double(try element.nonEmptyTextOrThrow()) else {
+  567|      0|            throw XMLDeserializationError.typeConversionFailed(type: "Double", element: element)
+  568|      0|        }
+  569|      0|        return value
+  570|      0|    }
+  571|       |
+  572|       |    /**
+  573|       |     Attempts to deserialize XML attribute content to a Double
+  574|       |
+  575|       |     - parameter attribute: The XMLAttribute to be deserialized
+  576|       |     - throws: an XMLDeserializationError.attributeDeserializationFailed if the attribute cannot be
+  577|       |               deserialized
+  578|       |     - returns: the deserialized Double value
+  579|       |     */
+  580|      0|    public static func deserialize(_ attribute: XMLAttribute) throws -> Double {
+  581|      0|        guard let value = Double(attribute.text) else {
+  582|      0|            throw XMLDeserializationError.attributeDeserializationFailed(
+  583|      0|                type: "Double", attribute: attribute)
+  584|      0|        }
+  585|      0|        return value
+  586|      0|    }
+  587|       |}
+  588|       |
+  589|       |extension Float: XMLElementDeserializable, XMLAttributeDeserializable {
+  590|       |    /**
+  591|       |    Attempts to deserialize XML element content to a Float
+  592|       |
+  593|       |    - parameters:
+  594|       |        - element: the XMLElement to be deserialized
+  595|       |    - throws: an XMLDeserializationError.typeConversionFailed if the element cannot be deserialized
+  596|       |    - returns: the deserialized Float value
+  597|       |    */
+  598|      0|    public static func deserialize(_ element: XMLElement) throws -> Float {
+  599|      0|        guard let value = Float(try element.nonEmptyTextOrThrow()) else {
+  600|      0|            throw XMLDeserializationError.typeConversionFailed(type: "Float", element: element)
+  601|      0|        }
+  602|      0|        return value
+  603|      0|    }
+  604|       |
+  605|       |    /**
+  606|       |     Attempts to deserialize XML attribute content to a Float
+  607|       |
+  608|       |     - parameter attribute: The XMLAttribute to be deserialized
+  609|       |     - throws: an XMLDeserializationError.attributeDeserializationFailed if the attribute cannot be
+  610|       |               deserialized
+  611|       |     - returns: the deserialized Float value
+  612|       |     */
+  613|      0|    public static func deserialize(_ attribute: XMLAttribute) throws -> Float {
+  614|      0|        guard let value = Float(attribute.text) else {
+  615|      0|            throw XMLDeserializationError.attributeDeserializationFailed(
+  616|      0|                type: "Float", attribute: attribute)
+  617|      0|        }
+  618|      0|        return value
+  619|      0|    }
+  620|       |}
+  621|       |
+  622|       |extension Bool: XMLElementDeserializable, XMLAttributeDeserializable {
+  623|       |    // swiftlint:disable line_length
+  624|       |    /**
+  625|       |     Attempts to deserialize XML element content to a Bool. This uses NSString's 'boolValue'
+  626|       |     described [here](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/#//apple_ref/occ/instp/NSString/boolValue)
+  627|       |
+  628|       |     - parameters:
+  629|       |        - element: the XMLElement to be deserialized
+  630|       |     - throws: an XMLDeserializationError.typeConversionFailed if the element cannot be deserialized
+  631|       |     - returns: the deserialized Bool value
+  632|       |     */
+  633|      0|    public static func deserialize(_ element: XMLElement) throws -> Bool {
+  634|      0|        let value = Bool(NSString(string: try element.nonEmptyTextOrThrow()).boolValue)
+  635|      0|        return value
+  636|      0|    }
+  637|       |
+  638|       |    /**
+  639|       |     Attempts to deserialize XML attribute content to a Bool. This uses NSString's 'boolValue'
+  640|       |     described [here](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/#//apple_ref/occ/instp/NSString/boolValue)
+  641|       |
+  642|       |     - parameter attribute: The XMLAttribute to be deserialized
+  643|       |     - throws: an XMLDeserializationError.attributeDeserializationFailed if the attribute cannot be
+  644|       |               deserialized
+  645|       |     - returns: the deserialized Bool value
+  646|       |     */
+  647|      0|    public static func deserialize(_ attribute: XMLAttribute) throws -> Bool {
+  648|      0|        let value = Bool(NSString(string: attribute.text).boolValue)
+  649|      0|        return value
+  650|      0|    }
+  651|       |    // swiftlint:enable line_length
+  652|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/BookWyrm/Pods/SWXMLHash/Source/SWXMLHash.swift:
+    1|       |//
+    2|       |//  SWXMLHash.swift
+    3|       |//  SWXMLHash
+    4|       |//
+    5|       |//  Copyright (c) 2014 David Mohundro
+    6|       |//
+    7|       |//  Permission is hereby granted, free of charge, to any person obtaining a copy
+    8|       |//  of this software and associated documentation files (the "Software"), to deal
+    9|       |//  in the Software without restriction, including without limitation the rights
+   10|       |//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   11|       |//  copies of the Software, and to permit persons to whom the Software is
+   12|       |//  furnished to do so, subject to the following conditions:
+   13|       |//
+   14|       |//  The above copyright notice and this permission notice shall be included in
+   15|       |//  all copies or substantial portions of the Software.
+   16|       |//
+   17|       |//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   18|       |//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   19|       |//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   20|       |//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   21|       |//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   22|       |//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   23|       |//  THE SOFTWARE.
+   24|       |//
+   25|       |
+   26|       |// swiftlint exceptions:
+   27|       |// - Disabled file_length because there are a number of users that still pull the
+   28|       |//   source down as is and it makes pulling the code into a project easier.
+   29|       |
+   30|       |// swiftlint:disable file_length
+   31|       |
+   32|       |import Foundation
+   33|       |
+   34|       |let rootElementName = "SWXMLHash_Root_Element"
+   35|       |
+   36|       |/// Parser options
+   37|       |public class SWXMLHashOptions {
+   38|     19|    internal init() {}
+   39|       |
+   40|       |    /// determines whether to parse the XML with lazy parsing or not
+   41|       |    public var shouldProcessLazily = false
+   42|       |
+   43|       |    /// determines whether to parse XML namespaces or not (forwards to
+   44|       |    /// `XMLParser.shouldProcessNamespaces`)
+   45|       |    public var shouldProcessNamespaces = false
+   46|       |
+   47|       |    /// Matching element names, element values, attribute names, attribute values
+   48|       |    /// will be case insensitive. This will not affect parsing (data does not change)
+   49|       |    public var caseInsensitive = false
+   50|       |
+   51|       |    /// Encoding used for XML parsing. Default is set to UTF8
+   52|       |    public var encoding = String.Encoding.utf8
+   53|       |
+   54|       |    /// Any contextual information set by the user for encoding
+   55|       |    public var userInfo = [CodingUserInfoKey: Any]()
+   56|       |
+   57|       |    /// Detect XML parsing errors... defaults to false as this library will
+   58|       |    /// attempt to handle HTML which isn't always XML-compatible
+   59|       |    public var detectParsingErrors = false
+   60|       |}
+   61|       |
+   62|       |/// Simple XML parser
+   63|       |public class SWXMLHash {
+   64|       |    let options: SWXMLHashOptions
+   65|       |
+   66|     19|    private init(_ options: SWXMLHashOptions = SWXMLHashOptions()) {
+   67|     19|        self.options = options
+   68|     19|    }
+   69|       |
+   70|       |    /**
+   71|       |    Method to configure how parsing works.
+   72|       |
+   73|       |    - parameters:
+   74|       |        - configAction: a block that passes in an `SWXMLHashOptions` object with
+   75|       |        options to be set
+   76|       |    - returns: an `SWXMLHash` instance
+   77|       |    */
+   78|      0|    class public func config(_ configAction: (SWXMLHashOptions) -> Void) -> SWXMLHash {
+   79|      0|        let opts = SWXMLHashOptions()
+   80|      0|        configAction(opts)
+   81|      0|        return SWXMLHash(opts)
+   82|      0|    }
+   83|       |
+   84|       |    /**
+   85|       |    Begins parsing the passed in XML string.
+   86|       |
+   87|       |    - parameters:
+   88|       |        - xml: an XML string. __Note__ that this is not a URL but a
+   89|       |        string containing XML.
+   90|       |    - returns: an `XMLIndexer` instance that can be iterated over
+   91|       |    */
+   92|      0|    public func parse(_ xml: String) -> XMLIndexer {
+   93|      0|        guard let data = xml.data(using: options.encoding) else {
+   94|      0|            return .xmlError(.encoding)
+   95|      0|        }
+   96|      0|        return parse(data)
+   97|      0|    }
+   98|       |
+   99|       |    /**
+  100|       |    Begins parsing the passed in XML string.
+  101|       |
+  102|       |    - parameters:
+  103|       |        - data: a `Data` instance containing XML
+  104|       |        - returns: an `XMLIndexer` instance that can be iterated over
+  105|       |    */
+  106|     19|    public func parse(_ data: Data) -> XMLIndexer {
+  107|     19|        let parser: SimpleXmlParser = options.shouldProcessLazily
+  108|     19|            ? LazyXMLParser(options)
+  109|     19|            : FullXMLParser(options)
+  110|     19|        return parser.parse(data)
+  111|     19|    }
+  112|       |
+  113|       |    /**
+  114|       |    Method to parse XML passed in as a string.
+  115|       |
+  116|       |    - parameter xml: The XML to be parsed
+  117|       |    - returns: An XMLIndexer instance that is used to look up elements in the XML
+  118|       |    */
+  119|      0|    class public func parse(_ xml: String) -> XMLIndexer {
+  120|      0|        return SWXMLHash().parse(xml)
+  121|      0|    }
+  122|       |
+  123|       |    /**
+  124|       |    Method to parse XML passed in as a Data instance.
+  125|       |
+  126|       |    - parameter data: The XML to be parsed
+  127|       |    - returns: An XMLIndexer instance that is used to look up elements in the XML
+  128|       |    */
+  129|     19|    class public func parse(_ data: Data) -> XMLIndexer {
+  130|     19|        return SWXMLHash().parse(data)
+  131|     19|    }
+  132|       |
+  133|       |    /**
+  134|       |    Method to lazily parse XML passed in as a string.
+  135|       |
+  136|       |    - parameter xml: The XML to be parsed
+  137|       |    - returns: An XMLIndexer instance that is used to look up elements in the XML
+  138|       |    */
+  139|      0|    class public func lazy(_ xml: String) -> XMLIndexer {
+  140|      0|        return config { conf in conf.shouldProcessLazily = true }.parse(xml)
+  141|      0|    }
+  142|       |
+  143|       |    /**
+  144|       |    Method to lazily parse XML passed in as a Data instance.
+  145|       |
+  146|       |    - parameter data: The XML to be parsed
+  147|       |    - returns: An XMLIndexer instance that is used to look up elements in the XML
+  148|       |    */
+  149|      0|    class public func lazy(_ data: Data) -> XMLIndexer {
+  150|      0|        return config { conf in conf.shouldProcessLazily = true }.parse(data)
+  151|      0|    }
+  152|       |}
+  153|       |
+  154|       |struct Stack<T> {
+  155|       |    var items = [T]()
+  156|  13.9k|    mutating func push(_ item: T) {
+  157|  13.9k|        items.append(item)
+  158|  13.9k|    }
+  159|  13.8k|    mutating func pop() -> T {
+  160|  13.8k|        return items.removeLast()
+  161|  13.8k|    }
+  162|  13.8k|    mutating func drop() {
+  163|  13.8k|        _ = pop()
+  164|  13.8k|    }
+  165|     19|    mutating func removeAll() {
+  166|     19|        items.removeAll(keepingCapacity: false)
+  167|     19|    }
+  168|  40.7k|    func top() -> T {
+  169|  40.7k|        return items[items.count - 1]
+  170|  40.7k|    }
+  171|       |}
+  172|       |
+  173|       |protocol SimpleXmlParser {
+  174|       |    init(_ options: SWXMLHashOptions)
+  175|       |    func parse(_ data: Data) -> XMLIndexer
+  176|       |}
+  177|       |
+  178|       |#if os(Linux)
+  179|       |
+  180|       |extension XMLParserDelegate {
+  181|       |
+  182|       |    func parserDidStartDocument(_ parser: Foundation.XMLParser) { }
+  183|       |    func parserDidEndDocument(_ parser: Foundation.XMLParser) { }
+  184|       |
+  185|       |    func parser(_ parser: Foundation.XMLParser,
+  186|       |                foundNotationDeclarationWithName name: String,
+  187|       |                publicID: String?,
+  188|       |                systemID: String?) { }
+  189|       |
+  190|       |    func parser(_ parser: Foundation.XMLParser,
+  191|       |                foundUnparsedEntityDeclarationWithName name: String,
+  192|       |                publicID: String?,
+  193|       |                systemID: String?,
+  194|       |                notationName: String?) { }
+  195|       |
+  196|       |    func parser(_ parser: Foundation.XMLParser,
+  197|       |                foundAttributeDeclarationWithName attributeName: String,
+  198|       |                forElement elementName: String,
+  199|       |                type: String?,
+  200|       |                defaultValue: String?) { }
+  201|       |
+  202|       |    func parser(_ parser: Foundation.XMLParser,
+  203|       |                foundElementDeclarationWithName elementName: String,
+  204|       |                model: String) { }
+  205|       |
+  206|       |    func parser(_ parser: Foundation.XMLParser,
+  207|       |                foundInternalEntityDeclarationWithName name: String,
+  208|       |                value: String?) { }
+  209|       |
+  210|       |    func parser(_ parser: Foundation.XMLParser,
+  211|       |                foundExternalEntityDeclarationWithName name: String,
+  212|       |                publicID: String?,
+  213|       |                systemID: String?) { }
+  214|       |
+  215|       |    func parser(_ parser: Foundation.XMLParser,
+  216|       |                didStartElement elementName: String,
+  217|       |                namespaceURI: String?,
+  218|       |                qualifiedName qName: String?,
+  219|       |                attributes attributeDict: [String: String]) { }
+  220|       |
+  221|       |    func parser(_ parser: Foundation.XMLParser,
+  222|       |                didEndElement elementName: String,
+  223|       |                namespaceURI: String?,
+  224|       |                qualifiedName qName: String?) { }
+  225|       |
+  226|       |    func parser(_ parser: Foundation.XMLParser,
+  227|       |                didStartMappingPrefix prefix: String,
+  228|       |                toURI namespaceURI: String) { }
+  229|       |
+  230|       |    func parser(_ parser: Foundation.XMLParser,
+  231|       |                didEndMappingPrefix prefix: String) { }
+  232|       |
+  233|       |    func parser(_ parser: Foundation.XMLParser,
+  234|       |                foundCharacters string: String) { }
+  235|       |
+  236|       |    func parser(_ parser: Foundation.XMLParser,
+  237|       |                foundIgnorableWhitespace whitespaceString: String) { }
+  238|       |
+  239|       |    func parser(_ parser: Foundation.XMLParser,
+  240|       |                foundProcessingInstructionWithTarget target: String,
+  241|       |                data: String?) { }
+  242|       |
+  243|       |    func parser(_ parser: Foundation.XMLParser,
+  244|       |                foundComment comment: String) { }
+  245|       |
+  246|       |    func parser(_ parser: Foundation.XMLParser,
+  247|       |                foundCDATA CDATABlock: Data) { }
+  248|       |
+  249|       |    func parser(_ parser: Foundation.XMLParser,
+  250|       |                resolveExternalEntityName name: String,
+  251|       |                systemID: String?) -> Data? { return nil }
+  252|       |
+  253|       |    func parser(_ parser: Foundation.XMLParser,
+  254|       |                parseErrorOccurred parseError: Error) { }
+  255|       |
+  256|       |    func parser(_ parser: Foundation.XMLParser,
+  257|       |                validationErrorOccurred validationError: Error) { }
+  258|       |}
+  259|       |
+  260|       |#endif
+  261|       |
+  262|       |/// The implementation of XMLParserDelegate and where the lazy parsing actually happens.
+  263|       |class LazyXMLParser: NSObject, SimpleXmlParser, XMLParserDelegate {
+  264|      0|    required init(_ options: SWXMLHashOptions) {
+  265|      0|        root = XMLElement(name: rootElementName, options: options)
+  266|      0|        self.options = options
+  267|      0|        super.init()
+  268|      0|    }
+  269|       |
+  270|       |    var root: XMLElement
+  271|       |    var parentStack = Stack<XMLElement>()
+  272|       |    var elementStack = Stack<String>()
+  273|       |
+  274|       |    var data: Data?
+  275|       |    var ops: [IndexOp] = []
+  276|       |    let options: SWXMLHashOptions
+  277|       |
+  278|      0|    func parse(_ data: Data) -> XMLIndexer {
+  279|      0|        self.data = data
+  280|      0|        return XMLIndexer(self)
+  281|      0|    }
+  282|       |
+  283|      0|    func startParsing(_ ops: [IndexOp]) {
+  284|      0|        // reset state for a new lazy parsing run
+  285|      0|        root = XMLElement(name: rootElementName, options: root.options)
+  286|      0|        parentStack.removeAll()
+  287|      0|        parentStack.push(root)
+  288|      0|
+  289|      0|        self.ops = ops
+  290|      0|        let parser = Foundation.XMLParser(data: data!)
+  291|      0|        parser.shouldProcessNamespaces = options.shouldProcessNamespaces
+  292|      0|        parser.delegate = self
+  293|      0|        _ = parser.parse()
+  294|      0|    }
+  295|       |
+  296|       |    func parser(_ parser: Foundation.XMLParser,
+  297|       |                didStartElement elementName: String,
+  298|       |                namespaceURI: String?,
+  299|       |                qualifiedName qName: String?,
+  300|      0|                attributes attributeDict: [String: String]) {
+  301|      0|
+  302|      0|        elementStack.push(elementName)
+  303|      0|
+  304|      0|        if !onMatch() {
+  305|      0|            return
+  306|      0|        }
+  307|      0|
+  308|      0|        let currentNode = parentStack
+  309|      0|            .top()
+  310|      0|            .addElement(elementName, withAttributes: attributeDict, caseInsensitive: self.options.caseInsensitive)
+  311|      0|        parentStack.push(currentNode)
+  312|      0|    }
+  313|       |
+  314|      0|    func parser(_ parser: Foundation.XMLParser, foundCharacters string: String) {
+  315|      0|        if !onMatch() {
+  316|      0|            return
+  317|      0|        }
+  318|      0|
+  319|      0|        let current = parentStack.top()
+  320|      0|
+  321|      0|        current.addText(string)
+  322|      0|    }
+  323|       |
+  324|      0|    func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
+  325|      0|        if !onMatch() {
+  326|      0|            return
+  327|      0|        }
+  328|      0|
+  329|      0|        if let cdataText = String(data: CDATABlock, encoding: String.Encoding.utf8) {
+  330|      0|            let current = parentStack.top()
+  331|      0|
+  332|      0|            current.addText(cdataText)
+  333|      0|        }
+  334|      0|    }
+  335|       |
+  336|       |    func parser(_ parser: Foundation.XMLParser,
+  337|       |                didEndElement elementName: String,
+  338|       |                namespaceURI: String?,
+  339|      0|                qualifiedName qName: String?) {
+  340|      0|
+  341|      0|        let match = onMatch()
+  342|      0|
+  343|      0|        elementStack.drop()
+  344|      0|
+  345|      0|        if match {
+  346|      0|            parentStack.drop()
+  347|      0|        }
+  348|      0|    }
+  349|       |
+  350|      0|    func onMatch() -> Bool {
+  351|      0|        // we typically want to compare against the elementStack to see if it matches ops, *but*
+  352|      0|        // if we're on the first element, we'll instead compare the other direction.
+  353|      0|        if elementStack.items.count > ops.count {
+  354|      0|            return elementStack.items.starts(with: ops.map { $0.key })
+  355|      0|        } else {
+  356|      0|            return ops.map { $0.key }.starts(with: elementStack.items)
+  357|      0|        }
+  358|      0|    }
+  359|       |}
+  360|       |
+  361|       |/// The implementation of XMLParserDelegate and where the parsing actually happens.
+  362|       |class FullXMLParser: NSObject, SimpleXmlParser, XMLParserDelegate {
+  363|     19|    required init(_ options: SWXMLHashOptions) {
+  364|     19|        root = XMLElement(name: rootElementName, options: options)
+  365|     19|        self.options = options
+  366|     19|        super.init()
+  367|     19|    }
+  368|       |
+  369|       |    let root: XMLElement
+  370|       |    var parentStack = Stack<XMLElement>()
+  371|       |    let options: SWXMLHashOptions
+  372|       |    var parsingError: ParsingError?
+  373|       |
+  374|     19|    func parse(_ data: Data) -> XMLIndexer {
+  375|     19|        // clear any prior runs of parse... expected that this won't be necessary,
+  376|     19|        // but you never know
+  377|     19|        parentStack.removeAll()
+  378|     19|
+  379|     19|        parentStack.push(root)
+  380|     19|
+  381|     19|        let parser = Foundation.XMLParser(data: data)
+  382|     19|        parser.shouldProcessNamespaces = options.shouldProcessNamespaces
+  383|     19|        parser.delegate = self
+  384|     19|        _ = parser.parse()
+  385|     19|
+  386|     19|        if options.detectParsingErrors, let err = parsingError {
+  387|      0|            return XMLIndexer.parsingError(err)
+  388|     19|        } else {
+  389|     19|            return XMLIndexer(root)
+  390|     19|        }
+  391|      0|    }
+  392|       |
+  393|       |    func parser(_ parser: Foundation.XMLParser,
+  394|       |                didStartElement elementName: String,
+  395|       |                namespaceURI: String?,
+  396|       |                qualifiedName qName: String?,
+  397|  13.9k|                attributes attributeDict: [String: String]) {
+  398|  13.9k|
+  399|  13.9k|        let currentNode = parentStack
+  400|  13.9k|            .top()
+  401|  13.9k|            .addElement(elementName, withAttributes: attributeDict, caseInsensitive: self.options.caseInsensitive)
+  402|  13.9k|
+  403|  13.9k|        parentStack.push(currentNode)
+  404|  13.9k|    }
+  405|       |
+  406|  25.5k|    func parser(_ parser: Foundation.XMLParser, foundCharacters string: String) {
+  407|  25.5k|        let current = parentStack.top()
+  408|  25.5k|
+  409|  25.5k|        current.addText(string)
+  410|  25.5k|    }
+  411|       |
+  412|       |    func parser(_ parser: Foundation.XMLParser,
+  413|       |                didEndElement elementName: String,
+  414|       |                namespaceURI: String?,
+  415|  13.8k|                qualifiedName qName: String?) {
+  416|  13.8k|
+  417|  13.8k|        parentStack.drop()
+  418|  13.8k|    }
+  419|       |
+  420|  1.31k|    func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
+  421|  1.31k|        if let cdataText = String(data: CDATABlock, encoding: String.Encoding.utf8) {
+  422|  1.31k|            let current = parentStack.top()
+  423|  1.31k|
+  424|  1.31k|            current.addText(cdataText)
+  425|  1.31k|        }
+  426|  1.31k|    }
+  427|       |
+  428|      5|    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+  429|      5|#if os(Linux) && !swift(>=4.1.50)
+  430|      5|        if let err = parseError as? NSError {
+  431|      5|            parsingError = ParsingError(line: err.userInfo["NSXMLParserErrorLineNumber"] as? Int ?? 0,
+  432|      5|                                        column: err.userInfo["NSXMLParserErrorColumn"] as? Int ?? 0)
+  433|      5|        }
+  434|      5|#else
+  435|      5|        let err = parseError as NSError
+  436|      5|        parsingError = ParsingError(line: err.userInfo["NSXMLParserErrorLineNumber"] as? Int ?? 0,
+  437|      5|                                    column: err.userInfo["NSXMLParserErrorColumn"] as? Int ?? 0)
+  438|      5|#endif
+  439|      5|    }
+  440|       |}
+  441|       |
+  442|       |/// Represents an indexed operation against a lazily parsed `XMLIndexer`
+  443|       |public class IndexOp {
+  444|       |    var index: Int
+  445|       |    let key: String
+  446|       |
+  447|      0|    init(_ key: String) {
+  448|      0|        self.key = key
+  449|      0|        self.index = -1
+  450|      0|    }
+  451|       |
+  452|      0|    func toString() -> String {
+  453|      0|        if index >= 0 {
+  454|      0|            return key + " " + index.description
+  455|      0|        }
+  456|      0|
+  457|      0|        return key
+  458|      0|    }
+  459|       |}
+  460|       |
+  461|       |/// Represents a collection of `IndexOp` instances. Provides a means of iterating them
+  462|       |/// to find a match in a lazily parsed `XMLIndexer` instance.
+  463|       |public class IndexOps {
+  464|       |    var ops: [IndexOp] = []
+  465|       |
+  466|       |    let parser: LazyXMLParser
+  467|       |
+  468|      0|    init(parser: LazyXMLParser) {
+  469|      0|        self.parser = parser
+  470|      0|    }
+  471|       |
+  472|      0|    func findElements() -> XMLIndexer {
+  473|      0|        parser.startParsing(ops)
+  474|      0|        let indexer = XMLIndexer(parser.root)
+  475|      0|        var childIndex = indexer
+  476|      0|        for oper in ops {
+  477|      0|            childIndex = childIndex[oper.key]
+  478|      0|            if oper.index >= 0 {
+  479|      0|                childIndex = childIndex[oper.index]
+  480|      0|            }
+  481|      0|        }
+  482|      0|        ops.removeAll(keepingCapacity: false)
+  483|      0|        return childIndex
+  484|      0|    }
+  485|       |
+  486|      0|    func stringify() -> String {
+  487|      0|        var ret = ""
+  488|      0|        for oper in ops {
+  489|      0|            ret += "[" + oper.toString() + "]"
+  490|      0|        }
+  491|      0|        return ret
+  492|      0|    }
+  493|       |}
+  494|       |
+  495|       |public struct ParsingError: Error {
+  496|       |    public let line: Int
+  497|       |    public let column: Int
+  498|       |}
+  499|       |
+  500|       |/// Error type that is thrown when an indexing or parsing operation fails.
+  501|       |public enum IndexingError: Error {
+  502|       |    case attribute(attr: String)
+  503|       |    case attributeValue(attr: String, value: String)
+  504|       |    case key(key: String)
+  505|       |    case index(idx: Int)
+  506|       |    case initialize(instance: AnyObject)
+  507|       |    case encoding
+  508|       |    case error
+  509|       |
+  510|       |// swiftlint:disable identifier_name
+  511|       |    // unavailable
+  512|       |    @available(*, unavailable, renamed: "attribute(attr:)")
+  513|      0|    public static func Attribute(attr: String) -> IndexingError {
+  514|      0|        fatalError("unavailable")
+  515|      0|    }
+  516|       |    @available(*, unavailable, renamed: "attributeValue(attr:value:)")
+  517|      0|    public static func AttributeValue(attr: String, value: String) -> IndexingError {
+  518|      0|        fatalError("unavailable")
+  519|      0|    }
+  520|       |    @available(*, unavailable, renamed: "key(key:)")
+  521|      0|    public static func Key(key: String) -> IndexingError {
+  522|      0|        fatalError("unavailable")
+  523|      0|    }
+  524|       |    @available(*, unavailable, renamed: "index(idx:)")
+  525|      0|    public static func Index(idx: Int) -> IndexingError {
+  526|      0|        fatalError("unavailable")
+  527|      0|    }
+  528|       |    @available(*, unavailable, renamed: "initialize(instance:)")
+  529|      0|    public static func Init(instance: AnyObject) -> IndexingError {
+  530|      0|        fatalError("unavailable")
+  531|      0|    }
+  532|       |    @available(*, unavailable, renamed: "error")
+  533|      0|    public static var Error: IndexingError {
+  534|      0|        fatalError("unavailable")
+  535|      0|    }
+  536|       |// swiftlint:enable identifier_name
+  537|       |}
+  538|       |
+  539|       |/// Returned from SWXMLHash, allows easy element lookup into XML data.
+  540|       |public enum XMLIndexer {
+  541|       |    case element(XMLElement)
+  542|       |    case list([XMLElement])
+  543|       |    case stream(IndexOps)
+  544|       |    case xmlError(IndexingError)
+  545|       |    case parsingError(ParsingError)
+  546|       |
+  547|       |// swiftlint:disable identifier_name
+  548|       |    // unavailable
+  549|       |    @available(*, unavailable, renamed: "element(_:)")
+  550|      0|    public static func Element(_: XMLElement) -> XMLIndexer {
+  551|      0|        fatalError("unavailable")
+  552|      0|    }
+  553|       |    @available(*, unavailable, renamed: "list(_:)")
+  554|      0|    public static func List(_: [XMLElement]) -> XMLIndexer {
+  555|      0|        fatalError("unavailable")
+  556|      0|    }
+  557|       |    @available(*, unavailable, renamed: "stream(_:)")
+  558|      0|    public static func Stream(_: IndexOps) -> XMLIndexer {
+  559|      0|        fatalError("unavailable")
+  560|      0|    }
+  561|       |    @available(*, unavailable, renamed: "xmlError(_:)")
+  562|      0|    public static func XMLError(_: IndexingError) -> XMLIndexer {
+  563|      0|        fatalError("unavailable")
+  564|      0|    }
+  565|       |    @available(*, unavailable, renamed: "withAttribute(_:_:)")
+  566|      0|    public static func withAttr(_ attr: String, _ value: String) throws -> XMLIndexer {
+  567|      0|        fatalError("unavailable")
+  568|      0|    }
+  569|       |// swiftlint:enable identifier_name
+  570|       |
+  571|       |    /// The underlying XMLElement at the currently indexed level of XML.
+  572|    942|    public var element: XMLElement? {
+  573|    942|        switch self {
+  574|    942|        case .element(let elem):
+  575|    942|            return elem
+  576|    942|        case .stream(let ops):
+  577|      0|            let list = ops.findElements()
+  578|      0|            return list.element
+  579|    942|        default:
+  580|      0|            return nil
+  581|    942|        }
+  582|    942|    }
+  583|       |
+  584|       |    /// All elements at the currently indexed level
+  585|     12|    public var all: [XMLIndexer] {
+  586|    230|        return allElements.map { XMLIndexer($0) }
+  587|     12|    }
+  588|       |
+  589|     12|    private var allElements: [XMLElement] {
+  590|     12|        switch self {
+  591|     12|        case .list(let list):
+  592|     12|            return list
+  593|     12|        case .element(let elem):
+  594|      0|            return [elem]
+  595|     12|        case .stream(let ops):
+  596|      0|            let list = ops.findElements()
+  597|      0|            return list.allElements
+  598|     12|        default:
+  599|      0|            return []
+  600|     12|        }
+  601|     12|    }
+  602|       |
+  603|       |    /// All child elements from the currently indexed level
+  604|      0|    public var children: [XMLIndexer] {
+  605|      0|        return childElements.map { XMLIndexer($0) }
+  606|      0|    }
+  607|       |
+  608|      0|    private var childElements: [XMLElement] {
+  609|      0|        var list = [XMLElement]()
+  610|      0|        for elem in all.compactMap({ $0.element }) {
+  611|      0|            for elem in elem.xmlChildren {
+  612|      0|                list.append(elem)
+  613|      0|            }
+  614|      0|        }
+  615|      0|        return list
+  616|      0|    }
+  617|       |
+  618|       |    @available(*, unavailable, renamed: "filterChildren(_:)")
+  619|      0|    public func filter(_ included: (_ elem: XMLElement, _ index: Int) -> Bool) -> XMLIndexer {
+  620|      0|        return filterChildren(included)
+  621|      0|    }
+  622|       |
+  623|      0|    public func filterChildren(_ included: (_ elem: XMLElement, _ index: Int) -> Bool) -> XMLIndexer {
+  624|      0|        let children = handleFilteredResults(list: childElements, included: included)
+  625|      0|        if let current = self.element {
+  626|      0|            let filteredElem = XMLElement(name: current.name, index: current.index, options: current.options)
+  627|      0|            filteredElem.children = children.allElements
+  628|      0|            return .element(filteredElem)
+  629|      0|        }
+  630|      0|        return .xmlError(IndexingError.error)
+  631|      0|    }
+  632|       |
+  633|      0|    public func filterAll(_ included: (_ elem: XMLElement, _ index: Int) -> Bool) -> XMLIndexer {
+  634|      0|        return handleFilteredResults(list: allElements, included: included)
+  635|      0|    }
+  636|       |
+  637|       |    private func handleFilteredResults(list: [XMLElement],
+  638|      0|                                       included: (_ elem: XMLElement, _ index: Int) -> Bool) -> XMLIndexer {
+  639|      0|        let results = zip(list.indices, list).filter { included($1, $0) }.map { $1 }
+  640|      0|        if results.count == 1 {
+  641|      0|            return .element(results.first!)
+  642|      0|        }
+  643|      0|        return .list(results)
+  644|      0|    }
+  645|       |
+  646|      0|    public var userInfo: [CodingUserInfoKey: Any] {
+  647|      0|        switch self {
+  648|      0|        case .element(let elem):
+  649|      0|            return elem.userInfo
+  650|      0|        default:
+  651|      0|            return [:]
+  652|      0|        }
+  653|      0|    }
+  654|       |
+  655|       |    /**
+  656|       |    Allows for element lookup by matching attribute values.
+  657|       |
+  658|       |    - parameters:
+  659|       |        - attr: should the name of the attribute to match on
+  660|       |        - value: should be the value of the attribute to match on
+  661|       |    - throws: an XMLIndexer.XMLError if an element with the specified attribute isn't found
+  662|       |    - returns: instance of XMLIndexer
+  663|       |    */
+  664|      0|    public func withAttribute(_ attr: String, _ value: String) throws -> XMLIndexer {
+  665|      0|        switch self {
+  666|      0|        case .stream(let opStream):
+  667|      0|            let match = opStream.findElements()
+  668|      0|            return try match.withAttribute(attr, value)
+  669|      0|        case .list(let list):
+  670|      0|            if let elem = list.first(where: {
+  671|      0|                value.compare($0.attribute(by: attr)?.text, $0.caseInsensitive)
+  672|      0|            }) {
+  673|      0|                return .element(elem)
+  674|      0|            }
+  675|      0|            throw IndexingError.attributeValue(attr: attr, value: value)
+  676|      0|        case .element(let elem):
+  677|      0|            if value.compare(elem.attribute(by: attr)?.text, elem.caseInsensitive) {
+  678|      0|                return .element(elem)
+  679|      0|            }
+  680|      0|            throw IndexingError.attributeValue(attr: attr, value: value)
+  681|      0|        default:
+  682|      0|            throw IndexingError.attribute(attr: attr)
+  683|      0|        }
+  684|      0|    }
+  685|       |
+  686|       |    /**
+  687|       |    Initializes the XMLIndexer
+  688|       |
+  689|       |    - parameter _: should be an instance of XMLElement, but supports other values for error handling
+  690|       |    - throws: an Error if the object passed in isn't an XMLElement or LaxyXMLParser
+  691|       |    */
+  692|      0|    public init(_ rawObject: AnyObject) throws {
+  693|      0|        switch rawObject {
+  694|      0|        case let value as XMLElement:
+  695|      0|            self = .element(value)
+  696|      0|        case let value as LazyXMLParser:
+  697|      0|            self = .stream(IndexOps(parser: value))
+  698|      0|        default:
+  699|      0|            throw IndexingError.initialize(instance: rawObject)
+  700|      0|        }
+  701|      0|    }
+  702|       |
+  703|       |    /**
+  704|       |    Initializes the XMLIndexer
+  705|       |
+  706|       |    - parameter _: an instance of XMLElement
+  707|       |    */
+  708|    249|    public init(_ elem: XMLElement) {
+  709|    249|        self = .element(elem)
+  710|    249|    }
+  711|       |
+  712|      0|    init(_ stream: LazyXMLParser) {
+  713|      0|        self = .stream(IndexOps(parser: stream))
+  714|      0|    }
+  715|       |
+  716|       |    /**
+  717|       |    Find an XML element at the current level by element name
+  718|       |
+  719|       |    - parameter key: The element name to index by
+  720|       |    - returns: instance of XMLIndexer to match the element (or elements) found by key
+  721|       |    - throws: Throws an XMLIndexingError.Key if no element was found
+  722|       |    */
+  723|  1.39k|    public func byKey(_ key: String) throws -> XMLIndexer {
+  724|  1.39k|        switch self {
+  725|  1.39k|        case .stream(let opStream):
+  726|      0|            let oper = IndexOp(key)
+  727|      0|            opStream.ops.append(oper)
+  728|      0|            return .stream(opStream)
+  729|  1.39k|        case .element(let elem):
+  730|  20.8k|            let match = elem.xmlChildren.filter({
+  731|  20.8k|                $0.name.compare(key, $0.caseInsensitive)
+  732|  20.8k|            })
+  733|  1.39k|            if !match.isEmpty {
+  734|  1.39k|                if match.count == 1 {
+  735|  1.37k|                    return .element(match[0])
+  736|  1.37k|                } else {
+  737|     19|                    return .list(match)
+  738|     19|                }
+  739|      0|            }
+  740|      0|            throw IndexingError.key(key: key)
+  741|  1.39k|        default:
+  742|      0|            throw IndexingError.key(key: key)
+  743|  1.39k|        }
+  744|  1.39k|    }
+  745|       |
+  746|       |    /**
+  747|       |    Find an XML element at the current level by element name
+  748|       |
+  749|       |    - parameter key: The element name to index by
+  750|       |    - returns: instance of XMLIndexer to match the element (or elements) found by
+  751|       |    */
+  752|  1.39k|    public subscript(key: String) -> XMLIndexer {
+  753|  1.39k|        do {
+  754|  1.39k|            return try self.byKey(key)
+  755|  1.39k|        } catch let error as IndexingError {
+  756|      0|            return .xmlError(error)
+  757|      0|        } catch {
+  758|      0|            return .xmlError(IndexingError.key(key: key))
+  759|      0|        }
+  760|      0|    }
+  761|       |
+  762|       |    /**
+  763|       |    Find an XML element by index within a list of XML Elements at the current level
+  764|       |
+  765|       |    - parameter index: The 0-based index to index by
+  766|       |    - throws: XMLIndexer.XMLError if the index isn't found
+  767|       |    - returns: instance of XMLIndexer to match the element (or elements) found by index
+  768|       |    */
+  769|      7|    public func byIndex(_ index: Int) throws -> XMLIndexer {
+  770|      7|        switch self {
+  771|      7|        case .stream(let opStream):
+  772|      0|            opStream.ops[opStream.ops.count - 1].index = index
+  773|      0|            return .stream(opStream)
+  774|      7|        case .list(let list):
+  775|      7|            if index < list.count {
+  776|      7|                return .element(list[index])
+  777|      7|            }
+  778|      0|            return .xmlError(IndexingError.index(idx: index))
+  779|      7|        case .element(let elem):
+  780|      0|            if index == 0 {
+  781|      0|                return .element(elem)
+  782|      0|            }
+  783|      0|            return .xmlError(IndexingError.index(idx: index))
+  784|      7|        default:
+  785|      0|            return .xmlError(IndexingError.index(idx: index))
+  786|      7|        }
+  787|      7|    }
+  788|       |
+  789|       |    /**
+  790|       |    Find an XML element by index
+  791|       |
+  792|       |    - parameter index: The 0-based index to index by
+  793|       |    - returns: instance of XMLIndexer to match the element (or elements) found by index
+  794|       |    */
+  795|      7|    public subscript(index: Int) -> XMLIndexer {
+  796|      7|        do {
+  797|      7|            return try byIndex(index)
+  798|      7|        } catch let error as IndexingError {
+  799|      0|            return .xmlError(error)
+  800|      0|        } catch {
+  801|      0|            return .xmlError(IndexingError.index(idx: index))
+  802|      0|        }
+  803|      0|    }
+  804|       |}
+  805|       |
+  806|       |/// XMLIndexer extensions
+  807|       |
+  808|       |extension XMLIndexer: CustomStringConvertible {
+  809|       |    /// The XML representation of the XMLIndexer at the current level
+  810|      0|    public var description: String {
+  811|      0|        switch self {
+  812|      0|        case .list(let list):
+  813|      0|            return list.reduce("", { $0 + $1.description })
+  814|      0|        case .element(let elem):
+  815|      0|            if elem.name == rootElementName {
+  816|      0|                return elem.children.reduce("", { $0 + $1.description })
+  817|      0|            }
+  818|      0|
+  819|      0|            return elem.description
+  820|      0|        default:
+  821|      0|            return ""
+  822|      0|        }
+  823|      0|    }
+  824|       |}
+  825|       |
+  826|       |extension IndexingError: CustomStringConvertible {
+  827|       |    /// The description for the `IndexingError`.
+  828|      0|    public var description: String {
+  829|      0|        switch self {
+  830|      0|        case .attribute(let attr):
+  831|      0|            return "XML Attribute Error: Missing attribute [\"\(attr)\"]"
+  832|      0|        case .attributeValue(let attr, let value):
+  833|      0|            return "XML Attribute Error: Missing attribute [\"\(attr)\"] with value [\"\(value)\"]"
+  834|      0|        case .key(let key):
+  835|      0|            return "XML Element Error: Incorrect key [\"\(key)\"]"
+  836|      0|        case .index(let index):
+  837|      0|            return "XML Element Error: Incorrect index [\"\(index)\"]"
+  838|      0|        case .initialize(let instance):
+  839|      0|            return "XML Indexer Error: initialization with Object [\"\(instance)\"]"
+  840|      0|        case .encoding:
+  841|      0|            return "String Encoding Error"
+  842|      0|        case .error:
+  843|      0|            return "Unknown Error"
+  844|      0|        }
+  845|      0|    }
+  846|       |}
+  847|       |
+  848|       |/// Models content for an XML doc, whether it is text or XML
+  849|       |public protocol XMLContent: CustomStringConvertible { }
+  850|       |
+  851|       |/// Models a text element
+  852|       |public class TextElement: XMLContent {
+  853|       |    /// The underlying text value
+  854|       |    public let text: String
+  855|  26.8k|    init(text: String) {
+  856|  26.8k|        self.text = text
+  857|  26.8k|    }
+  858|       |}
+  859|       |
+  860|       |public struct XMLAttribute {
+  861|       |    public let name: String
+  862|       |    public let text: String
+  863|  3.49k|    init(name: String, text: String) {
+  864|  3.49k|        self.name = name
+  865|  3.49k|        self.text = text
+  866|  3.49k|    }
+  867|       |}
+  868|       |
+  869|       |/// Models an XML element, including name, text and attributes
+  870|       |public class XMLElement: XMLContent {
+  871|       |    /// The name of the element
+  872|       |    public let name: String
+  873|       |
+  874|       |    /// Whether the element is case insensitive or not
+  875|  20.8k|    public var caseInsensitive: Bool {
+  876|  20.8k|        return options.caseInsensitive
+  877|  20.8k|    }
+  878|       |
+  879|      0|    var userInfo: [CodingUserInfoKey: Any] {
+  880|      0|        return options.userInfo
+  881|      0|    }
+  882|       |
+  883|       |    /// All attributes
+  884|       |    public var allAttributes = [String: XMLAttribute]()
+  885|       |
+  886|       |    /// Find an attribute by name
+  887|      0|    public func attribute(by name: String) -> XMLAttribute? {
+  888|      0|        if caseInsensitive {
+  889|      0|            return allAttributes.first(where: { $0.key.compare(name, true) })?.value
+  890|      0|        }
+  891|      0|        return allAttributes[name]
+  892|      0|    }
+  893|       |
+  894|       |    /// The inner text of the element, if it exists
+  895|    942|    public var text: String {
+  896|    957|        return children.reduce("", {
+  897|    957|            if let element = $1 as? TextElement {
+  898|    957|                return $0 + element.text
+  899|    957|            }
+  900|      0|
+  901|      0|            return $0
+  902|    957|        })
+  903|    942|    }
+  904|       |
+  905|       |    /// The inner text of the element and its children
+  906|      0|    public var recursiveText: String {
+  907|      0|        return children.reduce("", {
+  908|      0|            if let textElement = $1 as? TextElement {
+  909|      0|                return $0 + textElement.text
+  910|      0|            } else if let xmlElement = $1 as? XMLElement {
+  911|      0|                return $0 + xmlElement.recursiveText
+  912|      0|            } else {
+  913|      0|                return $0
+  914|      0|            }
+  915|      0|        })
+  916|      0|    }
+  917|       |
+  918|      0|    public var innerXML: String {
+  919|      0|        return children.reduce("", {
+  920|      0|            return $0.description + $1.description
+  921|      0|        })
+  922|      0|    }
+  923|       |
+  924|       |    /// All child elements (text or XML)
+  925|       |    public var children = [XMLContent]()
+  926|       |
+  927|       |    var count: Int = 0
+  928|       |    var index: Int
+  929|       |    let options: SWXMLHashOptions
+  930|       |
+  931|  1.39k|    var xmlChildren: [XMLElement] {
+  932|  42.9k|        return children.compactMap { $0 as? XMLElement }
+  933|  1.39k|    }
+  934|       |
+  935|       |    /**
+  936|       |    Initialize an XMLElement instance
+  937|       |
+  938|       |    - parameters:
+  939|       |        - name: The name of the element to be initialized
+  940|       |        - index: The index of the element to be initialized
+  941|       |        - options: The SWXMLHash options
+  942|       |    */
+  943|  13.9k|    init(name: String, index: Int = 0, options: SWXMLHashOptions) {
+  944|  13.9k|        self.name = name
+  945|  13.9k|        self.index = index
+  946|  13.9k|        self.options = options
+  947|  13.9k|    }
+  948|       |
+  949|       |    /**
+  950|       |    Adds a new XMLElement underneath this instance of XMLElement
+  951|       |
+  952|       |    - parameters:
+  953|       |        - name: The name of the new element to be added
+  954|       |        - withAttributes: The attributes dictionary for the element being added
+  955|       |    - returns: The XMLElement that has now been added
+  956|       |    */
+  957|       |
+  958|  13.9k|    func addElement(_ name: String, withAttributes attributes: [String: String], caseInsensitive: Bool) -> XMLElement {
+  959|  13.9k|        let element = XMLElement(name: name, index: count, options: options)
+  960|  13.9k|        count += 1
+  961|  13.9k|
+  962|  13.9k|        children.append(element)
+  963|  13.9k|
+  964|  13.9k|        for (key, value) in attributes {
+  965|  3.49k|            element.allAttributes[key] = XMLAttribute(name: key, text: value)
+  966|  13.9k|        }
+  967|  13.9k|
+  968|  13.9k|        return element
+  969|  13.9k|    }
+  970|       |
+  971|  26.8k|    func addText(_ text: String) {
+  972|  26.8k|        let elem = TextElement(text: text)
+  973|  26.8k|
+  974|  26.8k|        children.append(elem)
+  975|  26.8k|    }
+  976|       |}
+  977|       |
+  978|       |extension TextElement: CustomStringConvertible {
+  979|       |    /// The text value for a `TextElement` instance.
+  980|      0|    public var description: String {
+  981|      0|        return text
+  982|      0|    }
+  983|       |}
+  984|       |
+  985|       |extension XMLAttribute: CustomStringConvertible {
+  986|       |    /// The textual representation of an `XMLAttribute` instance.
+  987|      0|    public var description: String {
+  988|      0|        return "\(name)=\"\(text)\""
+  989|      0|    }
+  990|       |}
+  991|       |
+  992|       |extension XMLElement: CustomStringConvertible {
+  993|       |    /// The tag, attributes and content for a `XMLElement` instance (<elem id="foo">content</elem>)
+  994|      0|    public var description: String {
+  995|      0|        let attributesString = allAttributes.reduce("", { $0 + " " + $1.1.description })
+  996|      0|
+  997|      0|        if !children.isEmpty {
+  998|      0|            var xmlReturn = [String]()
+  999|      0|            xmlReturn.append("<\(name)\(attributesString)>")
+ 1000|      0|            for child in children {
+ 1001|      0|                xmlReturn.append(child.description)
+ 1002|      0|            }
+ 1003|      0|            xmlReturn.append("</\(name)>")
+ 1004|      0|            return xmlReturn.joined(separator: "")
+ 1005|      0|        }
+ 1006|      0|
+ 1007|      0|        return "<\(name)\(attributesString)>\(text)</\(name)>"
+ 1008|      0|    }
+ 1009|       |}
+ 1010|       |
+ 1011|       |// Workaround for "'XMLElement' is ambiguous for type lookup in this context" error on macOS.
+ 1012|       |//
+ 1013|       |// On macOS, `XMLElement` is defined in Foundation.
+ 1014|       |// So, the code referencing `XMLElement` generates above error.
+ 1015|       |// Following code allow to using `SWXMLhash.XMLElement` in client codes.
+ 1016|       |extension SWXMLHash {
+ 1017|       |    public typealias XMLElement = SWXMLHashXMLElement
+ 1018|       |}
+ 1019|       |
+ 1020|       |public typealias SWXMLHashXMLElement = XMLElement
+ 1021|       |
+ 1022|       |fileprivate extension String {
+ 1023|  20.8k|    func compare(_ str2: String?, _ insensitive: Bool) -> Bool {
+ 1024|  20.8k|        guard let str2 = str2 else {
+ 1025|      0|            return false
+ 1026|  20.8k|        }
+ 1027|  20.8k|        let str1 = self
+ 1028|  20.8k|        if insensitive {
+ 1029|      0|            return str1.caseInsensitiveCompare(str2) == .orderedSame
+ 1030|  20.8k|        }
+ 1031|  20.8k|        return str1 == str2
+ 1032|  20.8k|    }
+ 1033|       |}
+

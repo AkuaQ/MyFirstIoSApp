@@ -1,0 +1,199 @@
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Starter/BullsEye/BullsEye/BullsEyeGame.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |///
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |///
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |///
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |///
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import Foundation
+   30|       |
+   31|       |class BullsEyeGame {
+   32|       |  var round = 0
+   33|       |  let startValue = 50
+   34|       |  var targetValue = 50
+   35|       |  var scoreRound = 0
+   36|       |  var scoreTotal = 0
+   37|       |  
+   38|      2|  init() {
+   39|      2|    startNewGame()
+   40|      2|  }
+   41|       |  
+   42|      3|  func startNewGame() {
+   43|      3|    round = 0
+   44|      3|    scoreTotal = 0
+   45|      3|    startNewRound()
+   46|      3|  }
+   47|       |  
+   48|      3|  func startNewRound() {
+   49|      3|    round = round + 1
+   50|      3|    scoreRound = 0
+   51|      3|    targetValue = 1 + (Int(arc4random()) % 100)
+   52|      3|  }
+   53|       |
+   54|       |  @discardableResult
+   55|      1|  func check(guess: Int) -> Int {
+   56|      1|    let difference = abs(targetValue - guess)
+   57|      1|    scoreRound = 100 - difference
+   58|      1|    scoreTotal = scoreTotal + scoreRound
+   59|      1|    
+   60|      1|    return difference
+   61|      1|  }
+   62|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Starter/BullsEye/BullsEye/ViewController.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |///
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |///
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |///
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |///
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import UIKit
+   30|       |
+   31|       |class ViewController: UIViewController {
+   32|       |  var defaults = UserDefaults.standard
+   33|       |
+   34|       |  @IBOutlet weak var targetGuessLabel: UILabel!
+   35|       |  @IBOutlet weak var targetGuessField: UITextField!
+   36|       |  @IBOutlet weak var roundLabel: UILabel!
+   37|       |  @IBOutlet weak var scoreLabel: UILabel!
+   38|       |  @IBOutlet weak var slider: UISlider!
+   39|       |  @IBOutlet weak var segmentedControl: UISegmentedControl!
+   40|       |  
+   41|       |  let game = BullsEyeGame()
+   42|       |  enum GameStyle: Int { case moveSlider, guessPosition }
+   43|       |  let gameStyleRange = 0..<2
+   44|       |  var gameStyle = GameStyle.guessPosition
+   45|       |  
+   46|      1|  override func viewDidLoad() {
+   47|      1|    super.viewDidLoad()
+   48|      1|    
+   49|      1|    let defaultGameStyle = defaults.integer(forKey: "gameStyle")
+   50|      1|    print(defaultGameStyle)
+   51|      1|    if gameStyleRange.contains(defaultGameStyle) {
+   52|      1|      gameStyle = GameStyle(rawValue: defaultGameStyle)!
+   53|      1|      segmentedControl.selectedSegmentIndex = defaultGameStyle
+   54|      1|    } else {
+   55|      0|      gameStyle = .moveSlider
+   56|      0|      defaults.set(0, forKey: "gameStyle")
+   57|      1|    }
+   58|      1|    updateView()
+   59|      1|  }
+   60|       |  
+   61|      0|  @IBAction func chooseGameStyle(_ sender: UISegmentedControl) {
+   62|      0|    if gameStyleRange.contains(sender.selectedSegmentIndex) {
+   63|      0|      gameStyle = GameStyle(rawValue: sender.selectedSegmentIndex)!
+   64|      0|      updateView()
+   65|      0|    }
+   66|      0|    defaults.set(sender.selectedSegmentIndex, forKey: "gameStyle")
+   67|      0|  }
+   68|       |  
+   69|      1|  func updateView() {
+   70|      1|    switch gameStyle {
+   71|      1|    case .moveSlider:
+   72|      0|      targetGuessLabel.text = "Get as close as you can to: "
+   73|      0|      targetGuessField.text = "\(game.targetValue)"
+   74|      0|      targetGuessField.isEnabled = false
+   75|      0|      slider.value = Float(game.startValue)
+   76|      0|      slider.isEnabled = true
+   77|      1|    case .guessPosition:
+   78|      1|      targetGuessLabel.text = "Guess where the slider is: "
+   79|      1|      targetGuessField.text = ""
+   80|      1|      targetGuessField.placeholder = "1-100"
+   81|      1|      targetGuessField.isEnabled = true
+   82|      1|      slider.value = Float(game.targetValue)
+   83|      1|      slider.isEnabled = false
+   84|      1|    }
+   85|      1|    
+   86|      1|    roundLabel.text = "Round: \(game.round)"
+   87|      1|    scoreLabel.text = "Score: \(game.scoreTotal)"
+   88|      1|  }
+   89|       |  
+   90|      0|  @IBAction func checkGuess(_ sender: Any) {
+   91|      0|    var guess: Int?
+   92|      0|    switch gameStyle {
+   93|      0|    case .moveSlider:
+   94|      0|      guess = Int(lroundf(slider.value))
+   95|      0|    case .guessPosition:
+   96|      0|      targetGuessField.resignFirstResponder()
+   97|      0|      guess = Int(targetGuessField.text!)
+   98|      0|    }
+   99|      0|    if let guess = guess {
+  100|      0|      showScoreAlert(difference: game.check(guess: guess))
+  101|      0|    } else {
+  102|      0|      showNaNAlert()
+  103|      0|    }
+  104|      0|  }
+  105|       |  
+  106|      0|  func showScoreAlert(difference: Int) {
+  107|      0|    let title = "you scored \(game.scoreRound) points"
+  108|      0|    let message = "target value \(game.targetValue)"
+  109|      0|    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+  110|      0|    
+  111|      0|    let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+  112|      0|      self.game.startNewRound()
+  113|      0|      self.updateView()
+  114|      0|    })
+  115|      0|    alert.addAction(action)
+  116|      0|    
+  117|      0|    present(alert, animated: true, completion: nil)
+  118|      0|  }
+  119|       |  
+  120|      0|  func showNaNAlert() {
+  121|      0|    let alert = UIAlertController(title: "Not A Number",
+  122|      0|                                  message: "Please enter a positive number",
+  123|      0|                                  preferredStyle: .alert)
+  124|      0|    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+  125|      0|    alert.addAction(action)
+  126|      0|    present(alert, animated: true, completion: nil)
+  127|      0|  }
+  128|       |  
+  129|      0|  @IBAction func startOver(_ sender: Any) {
+  130|      0|    game.startNewGame()
+  131|      0|    updateView()
+  132|      0|  }
+  133|       |}
+

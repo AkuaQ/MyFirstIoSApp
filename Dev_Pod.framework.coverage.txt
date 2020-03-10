@@ -14,11 +14,11 @@
    13|       |        public static  let recipeDetailViewController = "RecipeDetailViewController"
    14|       |    }
    15|       |
-   16|      2|    public static func isPasswordValid(_ password: String) -> Bool {
-   17|      2|        let passwordTest = NSPredicate(format: "SELF MATCHES %@",
-   18|      2|                                    "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
-   19|      2|        return passwordTest.evaluate(with: password)
-   20|      2|    }
+   16|      0|    public static func isPasswordValid(_ password: String) -> Bool {
+   17|      0|        let passwordTest = NSPredicate(format: "SELF MATCHES %@",
+   18|      0|                                    "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+   19|      0|        return passwordTest.evaluate(with: password)
+   20|      0|    }
    21|       |}
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/Recipe.swift:
@@ -104,10 +104,6 @@
    46|      0|        self.foodQuery = foodQuery
    47|      0|    }
    48|       |}
-
-/Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/RecipeViewModel.swift:
-    1|      0|public func hello() {
-    2|      0|}
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/Utilities.swift:
     1|       |//

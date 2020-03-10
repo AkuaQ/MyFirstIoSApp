@@ -1,0 +1,89 @@
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |/// 
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |/// 
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |/// 
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |/// 
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import XCTest
+   30|       |@testable import HalfTunes
+   31|       |
+   32|       |class HalfTunesFakeTests: XCTestCase {
+   33|       |  var sut: SearchViewController!
+   34|       |  
+   35|      1|  override func setUp() {
+   36|      1|    super.setUp()
+   37|      1|    sut = UIStoryboard(name: "Main", bundle: nil)
+   38|      1|      .instantiateInitialViewController() as? SearchViewController
+   39|      1|    let testBundle = Bundle(for: type(of: self))
+   40|      1|    let path = testBundle.path(forResource: "abbaData", ofType: "json")
+   41|      1|    let data = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped)
+   42|      1|    
+   43|      1|    let url = URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=abba")
+   44|      1|    let urlResponse = HTTPURLResponse(url: url!, statusCode: 200, httpVersion: nil, headerFields: nil)
+   45|      1|    
+   46|      1|    let sessionMock = URLSessionMock(data: data, response: urlResponse, error: nil)
+   47|      1|    sut.defaultSession = sessionMock
+   48|      1|  }
+   49|       |  
+   50|      1|  override func tearDown() {
+   51|      1|    sut = nil
+   52|      1|    super.tearDown()
+   53|      1|  }
+   54|       |  
+   55|      1|  func test_UpdateSearchResults_ParsesData() {
+   56|      1|    // given
+   57|      1|    let promise = expectation(description: "Status code: 200")
+   58|      1|    
+   59|      1|    // when
+   60|      1|    XCTAssertEqual(sut.searchResults.count, 0, "searchResults should be empty before the data task runs")
+   61|      1|    let url = URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=abba")
+   62|      1|    let dataTask = sut.defaultSession.dataTask(with: url!) {
+   63|      1|      data, response, error in
+   64|      1|      // if HTTP request is successful, call updateSearchResults(_:) which parses the response data into Tracks
+   65|      1|      if let error = error {
+   66|      0|        print(error.localizedDescription)
+   67|      1|      } else if let httpResponse = response as? HTTPURLResponse,
+   68|      1|        httpResponse.statusCode == 200 {
+   69|      1|        self.sut.updateSearchResults(data)
+   70|      1|      }
+   71|      1|      promise.fulfill()
+   72|      1|    }
+   73|      1|    dataTask.resume()
+   74|      1|    wait(for: [promise], timeout: 5)
+   75|      1|    
+   76|      1|    // then
+   77|      1|    XCTAssertEqual(sut.searchResults.count, 3, "Didn't parse 3 items from fake response")
+   78|      1|  }
+   79|       |  
+   80|       |  // Performance
+   81|      0|  func test_StartDownload_Performance() {
+   82|      0|    let track = Track(name: "Waterloo", artist: "ABBA",
+   83|      0|                      previewUrl: "http://a821.phobos.apple.com/us/r30/Music/d7/ba/ce/mzm.vsyjlsff.aac.p.m4a")
+   84|      0|    measure {
+   85|      0|      self.sut.startDownload(track)
+   86|      0|    }
+   87|      0|  }
+   88|       |}
+

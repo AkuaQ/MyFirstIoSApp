@@ -1,0 +1,757 @@
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Final/HalfTunes/HalfTunes/AppDelegate.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |/// 
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |/// 
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |/// 
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |/// 
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import UIKit
+   30|       |
+   31|       |@UIApplicationMain
+   32|       |class AppDelegate: UIResponder, UIApplicationDelegate {
+   33|       |  var window: UIWindow?
+   34|       |
+   35|       |  let tintColor =  UIColor(red: 242/255, green: 71/255, blue: 63/255, alpha: 1)
+   36|       |  var backgroundSessionCompletionHandler: (() -> Void)?
+   37|       |
+   38|      1|  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   39|      1|    // Override point for customization after application launch.
+   40|      1|    customizeAppearance()
+   41|      1|    return true
+   42|      1|  }
+   43|       |
+   44|       |  // wakes up the app to deal with the completed background task. you need to handle two things in this event
+   45|       |  // 1. the app needs to reconnect to the appropriate background session with the identifier provided by the delegate method. But since you create and use one background session every time you instantiate SearchViewController, you're already reconnected at this point
+   46|       |  // 2. you'll need to capture the completion handler provided by the delegate method. Invoking the completion handler causes the OS to snapshot your updated UI for display in the app switcher, as well as tells the OS that your app's done working with all background activities for the current session.
+   47|      0|  func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+   48|      0|    // save the provided completionHandler as a variable in your app delegate for later use
+   49|      0|    backgroundSessionCompletionHandler = completionHandler
+   50|      0|  }
+   51|       |
+   52|       |  // MARK - App Theme Customization
+   53|       |
+   54|      1|  private func customizeAppearance() {
+   55|      1|    window?.tintColor = tintColor
+   56|      1|    UISearchBar.appearance().barTintColor = tintColor
+   57|      1|    UINavigationBar.appearance().barTintColor = tintColor
+   58|      1|    UINavigationBar.appearance().tintColor = .white
+   59|      1|    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+   60|      1|  }
+   61|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Final/HalfTunes/HalfTunes/Cells/TrackCell.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |///
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |///
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |///
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |///
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import UIKit
+   30|       |
+   31|       |protocol TrackCellDelegate {
+   32|       |  func pauseTapped(_ cell: TrackCell)
+   33|       |  func resumeTapped(_ cell: TrackCell)
+   34|       |  func cancelTapped(_ cell: TrackCell)
+   35|       |  func downloadTapped(_ cell: TrackCell)
+   36|       |}
+   37|       |
+   38|       |class TrackCell: UITableViewCell {
+   39|       |  var delegate: TrackCellDelegate?
+   40|       |  
+   41|       |  @IBOutlet weak var titleLabel: UILabel!
+   42|       |  @IBOutlet weak var artistLabel: UILabel!
+   43|       |  @IBOutlet weak var progressView: UIProgressView!
+   44|       |  @IBOutlet weak var progressLabel: UILabel!
+   45|       |  @IBOutlet weak var pauseButton: UIButton!
+   46|       |  @IBOutlet weak var cancelButton: UIButton!
+   47|       |  @IBOutlet weak var downloadButton: UIButton!
+   48|       |  
+   49|      0|  @IBAction func pauseOrResumeTapped(_ sender: AnyObject) {
+   50|      0|    if pauseButton.titleLabel!.text == "Pause" {
+   51|      0|      delegate?.pauseTapped(self)
+   52|      0|    } else {
+   53|      0|      delegate?.resumeTapped(self)
+   54|      0|    }
+   55|      0|  }
+   56|       |  
+   57|      0|  @IBAction func cancelTapped(_ sender: AnyObject) {
+   58|      0|    delegate?.cancelTapped(self)
+   59|      0|  }
+   60|       |  
+   61|      0|  @IBAction func downloadTapped(_ sender: AnyObject) {
+   62|      0|    delegate?.downloadTapped(self)
+   63|      0|  }
+   64|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Final/HalfTunes/HalfTunes/Data Objects/Download.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |///
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |///
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |///
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |///
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import Foundation
+   30|       |
+   31|       |class Download {
+   32|       |  
+   33|       |  /// the URL of the file to download. This also acts as a unique identifier for a Download
+   34|       |  let url: String
+   35|       |  /// wheter the download is ongoing or paused
+   36|       |  var isDownloading = false
+   37|       |  /// the fractional progress of the download; a float between 0.0 and 1.0
+   38|       |  var progress: Float = 0.0
+   39|       |  /// the URLSessionDownloadTask that downloads the file
+   40|       |  var downloadTask: URLSessionDownloadTask?
+   41|       |  /// stores the Data produces when you pause a download task. If the host server supports it, you can use this to resume a paused download in the future
+   42|       |  var resumeData: Data?
+   43|       |  
+   44|      0|  init(url: String) {
+   45|      0|    self.url = url
+   46|      0|  }
+   47|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Final/HalfTunes/HalfTunes/Data Objects/Track.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |///
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |///
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |///
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |///
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |struct Track {
+   30|       |  let name: String?
+   31|       |  let artist: String?
+   32|       |  let previewUrl: String?
+   33|       |  
+   34|      3|  init(name: String?, artist: String?, previewUrl: String?) {
+   35|      3|    self.name = name
+   36|      3|    self.artist = artist
+   37|      3|    self.previewUrl = previewUrl
+   38|      3|  }
+   39|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Final/HalfTunes/HalfTunes/SearchViewController.swift:
+    1|       |/// Copyright (c) 2019 Razeware LLC
+    2|       |///
+    3|       |/// Permission is hereby granted, free of charge, to any person obtaining a copy
+    4|       |/// of this software and associated documentation files (the "Software"), to deal
+    5|       |/// in the Software without restriction, including without limitation the rights
+    6|       |/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    7|       |/// copies of the Software, and to permit persons to whom the Software is
+    8|       |/// furnished to do so, subject to the following conditions:
+    9|       |///
+   10|       |/// The above copyright notice and this permission notice shall be included in
+   11|       |/// all copies or substantial portions of the Software.
+   12|       |///
+   13|       |/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+   14|       |/// distribute, sublicense, create a derivative work, and/or sell copies of the
+   15|       |/// Software in any work that is designed, intended, or marketed for pedagogical or
+   16|       |/// instructional purposes related to programming, coding, application development,
+   17|       |/// or information technology.  Permission for such use, copying, modification,
+   18|       |/// merger, publication, distribution, sublicensing, creation of derivative works,
+   19|       |/// or sale is expressly withheld.
+   20|       |///
+   21|       |/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   22|       |/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   23|       |/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   24|       |/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   25|       |/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   26|       |/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   27|       |/// THE SOFTWARE.
+   28|       |
+   29|       |import UIKit
+   30|       |import AVKit
+   31|       |import AVFoundation
+   32|       |
+   33|       |class SearchViewController: UIViewController {
+   34|       |  @IBOutlet weak var tableView: UITableView!
+   35|       |  @IBOutlet weak var searchBar: UISearchBar!
+   36|       |  
+   37|       |  var searchResults: [Track] = []
+   38|       |  
+   39|       |  // create and initialize URLSession with a default session configuration
+   40|       |  var defaultSession: DHURLSession = URLSession(configuration: URLSessionConfiguration.default)
+   41|       |  // declare a URLSessionDataTask which you'll use to make an HTTP GET request to the iTunes Seach web service
+   42|       |  // when the user performs a search. Will be re-initialized and reused each time the user creates a new query
+   43|       |  var dataTask: URLSessionDataTask?
+   44|       |  
+   45|       |  // maintains a mapping between URLs and their active Download, if any
+   46|       |  var activeDownloads: [String: Download] = [:]
+   47|       |
+   48|      0|  lazy var tapRecognizer: UITapGestureRecognizer = {
+   49|      0|    var recognizer = UITapGestureRecognizer(target:self, action: #selector(SearchViewController.dismissKeyboard))
+   50|      0|    return recognizer
+   51|      0|  }()
+   52|       |  
+   53|       |  // you initialize a separate session with a default configuration to handle all your download tasks
+   54|       |  // you also specify a delegate, which lets you receive URLSession events via delegate calls
+   55|       |  // this is useful for tracking not just when a task is complete, but also the progress of the task
+   56|       |  // setting the delegate to nil causes the session to create a serial operation queue, by default, to perform
+   57|       |  // all calls to the delegate methods and completion handlers
+   58|       |  // NOTE: the lazy creation of downloadsSession: this lets you delay the creation of the session until it's needed
+   59|       |  // most importantly, it lets you pass self as the delegate parameter to the initializer - even if self isn't initialized
+   60|      1|  lazy var downloadsSession: URLSession = {
+   61|      1|    // instead of using the default session configuration, you use a special background session configuration
+   62|      1|    // you also set a unique identifier for the session here to allow you to reference and "reconnect" to the same background session if needed
+   63|      1|    let configuration = URLSessionConfiguration.background(withIdentifier: "bgSessionConfiguration")
+   64|      1|    let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+   65|      1|    return session
+   66|      1|  }()
+   67|       |  
+   68|       |  // MARK: View controller methods
+   69|       |  
+   70|      1|  override func viewDidLoad() {
+   71|      1|    super.viewDidLoad()
+   72|      1|    tableView.tableFooterView = UIView()
+   73|      1|    // calling the lazily-loaded downloadsSession ensures the app creates exactly one background session upon initialization of SearchViewController
+   74|      1|    _ = downloadsSession
+   75|      1|  }
+   76|       |  
+   77|       |  // MARK: Handling Search Results
+   78|       |  
+   79|       |  // This helper method helps parse response JSON NSData into an array of Track objects.
+   80|      1|  func updateSearchResults(_ data: Data?) {
+   81|      1|    searchResults.removeAll()
+   82|      1|    do {
+   83|      1|      if
+   84|      1|        let data = data,
+   85|      1|        let response = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions(rawValue:0)) as? [String: AnyObject] {
+   86|      1|        // Get the results array
+   87|      1|        if let array: AnyObject = response["results"] {
+   88|      3|          for trackDictonary in array as! [AnyObject] {
+   89|      3|            if let trackDictonary = trackDictonary as? [String: AnyObject], let previewUrl = trackDictonary["previewUrl"] as? String {
+   90|      3|              // Parse the search result
+   91|      3|              let name = trackDictonary["trackName"] as? String
+   92|      3|              let artist = trackDictonary["artistName"] as? String
+   93|      3|              searchResults.append(Track(name: name, artist: artist, previewUrl: previewUrl))
+   94|      3|            } else {
+   95|      0|              print("Not a dictionary")
+   96|      3|            }
+   97|      3|          }
+   98|      1|        } else {
+   99|      0|          print("Results key not found in dictionary")
+  100|      1|        }
+  101|      1|      } else {
+  102|      0|        print("JSON Error")
+  103|      1|      }
+  104|      1|    } catch let error as NSError {
+  105|      0|      print("Error parsing results: \(error.localizedDescription)")
+  106|      1|    }
+  107|      1|    
+  108|      1|    DispatchQueue.main.async {
+  109|      1|      self.tableView?.reloadData()
+  110|      1|      self.tableView?.setContentOffset(CGPoint.zero, animated: false)
+  111|      1|    }
+  112|      1|  }
+  113|       |  
+  114|       |  // MARK: Keyboard dismissal
+  115|       |  
+  116|      0|  @objc func dismissKeyboard() {
+  117|      0|    searchBar.resignFirstResponder()
+  118|      0|  }
+  119|       |  
+  120|       |  // MARK: Download methods
+  121|       |  
+  122|       |  // Called when the Download button for a track is tapped
+  123|      0|  func startDownload(_ track: Track) {
+  124|      0|    if let urlString = track.previewUrl, let url = URL(string: urlString) {
+  125|      0|      // initialize a Download with the preview URL of the track
+  126|      0|      let download = Download(url: urlString)
+  127|      0|      // using your new session object, you create a URLSessionDownloadTask with the preview URL and set it to the downloadTask property of the Download
+  128|      0|      download.downloadTask = downloadsSession.downloadTask(with: url)
+  129|      0|      // start the download task by calling resume() on it
+  130|      0|      download.downloadTask!.resume()
+  131|      0|      // indicate that the download is in progress
+  132|      0|      download.isDownloading = true
+  133|      0|      // finally map the download URL to its Download in the activeDownloads dictionary
+  134|      0|      activeDownloads[download.url] = download
+  135|      0|    }
+  136|      0|  }
+  137|       |  
+  138|       |  // Called when the Pause button for a track is tapped
+  139|      0|  func pauseDownload(_ track: Track) {
+  140|      0|    if let urlString = track.previewUrl, let download = activeDownloads[urlString] {
+  141|      0|      if download.isDownloading {
+  142|      0|        // you retrieve the resume data from the closure provided by cancel(byProducingResumeData:)
+  143|      0|        // and save it to the appropriate Download for future resumption
+  144|      0|        download.downloadTask?.cancel(byProducingResumeData: { data in
+  145|      0|          if data != nil {
+  146|      0|            download.resumeData = data
+  147|      0|          }
+  148|      0|        })
+  149|      0|        // set isDownloading to false, to signify that the download is paused
+  150|      0|        download.isDownloading = false
+  151|      0|      }
+  152|      0|    }
+  153|      0|  }
+  154|       |  
+  155|       |  // Called when the Cancel button for a track is tapped
+  156|      0|  func cancelDownload(_ track: Track) {
+  157|      0|    if let urlString = track.previewUrl, let download = activeDownloads[urlString] {
+  158|      0|      // call cancel on the corresponding Download in the dictionary of active downloads
+  159|      0|      download.downloadTask?.cancel()
+  160|      0|      // you then remove it from the dictionary of active downloads
+  161|      0|      activeDownloads[urlString] = nil
+  162|      0|    }
+  163|      0|  }
+  164|       |  
+  165|       |  // Called when the Resume button for a track is tapped
+  166|      0|  func resumeDownload(_ track: Track) {
+  167|      0|    if let urlString = track.previewUrl, let download = activeDownloads[urlString] {
+  168|      0|      // is resume data present
+  169|      0|      if let resumeData = download.resumeData {
+  170|      0|        // if resumeData found, create a new downloadTask by invoking downloadTask(withResumeData:) with the resume data
+  171|      0|        // and start the task by calling resume()
+  172|      0|        download.downloadTask = downloadsSession.downloadTask(withResumeData: resumeData as Data)
+  173|      0|        download.downloadTask!.resume()
+  174|      0|        download.isDownloading = true
+  175|      0|      } else if let url = URL(string: download.url) {
+  176|      0|        // if resume data is absent for some reason, you create a new download task from scratch with the download URL and start it
+  177|      0|        download.downloadTask = downloadsSession.downloadTask(with: url)
+  178|      0|        download.downloadTask!.resume()
+  179|      0|        download.isDownloading = true
+  180|      0|      }
+  181|      0|    }
+  182|      0|  }
+  183|       |  
+  184|       |  // This method attempts to play the local file (if it exists) when the cell is tapped
+  185|      0|  func playDownload(_ track: Track) {
+  186|      0|    if let urlString = track.previewUrl, let url = localFilePathForUrl(urlString) {
+  187|      0|      let tunePlayerViewController = AVPlayerViewController()
+  188|      0|      tunePlayerViewController.player = AVPlayer(url: url)
+  189|      0|      tunePlayerViewController.player?.play()
+  190|      0|      present(tunePlayerViewController, animated: true, completion: nil)
+  191|      0|    }
+  192|      0|  }
+  193|       |  
+  194|       |  // MARK: Download helper methods
+  195|       |  
+  196|       |  // This method generates a permanent local file path to save a track to by appending
+  197|       |  // the lastPathComponent of the URL (i.e. the file name and extension of the file)
+  198|       |  // to the path of the app’s Documents directory.
+  199|      0|  func localFilePathForUrl(_ previewUrl: String) -> URL? {
+  200|      0|    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+  201|      0|    if let url = URL(string: previewUrl) {
+  202|      0|      let fullPath = documentsPath.appendingPathComponent(url.lastPathComponent)
+  203|      0|      return URL(fileURLWithPath:fullPath)
+  204|      0|    }
+  205|      0|    return nil
+  206|      0|  }
+  207|       |  
+  208|       |  // This method checks if the local file exists at the path generated by localFilePathForUrl(_:)
+  209|      0|  func localFileExistsForTrack(_ track: Track) -> Bool {
+  210|      0|    if let urlString = track.previewUrl, let localUrl = localFilePathForUrl(urlString) {
+  211|      0|      var isDir: ObjCBool = false
+  212|      0|       return FileManager.default.fileExists(atPath: localUrl.path, isDirectory: &isDir)
+  213|      0|     }
+  214|      0|    return false
+  215|      0|  }
+  216|       |  
+  217|       |  // simply returns the index of the Track in the searchResults list that has the given URL
+  218|      0|  func trackIndexForDownloadTask(downloadTask: URLSessionDownloadTask) -> Int? {
+  219|      0|    if let url = downloadTask.originalRequest?.url?.absoluteString {
+  220|      0|      for (index, track) in searchResults.enumerated() {
+  221|      0|        if url == track.previewUrl! {
+  222|      0|          return index
+  223|      0|        }
+  224|      0|      }
+  225|      0|    }
+  226|      0|    return nil
+  227|      0|  }
+  228|       |}
+  229|       |
+  230|       |// MARK: - UISearchBarDelegate
+  231|       |
+  232|       |extension SearchViewController: UISearchBarDelegate {
+  233|      0|  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+  234|      0|    // Dimiss the keyboard
+  235|      0|    dismissKeyboard()
+  236|      0|    
+  237|      0|    if !searchBar.text!.isEmpty {
+  238|      0|      // check if data task is already initialized.
+  239|      0|      // If so, you can cancel the task as you want to reuse the data task object for the latest query
+  240|      0|      if dataTask != nil {
+  241|      0|        dataTask?.cancel()
+  242|      0|      }
+  243|      0|      // enable the network indicator on the status bar to indicate to the user that a network process is running
+  244|      0|      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+  245|      0|      // before passing the user's search string as a parameter to the query URL, you call addingPercentEncoding on the string to ensure that it's properly escaped
+  246|      0|      let expectedCharSet = NSCharacterSet.urlQueryAllowed
+  247|      0|      let searchTerm = searchBar.text!.addingPercentEncoding(withAllowedCharacters: expectedCharSet)!
+  248|      0|      // construct a URL by appending the escaped search string as a GET parameter to the iTunes Search API base url
+  249|      0|      let url = URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=\(searchTerm)")
+  250|      0|      // from the session you created, you initialize a URLSessionDataTask to handle the HTTP GET request.
+  251|      0|      // the constructor of URLSessionDataTask takes in the URL that you constructed along with a completion handler to be called when the data task completed
+  252|      0|      dataTask = defaultSession.dataTask(with: url!) {
+  253|      0|        data, response, error in
+  254|      0|        // invoke the UI update in the main thread and hide the activity indicator to show that the task is completed
+  255|      0|        DispatchQueue.main.async {
+  256|      0|          UIApplication.shared.isNetworkActivityIndicatorVisible = false
+  257|      0|        }
+  258|      0|        // if HTTP request is successful you call updateSearchResults(_:) which parses the response NSData into Tracks and updates the table view
+  259|      0|        if let error = error {
+  260|      0|          print(error.localizedDescription)
+  261|      0|        } else if let httpResponse = response as? HTTPURLResponse {
+  262|      0|          if httpResponse.statusCode == 200 {
+  263|      0|            self.updateSearchResults(data)
+  264|      0|          }
+  265|      0|        }
+  266|      0|      }
+  267|      0|      // all tasks start in a suspended state by default, calling resume() starts the data task
+  268|      0|      dataTask?.resume()
+  269|      0|    }
+  270|      0|  }
+  271|       |  
+  272|      1|  func position(for bar: UIBarPositioning) -> UIBarPosition {
+  273|      1|    return .topAttached
+  274|      1|  }
+  275|       |  
+  276|      0|  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+  277|      0|    view.addGestureRecognizer(tapRecognizer)
+  278|      0|  }
+  279|       |  
+  280|      0|  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+  281|      0|    view.removeGestureRecognizer(tapRecognizer)
+  282|      0|  }
+  283|       |}
+  284|       |
+  285|       |// MARK: TrackCellDelegate
+  286|       |
+  287|       |extension SearchViewController: TrackCellDelegate {
+  288|      0|  func pauseTapped(_ cell: TrackCell) {
+  289|      0|    if let indexPath = tableView.indexPath(for: cell) {
+  290|      0|      let track = searchResults[indexPath.row]
+  291|      0|      pauseDownload(track)
+  292|      0|      tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+  293|      0|    }
+  294|      0|  }
+  295|       |  
+  296|      0|  func resumeTapped(_ cell: TrackCell) {
+  297|      0|    if let indexPath = tableView.indexPath(for: cell) {
+  298|      0|      let track = searchResults[indexPath.row]
+  299|      0|      resumeDownload(track)
+  300|      0|      tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+  301|      0|    }
+  302|      0|  }
+  303|       |  
+  304|      0|  func cancelTapped(_ cell: TrackCell) {
+  305|      0|    if let indexPath = tableView.indexPath(for: cell) {
+  306|      0|      let track = searchResults[indexPath.row]
+  307|      0|      cancelDownload(track)
+  308|      0|      tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+  309|      0|    }
+  310|      0|  }
+  311|       |  
+  312|      0|  func downloadTapped(_ cell: TrackCell) {
+  313|      0|    if let indexPath = tableView.indexPath(for: cell) {
+  314|      0|      let track = searchResults[indexPath.row]
+  315|      0|      startDownload(track)
+  316|      0|      tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+  317|      0|    }
+  318|      0|  }
+  319|       |}
+  320|       |
+  321|       |// MARK: UITableViewDataSource
+  322|       |
+  323|       |extension SearchViewController: UITableViewDataSource {
+  324|      3|  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  325|      3|    return searchResults.count
+  326|      3|  }
+  327|       |  
+  328|      0|  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  329|      0|    let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as!TrackCell
+  330|      0|    
+  331|      0|    // Delegate cell button tap events to this view controller
+  332|      0|    cell.delegate = self
+  333|      0|    
+  334|      0|    let track = searchResults[indexPath.row]
+  335|      0|    
+  336|      0|    // Configure title and artist labels
+  337|      0|    cell.titleLabel.text = track.name
+  338|      0|    cell.artistLabel.text = track.artist
+  339|      0|    
+  340|      0|    // for tracks with active downloads, you set showDownloadControls to true; otherwise, you set it to false
+  341|      0|    // you then display the progress views and labels, provided with the sample project, in accordance with the value of showDownloadControls
+  342|      0|    // for paused downloads, display "Paused" for the status; otherwise "Downloading..."
+  343|      0|    var showDownloadControls = false
+  344|      0|    if let download = activeDownloads[track.previewUrl!] {
+  345|      0|      showDownloadControls = true
+  346|      0|      
+  347|      0|      cell.progressView.progress = download.progress
+  348|      0|      cell.progressLabel.text = (download.isDownloading) ? "Downloading..." : "Paused"
+  349|      0|      
+  350|      0|      // this toggles the button between the two states pause and resume
+  351|      0|      let title = (download.isDownloading) ? "Pause" : "Resume"
+  352|      0|      cell.pauseButton.setTitle(title, for: .normal)
+  353|      0|    }
+  354|      0|    cell.progressView.isHidden = !showDownloadControls
+  355|      0|    cell.progressLabel.isHidden = !showDownloadControls
+  356|      0|    
+  357|      0|    // If the track is already downloaded, enable cell selection and hide the Download button
+  358|      0|    let downloaded = localFileExistsForTrack(track)
+  359|      0|    cell.selectionStyle = downloaded ? .gray : .none
+  360|      0|    
+  361|      0|    // hide the Download button also if its track is downloading
+  362|      0|    cell.downloadButton.isHidden = downloaded || showDownloadControls
+  363|      0|    
+  364|      0|    // show the pause and cancel buttons only if a download is active
+  365|      0|    cell.pauseButton.isHidden = !showDownloadControls
+  366|      0|    cell.cancelButton.isHidden = !showDownloadControls
+  367|      0|    
+  368|      0|    return cell
+  369|      0|  }
+  370|       |}
+  371|       |
+  372|       |// MARK: UITableViewDelegate
+  373|       |
+  374|       |extension SearchViewController: UITableViewDelegate {
+  375|      0|  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  376|      0|    return 62.0
+  377|      0|  }
+  378|       |  
+  379|      0|  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  380|      0|    let track = searchResults[indexPath.row]
+  381|      0|    if localFileExistsForTrack(track) {
+  382|      0|      playDownload(track)
+  383|      0|    }
+  384|      0|    tableView.deselectRow(at: indexPath, animated: true)
+  385|      0|  }
+  386|       |}
+  387|       |
+  388|       |// MARK: URLSessionDownloadDelegate
+  389|       |
+  390|       |extension SearchViewController: URLSessionDownloadDelegate {
+  391|      0|  func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+  392|      0|    // extract the original request URL from the task and pass it to the provided localFilePathForUrl(_:) helper method.
+  393|      0|    // localFilePathForUrl(_:) then generates a permanent local file path to save to by appending the lastPastComponent of the URL
+  394|      0|    // (i.e. the file name and extension of the file) to the path of the app's Documents directory
+  395|      0|    if
+  396|      0|      let originalURL = downloadTask.originalRequest?.url?.absoluteString,
+  397|      0|      let destinationURL = localFilePathForUrl(originalURL) {
+  398|      0|      print(destinationURL)
+  399|      0|      
+  400|      0|      // with FileManager you move the downloaded file from its temporary file location to the desired destination file path by
+  401|      0|      // clearing out any item at that location before you start the copy task
+  402|      0|      let fileManager = FileManager.default
+  403|      0|      do {
+  404|      0|        try fileManager.removeItem(at: destinationURL)
+  405|      0|      } catch {
+  406|      0|        // Non-fatal: file probably doesn't exist
+  407|      0|      }
+  408|      0|      do {
+  409|      0|        try fileManager.copyItem(at: location, to: destinationURL)
+  410|      0|      } catch let error as NSError {
+  411|      0|        print("Could not copy file to disk: \(error.localizedDescription)")
+  412|      0|      }
+  413|      0|    }
+  414|      0|    
+  415|      0|    // look up the corresponding Download in your active downloads and remove it
+  416|      0|    if let url = downloadTask.originalRequest?.url?.absoluteString {
+  417|      0|      activeDownloads[url] = nil
+  418|      0|      // look up the Track in your table view and reload the corresponding cell
+  419|      0|      if let trackIndex = trackIndexForDownloadTask(downloadTask: downloadTask) {
+  420|      0|        DispatchQueue.main.async {
+  421|      0|          self.tableView.reloadRows(at: [IndexPath(row: trackIndex, section: 0)], with: .none)
+  422|      0|        }
+  423|      0|      }
+  424|      0|    }
+  425|      0|  }
+  426|       |  
+  427|      0|  func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+  428|      0|    // using the provided downloadTask, you extract the URL and use it to find the Download in your dictionary of active downloads.
+  429|      0|    if
+  430|      0|      let downloadUrl = downloadTask.originalRequest?.url?.absoluteString,
+  431|      0|      let download = activeDownloads[downloadUrl] {
+  432|      0|      // method returns total bytes written and the total bytes expected to be written. You calculate the progress as the ratio of the two
+  433|      0|      // values and save the result in the Download. You'll use this value to update the progress view.
+  434|      0|      download.progress = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
+  435|      0|      // ByteCountFormatter takes a byte value and generates a human-readable string showing the total download file size. You'll use this string to show the size of the download alongside the percentage complete
+  436|      0|      let totalSize = ByteCountFormatter.string(fromByteCount: totalBytesExpectedToWrite, countStyle: ByteCountFormatter.CountStyle.binary)
+  437|      0|      // find the cell responsible for displaying the Track and update both its progress view and progress label with the values derived form the previous steps
+  438|      0|      DispatchQueue.main.async {
+  439|      0|        if let trackIndex = self.trackIndexForDownloadTask(downloadTask: downloadTask), let trackCell = self.tableView.cellForRow(at: IndexPath(row: trackIndex, section: 0)) as? TrackCell {
+  440|      0|          trackCell.progressView.progress = download.progress
+  441|      0|          trackCell.progressLabel.text = String(format: "%.1f%% of %@", download.progress * 100, totalSize)
+  442|      0|        }
+  443|      0|      }
+  444|      0|    }
+  445|      0|  }
+  446|       |}
+  447|       |
+  448|       |// MARK: URLSessionDelegate
+  449|       |extension SearchViewController: URLSessionDelegate {
+  450|       |  // simply grabs the stored completion handler from the app delegate and invokes it on the main thread
+  451|      0|  func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+  452|      0|    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+  453|      0|      if let completionHandler = appDelegate.backgroundSessionCompletionHandler {
+  454|      0|        appDelegate.backgroundSessionCompletionHandler = nil
+  455|      0|        DispatchQueue.main.async {
+  456|      0|          completionHandler()
+  457|      0|        }
+  458|      0|      }
+  459|      0|    }
+  460|      0|  }
+  461|       |}
+
+/Users/aafraneokese/Documents/Learn IoS Features/Tests/Unit Tests/TestProjects/Final/HalfTunes/HalfTunes/Supporting Files/DHURLSessionMock.swift:
+    1|       |/*
+    2|       |Copyright (c) 2016 Dominik Hauser <dom@dasdom.de>
+    3|       |
+    4|       |Permission is hereby granted, free of charge, to any person obtaining a copy
+    5|       |of this software and associated documentation files (the "Software"), to deal
+    6|       |in the Software without restriction, including without limitation the rights
+    7|       |to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    8|       |copies of the Software, and to permit persons to whom the Software is
+    9|       |furnished to do so, subject to the following conditions:
+   10|       |
+   11|       |The above copyright notice and this permission notice shall be included in
+   12|       |all copies or substantial portions of the Software.
+   13|       |
+   14|       |THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   15|       |IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   16|       |FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   17|       |AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   18|       |LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   19|       |OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   20|       |THE SOFTWARE.
+   21|       |
+   22|       |Created by dasdom on 05.01.16.
+   23|       |Updated to Swift 3 by Audrey Tam on 28.11.16
+   24|       |*/
+   25|       |
+   26|       |import Foundation
+   27|       |
+   28|       |public protocol DHURLSession {
+   29|       |  func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+   30|       |  func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+   31|       |}
+   32|       |
+   33|       |extension URLSession: DHURLSession { }
+   34|       |
+   35|       |public final class URLSessionMock: DHURLSession {
+   36|       |  var url: URL?
+   37|       |  var request: URLRequest?
+   38|       |  private let dataTaskMock: URLSessionDataTaskMock
+   39|       |  
+   40|      0|  public convenience init?(jsonDict: [String: Any], response: URLResponse? = nil, error: Error? = nil) {
+   41|      0|    guard let data = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else { return nil }
+   42|      0|    self.init(data: data, response: response, error: error)
+   43|      0|  }
+   44|       |  
+   45|      1|  public init(data: Data? = nil, response: URLResponse? = nil, error: Error? = nil) {
+   46|      1|    dataTaskMock = URLSessionDataTaskMock()
+   47|      1|    dataTaskMock.taskResponse = (data, response, error)
+   48|      1|  }
+   49|       |  
+   50|      1|  public func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+   51|      1|      self.url = url
+   52|      1|      self.dataTaskMock.completionHandler = completionHandler
+   53|      1|      return self.dataTaskMock
+   54|      1|  }
+   55|       |  
+   56|      0|  public func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+   57|      0|      self.request = request
+   58|      0|      self.dataTaskMock.completionHandler = completionHandler
+   59|      0|      return self.dataTaskMock
+   60|      0|  }
+   61|       |  
+   62|       |  final private class URLSessionDataTaskMock: URLSessionDataTask {
+   63|       |    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+   64|       |    var completionHandler: CompletionHandler?
+   65|       |    var taskResponse: (Data?, URLResponse?, Error?)?
+   66|       |    
+   67|      1|    override func resume() {
+   68|      1|      DispatchQueue.main.async {
+   69|      1|        self.completionHandler?(self.taskResponse?.0, self.taskResponse?.1, self.taskResponse?.2)
+   70|      1|      }
+   71|      1|    }
+   72|       |  }
+   73|       |}
+

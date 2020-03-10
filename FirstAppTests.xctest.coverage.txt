@@ -12,27 +12,129 @@
    11|       |
    12|       |class FirstAppTests: XCTestCase {
    13|       |
-   14|      2|    override func setUp() {
-   15|      2|        // Put setup code here. This method is called before the invocation of each test method in the class.
-   16|      2|    }
+   14|      0|    override func setUp() {
+   15|      0|        // Put setup code here. This method is called before the invocation of each test method in the class.
+   16|      0|    }
    17|       |
-   18|      2|    override func tearDown() {
-   19|      2|        // Put teardown code here. This method is called after the invocation of each test method in the class.
-   20|      2|    }
+   18|      0|    override func tearDown() {
+   19|      0|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   20|      0|    }
    21|       |
-   22|      1|    func testExample() {
-   23|      1|        // This is an example of a functional test case.
-   24|      1|        // Use XCTAssert and related functions to verify your tests produce the correct results.
-   25|      1|    }
+   22|      0|    func testExample() {
+   23|      0|        // This is an example of a functional test case.
+   24|      0|        // Use XCTAssert and related functions to verify your tests produce the correct results.
+   25|      0|    }
    26|       |
-   27|      1|    func testPerformanceExample() {
-   28|      1|        // This is an example of a performance test case.
-   29|     10|        self.measure {
-   30|     10|            // Put the code you want to measure the time of here.
-   31|     10|        }
-   32|      1|    }
+   27|      0|    func testPerformanceExample() {
+   28|      0|        // This is an example of a performance test case.
+   29|      0|        self.measure {
+   30|      0|            // Put the code you want to measure the time of here.
+   31|      0|        }
+   32|      0|    }
    33|       |
    34|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/RecipeModelUnitTests.swift:
+    1|       |//
+    2|       |//  RecipeModelUnitTests.swift
+    3|       |//  FirstAppTests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/03/09.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import XCTest
+   10|       |@testable import Dev_Pod
+   11|       |class RecipeModelUnitTests: XCTestCase {
+   12|       |
+   13|       |    var recipe: FoodDetails!
+   14|      0|    override func setUp() {
+   15|      0|        recipe = FoodDetails()
+   16|      0|    }
+   17|       |
+   18|      0|    override func tearDown() {
+   19|      0|    }
+   20|       |
+   21|      0|    func testGivenRecipeReturnNotNil() {
+   22|      0|        XCTAssertNotNil(recipe)
+   23|      0|    }
+   24|       |
+   25|      0|    func testPerformanceExample() {
+   26|      0|        // This is an example of a performance test case.
+   27|      0|        self.measure {
+   28|      0|            // Put the code you want to measure the time of here.
+   29|      0|        }
+   30|      0|    }
+   31|       |
+   32|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/RecipeViewModelServiceTests.swift:
+    1|       |//
+    2|       |//  RecipeViewModelServiceTests.swift
+    3|       |//  FirstAppTests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/03/09.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import XCTest
+   10|       |@testable import Dev_Pod
+   11|       |class RecipeViewModelServiceTests: XCTestCase {
+   12|       |
+   13|      0|    override func setUp() {
+   14|      0|        // Put setup code here. This method is called before the invocation of each test method in the class.
+   15|      0|    }
+   16|       |
+   17|      0|    override func tearDown() {
+   18|      0|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   19|      0|    }
+   20|       |
+   21|      0|    func testGivenSearchCredsReturnSearchResultTitle() {
+   22|      0|        var searchResultTitle = ""
+   23|      0|        let foodRequest = FoodRequest(foodQuery: "fish")
+   24|      0|        foodRequest.getSearchResult {(result) in
+   25|      0|                        searchResultTitle = result[0].title
+   26|      0|            XCTAssertEqual(searchResultTitle, "Delicious Fish Curry Recipe")
+   27|      0|        }
+   28|      0|    }
+   29|       |
+   30|      0|    func testPerformanceExample() {
+   31|      0|        // This is an example of a performance test case.
+   32|      0|        self.measure {
+   33|      0|            // Put the code you want to measure the time of here.
+   34|      0|        }
+   35|      0|    }
+   36|       |
+   37|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/UserMock.swift:
+    1|       |//
+    2|       |//  UserMock.swift
+    3|       |//  FirstAppTests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/03/09.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import Foundation
+   10|       |@testable import FirstApp
+   11|       |class MockRepo: UserModelProtocol {
+   12|       |    func addUser(with firstName: String, lastName: String,
+   13|       |                 email: String, and password: String,
+   14|      0|                 complete: @escaping (String) -> Void) {
+   15|      0|        if password != "Test&Password" {
+   16|      0|            complete("false")
+   17|      0|        }
+   18|      0|        complete("true")
+   19|      0|    }
+   20|       |
+   21|      0|    func loginUser(with email: String, and password: String, complete: @escaping ( _ error: String) -> Void) {
+   22|      0|        if password != "Test&Password" {
+   23|      0|            complete("false")
+   24|      0|        }
+   25|      0|        complete("true")
+   26|      0|    }
+   27|       |}
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/UserModelUnitTests.swift:
     1|       |//
@@ -49,33 +151,54 @@
    12|       |class UserModelUnitTests: XCTestCase {
    13|       |
    14|       |    var user: User!
-   15|      3|    override func setUp() {
-   16|      3|        user = User(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
-   17|      3|    }
-   18|       |
-   19|      3|    override func tearDown() {
-   20|      3|        // Put teardown code here. This method is called after the invocation of each test method in the class.
-   21|      3|    }
-   22|       |
-   23|      1|    func testGivenSignUpValuesReturnSuccess() {
-   24|      1|        let closure = user.addUser(with: user.firstName, lastName: user.lastName, email: user.email, and: user.password) {(result) in
-   25|      0|        }
-   26|      1|        XCTAssertNotNil(closure)
-   27|      1|    }
-   28|      1|    func testGivenLoginValuesReturnSuccess() {
-   29|      1|        let closure = user.loginUser(with: user.email, and: user.password) {(result) in
-   30|      0|        }
-   31|      1|        XCTAssertNotNil(closure)
-   32|      1|    }
-   33|       |
-   34|      1|    func testPerformanceExample() {
-   35|      1|        // This is an example of a performance test case.
-   36|     10|        self.measure {
-   37|     10|            // Put the code you want to measure the time of here.
-   38|     10|        }
+   15|       |    var repo: UserModelProtocol!
+   16|      5|    override func setUp() {
+   17|      5|        repo = User(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
+   18|      5|        user = User(firstName: "Kim", lastName: "Possible", email: "kim@p.com", password: "CallMeMeetMe")
+   19|      5|    }
+   20|       |
+   21|      5|    override func tearDown() {
+   22|      5|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   23|      5|    }
+   24|       |
+   25|      1|    func testGivenCorrectUserModelValuesReturnSuccess() {
+   26|      1|        XCTAssertNotNil(user)
+   27|      1|        XCTAssertEqual(user.firstName, "Kim")
+   28|      1|        XCTAssertEqual(user.lastName, "Possible")
+   29|      1|        XCTAssertEqual(user.email, "kim@p.com")
+   30|      1|        XCTAssertEqual(user.password, "CallMeMeetMe")
+   31|      1|    }
+   32|       |
+   33|      1|    func testGivenIncorrectUserModelValuesReturnfailure() {
+   34|      1|        XCTAssertNotNil(user)
+   35|      1|        XCTAssertNotEqual(user.firstName, "Kimmy")
+   36|      1|        XCTAssertNotEqual(user.lastName, "Impossible")
+   37|      1|        XCTAssertNotEqual(user.email, "kimmy@p.com")
+   38|      1|        XCTAssertNotEqual(user.password, "If")
    39|      1|    }
    40|       |
-   41|       |}
+   41|      1|    func testGivenSignUpValuesReturnSuccess() {
+   42|      1|        let closure = repo.addUser(with: "TestName",
+   43|      1|                                   lastName: "TestSurname", email: "TestEmail", and: "Test&Password") {result in
+   44|      0|                                    print(result)
+   45|      0|        }
+   46|      1|        XCTAssertNotNil(closure)
+   47|      1|    }
+   48|      1|    func testGivenLoginValuesReturnSuccess() {
+   49|      1|        let closure = repo.loginUser(with: "TestEmail", and: "Test&Password") {result in
+   50|      0|             print(result)
+   51|      0|        }
+   52|      1|        XCTAssertNotNil(closure)
+   53|      1|    }
+   54|       |
+   55|      1|    func testPerformanceExample() {
+   56|      1|        // This is an example of a performance test case.
+   57|     10|        self.measure {
+   58|     10|            // Put the code you want to measure the time of here.
+   59|     10|        }
+   60|      1|    }
+   61|       |
+   62|       |}
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppTests/UtilitiesUnitTests.swift:
     1|       |//
@@ -92,28 +215,33 @@
    12|       |
    13|       |class UtilitiesUnitTests: XCTestCase {
    14|       |
-   15|      3|    override func setUp() {
-   16|      3|        // Put setup code here. This method is called before the invocation of each test method in the class.
-   17|      3|    }
+   15|      0|    override func setUp() {
+   16|      0|        // Put setup code here. This method is called before the invocation of each test method in the class.
+   17|      0|    }
    18|       |
-   19|      3|    override func tearDown() {
-   20|      3|        // Put teardown code here. This method is called after the invocation of each test method in the class.
-   21|      3|    }
+   19|      0|    override func tearDown() {
+   20|      0|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   21|      0|    }
    22|       |
-   23|      1|    func testGivenIncorrectPasswordReturnFalse() {
-   24|      1|        XCTAssertFalse(Constants.isPasswordValid(""))
-   25|      1|    }
+   23|      0|    func testGivenIncorrectPasswordReturnFalse() {
+   24|      0|        XCTAssertFalse(Constants.isPasswordValid(""))
+   25|      0|    }
    26|       |
-   27|      1|    func testGivenCorrectPasswordReturnTrue() {
-   28|      1|        XCTAssertTrue(Constants.isPasswordValid("HelloWorld@"))
-   29|      1|    }
+   27|      0|    func testGivenCorrectPasswordReturnTrue() {
+   28|      0|        XCTAssertTrue(Constants.isPasswordValid("HelloWorld@"))
+   29|      0|    }
    30|       |
-   31|      1|    func testPerformanceExample() {
-   32|      1|        // This is an example of a performance test case.
-   33|     10|        self.measure {
-   34|     10|            // Put the code you want to measure the time of here.
-   35|     10|        }
-   36|      1|    }
-   37|       |
-   38|       |}
+   31|      0|    func testGivenCreatedUtilitiesReturnNotNil() {
+   32|      0|        let utilities = Utilities()
+   33|      0|        XCTAssertNotNil(utilities)
+   34|      0|    }
+   35|       |
+   36|      0|    func testPerformanceExample() {
+   37|      0|        // This is an example of a performance test case.
+   38|      0|        self.measure {
+   39|      0|            // Put the code you want to measure the time of here.
+   40|      0|        }
+   41|      0|    }
+   42|       |
+   43|       |}
 
