@@ -316,7 +316,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Dev_Pod:
-    :commit: a9fe3dfb8dd1d3dcb4017a59ce191a190f1ed9e2
+    :commit: 8a527b1a447d4af4df4ba5f72fd42f66f0fffa95
     :git: https://github.com/AkuaQ/Dev_Pod.git
 
 SPEC CHECKSUMS:
