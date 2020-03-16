@@ -17,21 +17,7 @@ class APIUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-     /*func textExample2() {
-       app.tables["Empty list"].searchFields["Search for ingredients"].tap()
-        
-        
-        app2.buttons[
-     "Search"].tap()
-        app2.tables
-         .staticTexts[
-            "Fish Mayonnaise Recipe"].tap()
-        
-        app.buttons["View Instructions"].tap()
-        
-        
-        app.navigationBars["FirstApp.WebView"].buttons["Back"].tap()
-    }*/
+  
     func testGivenCorrectSearchReturnSuccessfulDetailAndWebsite() {
         let application = XCUIApplication()
         application.launch()

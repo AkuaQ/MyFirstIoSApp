@@ -75,7 +75,6 @@ class SignUpUITests: XCTestCase {
         XCTAssert(application.staticTexts["Error creating user"].exists)
     }
 
-    
      func testGivenEmptyFieldsReturnFailure() {
         let application = XCUIApplication()
         application.launch()
