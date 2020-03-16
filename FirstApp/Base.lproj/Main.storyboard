@@ -162,6 +162,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xe4-od-6t8">
                                                         <rect key="frame" x="0.0" y="21" width="275" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="firstName"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -181,6 +182,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-Ec-AU5">
                                                         <rect key="frame" x="0.0" y="21" width="275" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="lastName"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -208,6 +210,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-W7-uuZ">
                                                         <rect key="frame" x="0.0" y="21" width="275" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="emailSignUp"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -227,6 +230,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-mA-rxS">
                                                         <rect key="frame" x="0.0" y="21" width="275" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="passwordSignUp"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
@@ -339,6 +343,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-5h-4tA">
                                                         <rect key="frame" x="0.0" y="21" width="275" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="emailLogin"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
@@ -361,6 +366,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZV-4M-JeC">
                                                         <rect key="frame" x="0.0" y="21" width="275" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="passwordLogin"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
