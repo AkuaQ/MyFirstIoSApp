@@ -65,5 +65,40 @@ class APIUITests: XCTestCase {
         sleep(2)
         XCTAssert(application.staticTexts["Fish Mayonnaise Recipe"].exists)
     }
-
+    func testGivenCorrectSearchReturnSuccessfulDetailAndWebsite() {
+        let application = XCUIApplication()
+        application.launch()
+        application.buttons["Login"].tap()
+        application.textFields["emailLogin"].tap()
+        application.tapKeys(text: "tester")
+        application.keys["more"].tap()
+        application.keys["@"].tap()
+        application.keys["more"].tap()
+        application.tapKeys(text: "test")
+        application.keys["more"].tap()
+        application.keys["."].tap()
+        application.keys["more"].tap()
+        application.tapKeys(text: "com")
+        application.secureTextFields["passwordLogin"].tap()
+        application.tapKeys(text: "testpassword")
+        application.keys["more"].tap()
+        application.keys["1"].tap()
+        application.keys["?"].tap()
+        application.keys["more"].tap()
+        application.buttons["Log in"].tap()
+        sleep(8)
+        application.searchFields[
+            "Search for ingredients"].tap()
+        application.keys[
+        "F"].tap()
+        application.tapKeys(text: "ish")
+        application.buttons[
+            "Search"].tap()
+        sleep(2)
+        application.staticTexts["Fish Mayonnaise Recipe"].tap()
+        sleep(2)
+        application.buttons["View Instructions"].tap()
+        sleep(8)
+        //XCTAssert(application.staticTexts["What do you think?"].exists)
+    }
 }
