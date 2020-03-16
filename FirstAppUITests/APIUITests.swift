@@ -95,10 +95,9 @@ class APIUITests: XCTestCase {
         application.buttons[
             "Search"].tap()
         sleep(2)
-        application.staticTexts["Fish Mayonnaise Recipe"].tap()
+        application.staticTexts["Delicious Fish Curry Recipe"].tap()
         sleep(2)
         application.buttons["View Instructions"].tap()
         sleep(8)
-        //XCTAssert(application.staticTexts["What do you think?"].exists)
     }
 }
