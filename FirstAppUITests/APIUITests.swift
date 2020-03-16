@@ -17,22 +17,12 @@ class APIUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-        func testExample() {
-            
-            let app = XCUIApplication()
-            app.otherElements.statusBars.children(matching: .other).element.children(matching: .other).element.tap()
-            app.textFields["emailLogin"].tap()
-            app.buttons["Log in"].tap()
-            app.tables["Empty list"].searchFields["Search for ingredients"].tap()
-            app/*@START_MENU_TOKEN@*/.keys["F"]/*[[".keyboards.keys[\"F\"]",".keys[\"F\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-    }
-    func textExample2() {
-        /*app.tables["Empty list"].searchFields["Search for ingredients"].tap()
+     /*func textExample2() {
+       app.tables["Empty list"].searchFields["Search for ingredients"].tap()
         
         
-        app2/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards",".buttons[\"search\"]",".buttons[\"Search\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app2.buttons[
+     "Search"].tap()
         app2.tables
          .staticTexts[
             "Fish Mayonnaise Recipe"].tap()
@@ -40,8 +30,8 @@ class APIUITests: XCTestCase {
         app.buttons["View Instructions"].tap()
         
         
-        app.navigationBars["FirstApp.WebView"].buttons["Back"].tap()*/
-    }
+        app.navigationBars["FirstApp.WebView"].buttons["Back"].tap()
+    }*/
 
     func testGivenCorrectSearchReturnSuccessfulAPIResult() {
         let application = XCUIApplication()
