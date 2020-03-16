@@ -1,0 +1,75 @@
+/Users/aafraneokese/Documents/Git/Dev_Pod/Example/Dev_Pod/AppDelegate.swift:
+    1|       |//
+    2|       |//  AppDelegate.swift
+    3|       |//  Dev_Pod
+    4|       |//
+    5|       |//  Created by AkuaQ on 02/25/2020.
+    6|       |//  Copyright (c) 2020 AkuaQ. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import UIKit
+   10|       |
+   11|       |@UIApplicationMain
+   12|       |class AppDelegate: UIResponder, UIApplicationDelegate {
+   13|       |
+   14|       |    var window: UIWindow?
+   15|       |
+   16|       |    func application(_ application: UIApplication,
+   17|      1|                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   18|      1|        // Override point for customization after application launch.
+   19|      1|        return true
+   20|      1|    }
+   21|       |
+   22|      0|    func applicationWillResignActive(_ application: UIApplication) {
+   23|      0|    }
+   24|       |
+   25|      0|    func applicationDidEnterBackground(_ application: UIApplication) {
+   26|      0|    }
+   27|       |
+   28|      0|    func applicationWillEnterForeground(_ application: UIApplication) {
+   29|      0|    }
+   30|       |
+   31|      1|    func applicationDidBecomeActive(_ application: UIApplication) {
+   32|      1|    }
+   33|       |
+   34|      0|    func applicationWillTerminate(_ application: UIApplication) {
+   35|      0|    }
+   36|       |}
+
+/Users/aafraneokese/Documents/Git/Dev_Pod/Example/Dev_Pod/ViewController.swift:
+    1|       |//
+    2|       |//  ViewController.swift
+    3|       |//  Dev_Pod
+    4|       |//
+    5|       |//  Created by AkuaQ on 02/25/2020.
+    6|       |//  Copyright (c) 2020 AkuaQ. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import UIKit
+   10|       |import Dev_Pod
+   11|       |class ViewController: UIViewController {
+   12|       |    @IBOutlet weak var buttonOne: UIButton!
+   13|       |    @IBOutlet weak var buttonTwo: UIButton!
+   14|       |    @IBOutlet weak var textFieldOne: UITextField!
+   15|       |    @IBOutlet weak var textFieldTwo: UITextField!
+   16|       |
+   17|      1|    override func viewDidLoad() {
+   18|      1|        super.viewDidLoad()
+   19|      1|        setUpElements()
+   20|      1|        // Do any additional setup after loading the view, typically from a nib.
+   21|      1|    }
+   22|       |
+   23|      0|    override func didReceiveMemoryWarning() {
+   24|      0|        super.didReceiveMemoryWarning()
+   25|      0|        // Dispose of any resources that can be recreated.
+   26|      0|    }
+   27|       |
+   28|      1|    func setUpElements() {
+   29|      1|        //Style the elements
+   30|      1|        Utilities.styleFilledButton(buttonOne)
+   31|      1|        Utilities.styleHollowButton(buttonTwo)
+   32|      1|        Utilities.styleTextField(textFieldOne)
+   33|      1|        Utilities.styleErrorTextField(textFieldTwo)
+   34|      1|    }
+   35|       |}
+

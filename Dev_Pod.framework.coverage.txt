@@ -1,0 +1,144 @@
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/Constants.swift:
+    1|       |//
+    2|       |//  Constants.swift
+    3|       |//  Dev_Pod
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/02/28.
+    6|       |//
+    7|       |
+    8|       |import Foundation
+    9|       |
+   10|       |public struct Constants {
+   11|       |    public struct Storyboard {
+   12|       |        public static let homeViewController = "HomeViewController"
+   13|       |        public static  let recipeDetailViewController = "RecipeDetailViewController"
+   14|       |    }
+   15|       |
+   16|      2|    public static func isPasswordValid(_ password: String) -> Bool {
+   17|      2|        let passwordTest = NSPredicate(format: "SELF MATCHES %@",
+   18|      2|                                    "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+   19|      2|        return passwordTest.evaluate(with: password)
+   20|      2|    }
+   21|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/Recipe.swift:
+    1|       |//
+    2|       |//  Recipe1.swift
+    3|       |//  Dev_Pod
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/02/27.
+    6|       |//
+    7|       |
+    8|       |import Foundation
+    9|       |public struct FoodResults: Decodable {
+   10|       |    public var resultCount: [FoodDetails]
+   11|       |
+   12|       |    public enum CodingKeys: String, CodingKey {
+   13|       |        case resultCount = "results"
+   14|       |    }
+   15|       |}
+   16|       |
+   17|       |public struct FoodResponse: Decodable {
+   18|       |    public var foods: FoodResults
+   19|       |}
+   20|       |
+   21|       |public struct FoodDetails: Decodable {
+   22|       |    public var title: String
+   23|       |    public var ingredients: String
+   24|       |    public var href: String
+   25|       |    public var thumbnail: String
+   26|      2|    public init() {
+   27|      2|        title = ""
+   28|      2|        ingredients = ""
+   29|      2|        href = ""
+   30|      2|        thumbnail = ""
+   31|      2|    }
+   32|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/RecipeRequest.swift:
+    1|       |//
+    2|       |//  RecipeRequest.swift
+    3|       |//  Dev_Pod
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/02/28.
+    6|       |//
+    7|       |
+    8|       |import Foundation
+    9|       |
+   10|       |public struct FoodRequest {
+   11|       |    public var foodQuery: String
+   12|       |
+   13|       |    public let defaultSession = URLSession(configuration: .default)
+   14|       |
+   15|       |    public var dataTask: URLSessionDataTask?
+   16|       |
+   17|      2|    public func getSearchResult(completionHandler: @escaping([FoodDetails]) -> Void) {
+   18|      2|       dataTask?.cancel()
+   19|      2|
+   20|      2|        let resourceString = "http://www.recipepuppy.com/api/?"
+   21|      2|        let resourceQuery = "i=\(foodQuery)"
+   22|      2|
+   23|      2|        guard let resourceURL = URL(string: resourceString + resourceQuery) else {fatalError()}
+   24|      2|        let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, response, error in
+   25|      0|
+   26|      0|            if let error = error {
+   27|      0|                print(error.localizedDescription)
+   28|      0|            } else if let data = data,
+   29|      0|                let response = response as? HTTPURLResponse,
+   30|      0|                response.statusCode == 200 {
+   31|      0|                print(data)
+   32|      0|
+   33|      0|                do {
+   34|      0|                    let foodList = try JSONDecoder().decode(FoodResults.self, from: data)
+   35|      0|
+   36|      0|                    completionHandler(foodList.resultCount)
+   37|      0|                } catch let error {
+   38|      0|                    print(error)
+   39|      0|                }
+   40|      0|            }
+   41|      0|        }
+   42|      2|        dataTask.resume()
+   43|      2|    }
+   44|       |
+   45|      2|    public init(foodQuery: String) {
+   46|      2|        self.foodQuery = foodQuery
+   47|      2|    }
+   48|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/Pods/Dev_Pod/Dev_Pod/Classes/Utilities.swift:
+    1|       |//
+    2|       |//  Utilities.swift
+    3|       |//  Dev_Pod
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/02/28.
+    6|       |//
+    7|       |
+    8|       |import Foundation
+    9|       |import UIKit
+   10|       |
+   11|       |public class Utilities {
+   12|      0|    public static func styleTextField(_ textfield: UITextField) {
+   13|      0|        // Remove border on text field
+   14|      0|        textfield.layer.borderWidth = 1
+   15|      0|        textfield.layer.borderColor = UIColor.init(red: 200/255, green: 135/255, blue: 215/255, alpha: 1).cgColor
+   16|      0|        textfield.layer.cornerRadius = 6
+   17|      0|    }
+   18|      1|    public static func styleFilledButton(_ button: UIButton) {
+   19|      1|        // Filled rounded corner style
+   20|      1|        button.layer.cornerRadius = 6
+   21|      1|    }
+   22|      1|    public static func styleHollowButton(_ button: UIButton) {
+   23|      1|        // Hollow rounded corner style
+   24|      1|        button.layer.borderWidth = 1
+   25|      1|        button.layer.borderColor = UIColor.init(red: 200/255, green: 135/255, blue: 215/255, alpha: 1).cgColor
+   26|      1|        button.layer.cornerRadius = 6
+   27|      1|    }
+   28|      0|    public static func styleErrorTextField(_ textfield: UITextField) {
+   29|      0|        // Hollow rounded corner style
+   30|      0|        textfield.layer.borderWidth = 1
+   31|      0|        textfield.layer.borderColor = UIColor.red.cgColor
+   32|      0|        textfield.layer.cornerRadius = 6
+   33|      0|    }
+   34|      1|    public init() {}
+   35|       |}
+
