@@ -17,35 +17,13 @@ class APIUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-     /*func textExample2() {
-       app.tables["Empty list"].searchFields["Search for ingredients"].tap()
-        
-        
-        app2.buttons[
-     "Search"].tap()
-        app2.tables
-         .staticTexts[
-            "Fish Mayonnaise Recipe"].tap()
-        
-        app.buttons["View Instructions"].tap()
-        
-        
-        app.navigationBars["FirstApp.WebView"].buttons["Back"].tap()
-    }*/
+
     func testGivenCorrectSearchReturnSuccessfulDetailAndWebsite() {
         let application = XCUIApplication()
         application.launch()
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
-        application.tapKeys(text: "tester")
-        application.keys["more"].tap()
-        application.keys["@"].tap()
-        application.keys["more"].tap()
-        application.tapKeys(text: "test")
-        application.keys["more"].tap()
-        application.keys["."].tap()
-        application.keys["more"].tap()
-        application.tapKeys(text: "com")
+        application.textFields["emailLogin"].typeText("tester@test.com")
         application.secureTextFields["passwordLogin"].tap()
         application.tapKeys(text: "testpassword")
         application.keys["more"].tap()
@@ -56,9 +34,10 @@ class APIUITests: XCTestCase {
         sleep(8)
         application.searchFields[
             "Search for ingredients"].tap()
-        application.keys[
+        application.searchFields["Search for ingredients"].typeText("Fish")
+        /*application.keys[
         "F"].tap()
-        application.tapKeys(text: "ish")
+        application.tapKeys(text: "ish")*/
         application.buttons[
             "Search"].tap()
         sleep(2)
