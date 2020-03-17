@@ -17,7 +17,7 @@ class APIUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-  
+
     func testGivenCorrectSearchReturnSuccessfulDetailAndWebsite() {
         let application = XCUIApplication()
         application.launch()
@@ -42,9 +42,10 @@ class APIUITests: XCTestCase {
         sleep(8)
         application.searchFields[
             "Search for ingredients"].tap()
-        application.keys[
+        application.searchFields["Search for ingredients"].typeText("Fish")
+        /*application.keys[
         "F"].tap()
-        application.tapKeys(text: "ish")
+        application.tapKeys(text: "ish")*/
         application.buttons[
             "Search"].tap()
         sleep(2)
