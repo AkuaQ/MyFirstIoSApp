@@ -23,7 +23,7 @@ class APIUITests: XCTestCase {
         application.launch()
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
-        application.tapKeys(text: "tester")
+        application.textFields["emailLogin"].typeText("tester")
         application.keys["more"].tap()
         application.keys["@"].tap()
         application.keys["more"].tap()
