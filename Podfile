@@ -11,6 +11,7 @@ target 'FirstApp' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Core'
+	pod 'DropDown'
 	pod 'Dev_Pod', :git => 'https://github.com/AkuaQ/Dev_Pod.git'
 
   target 'FirstAppTests' do
