@@ -93,10 +93,11 @@ class LoginEmailViewController: UIViewController {
     }
 
     func transitionToHome() {
-        let homeViewController = storyboard?
-            .instantiateViewController(identifier: Constants.Storyboard
-                .homeViewController)
-            as? HomeViewController
-        self.navigationController?.pushViewController(homeViewController!, animated: true)
+        //let homeViewController = storyboard?
+           // .instantiateViewController(identifier: Constants.Storyboard
+            //    .homeViewController)
+            //as? HomeViewController
+        let tabViewController = storyboard?.instantiateViewController(identifier: "HomeTabs")
+        self.navigationController?.pushViewController(tabViewController!, animated: true)
     }
 }

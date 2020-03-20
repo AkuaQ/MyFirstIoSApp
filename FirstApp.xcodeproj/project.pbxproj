@@ -14,6 +14,7 @@
 		375E7B9E2416179300536863 /* RecipeViewModelServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */; };
 		375E7BA02416196200536863 /* UserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B9F2416196200536863 /* UserMock.swift */; };
 		3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */; };
+		376127032424A0B1008EBAAE /* FavouritesObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376127022424A0B1008EBAAE /* FavouritesObjectiveCViewController.m */; };
 		376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62923F143B50030C871 /* LoginEmailViewController.swift */; };
 		376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62B23F146950030C871 /* SignUpEmailViewController.swift */; };
 		376CF63023F27D4A0030C871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */; };
@@ -63,6 +64,9 @@
 		375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelServiceTests.swift; sourceTree = "<group>"; };
 		375E7B9F2416196200536863 /* UserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMock.swift; sourceTree = "<group>"; };
 		3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		376127002424A0B1008EBAAE /* FirstApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirstApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		376127012424A0B1008EBAAE /* FavouritesObjectiveCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouritesObjectiveCViewController.h; sourceTree = "<group>"; };
+		376127022424A0B1008EBAAE /* FavouritesObjectiveCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouritesObjectiveCViewController.m; sourceTree = "<group>"; };
 		376CF62923F143B50030C871 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
 		376CF62B23F146950030C871 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
 		376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -196,6 +200,9 @@
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,
 				3794CCED23EBB51400693C03 /* Info.plist */,
 				376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */,
+				376127012424A0B1008EBAAE /* FavouritesObjectiveCViewController.h */,
+				376127022424A0B1008EBAAE /* FavouritesObjectiveCViewController.m */,
+				376127002424A0B1008EBAAE /* FirstApp-Bridging-Header.h */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -309,6 +316,7 @@
 					};
 					3794CCDB23EBB51400693C03 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					3794CCF123EBB51500693C03 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -461,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376127032424A0B1008EBAAE /* FavouritesObjectiveCViewController.m in Sources */,
 				3796271924084F29004C2BDE /* User.swift in Sources */,
 				3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
@@ -679,6 +688,7 @@
 			baseConfigurationReference = 04F28EEA7D562D07E7A028F1 /* Pods-FirstApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstApp/Info.plist;
@@ -688,6 +698,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FirstApp/FirstApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -698,6 +710,7 @@
 			baseConfigurationReference = 8F22AD3E794198475D1EAA69 /* Pods-FirstApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstApp/Info.plist;
@@ -707,6 +720,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FirstApp/FirstApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

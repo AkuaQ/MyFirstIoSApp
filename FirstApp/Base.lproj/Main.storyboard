@@ -496,7 +496,25 @@
             </objects>
             <point key="canvasLocation" x="1856.25" y="-151.875"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="8nK-p2-jNW">
+            <objects>
+                <tabBarController storyboardIdentifier="HomeTabs" id="fiT-6P-6FE" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0dX-18-ftf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eWZ-fv-AiR" kind="relationship" relationship="viewControllers" id="AEk-2G-OLN"/>
+                        <segue destination="YMM-bB-84l" kind="relationship" relationship="viewControllers" id="EH0-yy-EZ1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0p-8k-OD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="163"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="7dS-6C-iWW">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="eWZ-fv-AiR" customClass="HomeViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -517,7 +535,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Icz-bc-gcu">
-                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="538"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search for ingredients" id="OHv-hZ-U5M">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -611,6 +629,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TaO-oc-rTh"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="A0V-tZ-z2r"/>
                     <navigationItem key="navigationItem" id="82h-vp-Oa7"/>
                     <connections>
                         <outlet property="recipeSearchBar" destination="OHv-hZ-U5M" id="IhS-ae-oC5"/>
@@ -619,7 +638,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuE-Ff-Q2p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2642.96875" y="165.8203125"/>
+            <point key="canvasLocation" x="3538" y="-170"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="2mJ-mK-5Pj">
+            <objects>
+                <viewController storyboardIdentifier="FavouritesObjectiveCViewController" id="YMM-bB-84l" customClass="FavouritesObjectiveCViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lb4-b0-Il1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="h9f-ZK-wLw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Vs2-dh-lJg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-jG-gmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3537" y="518"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="VrH-1T-NaQ">
