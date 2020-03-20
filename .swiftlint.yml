@@ -1,0 +1,5 @@
+included:
+  - FirstApp
+
+excluded:
+  - Pods
