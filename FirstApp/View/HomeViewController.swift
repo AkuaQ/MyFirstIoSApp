@@ -78,6 +78,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let foods = foodList[indexPath.row]
         detailViewController?.recipeTitle = foods.title
         detailViewController?.recipeIngredients = foods.ingredients
+        detailViewController?.navbar = "Home"
         detailViewController?.website = foods.href
         if !(foods.thumbnail == "") {
             detailViewController?.image = foods.thumbnail
@@ -109,7 +110,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = recipeSearchBar.text else {return}
-        let foodRequest = FoodRequest(foodQuery: searchBarText)
+        let foodRequest = FoodRequest(foodQuery: searchBarText, typeQuery: "i")
         foodRequest.getSearchResult { [weak self] result in
             self?.foodList = result
         }
