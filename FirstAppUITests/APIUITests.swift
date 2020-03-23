@@ -38,7 +38,7 @@ class APIUITests: XCTestCase {
         application.buttons[
             "Search"].tap()
         application.staticTexts["Fish"].tap()
-       application.staticTexts["Cioppino"].tap()
+       application.staticTexts["Delicious Fish Curry Recipe"].tap()
         sleep(2)
         application.buttons["View Instructions"].tap()
         sleep(8)
