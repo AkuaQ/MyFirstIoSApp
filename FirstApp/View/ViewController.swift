@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     func setUpElements() {
         //Style the elements
+        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
+            self.navigationController?.navigationBar.barTintColor = UIColor(named: "PurplePink")
         Utilities.styleFilledButton(loginButton)
         Utilities.styleHollowButton(signUpButton)
     }
