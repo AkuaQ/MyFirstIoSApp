@@ -35,13 +35,10 @@ class APIUITests: XCTestCase {
         application.searchFields[
             "Search for ingredients"].tap()
         application.searchFields["Search for ingredients"].typeText("Fish")
-        /*application.keys[
-        "F"].tap()
-        application.tapKeys(text: "ish")*/
         application.buttons[
             "Search"].tap()
-        sleep(2)
-        application.staticTexts["Delicious Fish Curry Recipe"].tap()
+        application.staticTexts["Fish"].tap()
+       application.staticTexts["Delicious Fish Curry Recipe"].tap()
         sleep(2)
         application.buttons["View Instructions"].tap()
         sleep(8)

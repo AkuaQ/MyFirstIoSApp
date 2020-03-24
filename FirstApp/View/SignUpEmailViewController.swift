@@ -92,9 +92,7 @@ class SignUpEmailViewController: UIViewController {
     }
 
     func transitionToHome() {
-        let homeViewController = storyboard?.instantiateViewController(identifier:
-            Constants.Storyboard.homeViewController)
-            as? HomeViewController
-        self.navigationController?.pushViewController(homeViewController!, animated: true)
+        let tabViewController = storyboard?.instantiateViewController(identifier: "HomeTabs")
+        self.navigationController?.pushViewController(tabViewController!, animated: true)
     }
 }
