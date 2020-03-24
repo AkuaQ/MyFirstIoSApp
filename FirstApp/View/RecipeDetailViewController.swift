@@ -14,6 +14,7 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var ingredientsLabel: UILabel!
     var navbar = ""
+    var sideNavBar = ""
     var image = ""
     var recipeTitle = ""
     var recipeIngredients = ""
@@ -32,13 +33,15 @@ class RecipeDetailViewController: UIViewController {
             guard let url = URL(string: foodImage) else {fatalError()}
             recipeImageView.downloadImage(from: url)
         }
-        self.navigationController?.navigationBar.topItem?.title = navbar
+        self.navigationItem.title = navbar
+        self.navigationController?.navigationBar.topItem?.title = sideNavBar
     }
 
     @IBAction func linkButtonTapped(_ sender: Any) {
         let webViewController = storyboard?.instantiateViewController(identifier:
         "WebViewController") as? WebViewController
         webViewController?.website = website
+        webViewController?.navbar = "Instructions"
         self.navigationController?.pushViewController(webViewController!, animated: true)
     }
 }

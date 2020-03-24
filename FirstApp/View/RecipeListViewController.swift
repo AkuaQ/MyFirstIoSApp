@@ -24,6 +24,7 @@ class RecipeListViewController: UIViewController {
         super.viewDidLoad()
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
+        self.navigationController?.navigationBar.topItem?.title = "Recipe List"
     }
 }
 
@@ -39,7 +40,8 @@ extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
         let foods = foodList[indexPath.row]
         detailViewController?.recipeTitle = foods.title
         detailViewController?.recipeIngredients = foods.ingredients
-        detailViewController?.navbar = "Recipe List"
+        detailViewController?.navbar = "Recipe Details"
+        detailViewController?.sideNavBar = "Recipe List"
         detailViewController?.website = foods.href
         if !(foods.thumbnail == "") {
             detailViewController?.image = foods.thumbnail

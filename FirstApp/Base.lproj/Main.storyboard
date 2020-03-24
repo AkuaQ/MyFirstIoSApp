@@ -675,10 +675,22 @@
                     <view key="view" contentMode="scaleToFill" id="Lb4-b0-Il1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Favourites:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-we-x9F">
+                                <rect key="frame" x="132" y="99" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="h9f-ZK-wLw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favourites" image="star.fill" catalog="system" id="Vs2-dh-lJg"/>
+                    <connections>
+                        <outlet property="favouritesLabel" destination="vMP-we-x9F" id="XLL-Fd-UVZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-jG-gmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -713,11 +725,11 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="98" id="1cV-0N-P7S" customClass="RecipeCellTableViewCell" customModule="FirstApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="98" id="1cV-0N-P7S" customClass="RecipeCellTableViewCell" customModule="FirstApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cV-0N-P7S" id="vFy-iM-z7B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4a-Vg-aCp">
@@ -937,7 +949,7 @@
     </scenes>
     <resources>
         <image name="Background" width="244" height="390"/>
-        <image name="backgroundImage" width="780" height="1169"/>
+        <image name="backgroundImage" width="720" height="1280"/>
         <image name="facebook" width="32" height="32"/>
         <image name="food" width="3067" height="4600"/>
         <image name="google-1" width="32" height="32"/>
