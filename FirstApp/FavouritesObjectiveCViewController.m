@@ -9,6 +9,7 @@
 #import "FavouritesObjectiveCViewController.h"
 
 @interface FavouritesObjectiveCViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *favouritesLabel;
 
 @end
 

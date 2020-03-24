@@ -13,11 +13,13 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var website = ""
+    var navbar = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.viewDidLoad()
         let web = website
+        self.navigationItem.title = navbar
+        self.navigationController?.navigationBar.topItem?.title = "Recipe Details"
         let url = URL(string: web)!
         webView = WKWebView(frame: self.view.frame)
         webView.isUserInteractionEnabled = true
