@@ -9,6 +9,11 @@
 import Foundation
 
 struct UserViewModel {
+    func getEmail(with email: String, and password: String) -> String {
+        let user = User(firstName: "", lastName: "", email: email, password: password)
+        return user.getEmail()
+    }
+
     func addUser(with firstName: String, lastName: String, email: String,
                  and password: String, complete: @escaping ( _ error: String) -> Void) {
         let user = User(firstName: firstName, lastName: lastName, email: email, password: password)

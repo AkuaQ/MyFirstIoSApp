@@ -33,6 +33,7 @@
 		3794CCEC23EBB51400693C03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */; };
 		3796271924084F29004C2BDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271824084F29004C2BDE /* User.swift */; };
 		3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271A24084F9B004C2BDE /* UserViewModel.swift */; };
+		37A33626242B0BE0001EB8D0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A33625242B0BE0001EB8D0 /* TabViewController.swift */; };
 		37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */; };
 		37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */; };
 		7EEEE89CE2103410687BF957 /* Pods_FirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B222FD863115133B4D4EB /* Pods_FirstApp.framework */; };
@@ -93,6 +94,7 @@
 		3794CCF823EBB51500693C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3796271824084F29004C2BDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3796271A24084F9B004C2BDE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = FirstApp/Model/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		37A33625242B0BE0001EB8D0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		684B222FD863115133B4D4EB /* Pods_FirstApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				3760CD0E240E3A3C005DD6F3 /* WebViewController.swift */,
 				3761270924278B5A008EBAAE /* RecipeListViewController.swift */,
 				3761270B24279A38008EBAAE /* RecipeCellTableViewCell.swift */,
+				37A33625242B0BE0001EB8D0 /* TabViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				376127032424A0B1008EBAAE /* FavouritesObjectiveCViewController.m in Sources */,
 				3796271924084F29004C2BDE /* User.swift in Sources */,
 				3761270A24278B5A008EBAAE /* RecipeListViewController.swift in Sources */,
+				37A33626242B0BE0001EB8D0 /* TabViewController.swift in Sources */,
 				3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
 				37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */,

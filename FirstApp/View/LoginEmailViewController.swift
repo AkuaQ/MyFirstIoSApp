@@ -79,7 +79,11 @@ class LoginEmailViewController: UIViewController {
             let userModel = UserViewModel()
             userModel.loginUser(with: email, and: password) {(result) in
                 if result == "" {
-                    self.transitionToHome()
+                    let tabViewController = self.storyboard?.instantiateViewController(identifier: "HomeTabs")
+                        as? TabViewController
+                    print(userModel.getEmail(with: email, and: password))
+                    tabViewController?.username = userModel.getEmail(with: email, and: password)
+                    self.navigationController?.pushViewController(tabViewController!, animated: true)
                 } else {
                     self.showError(result)
                 }
@@ -90,10 +94,5 @@ class LoginEmailViewController: UIViewController {
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-
-    func transitionToHome() {
-        let tabViewController = storyboard?.instantiateViewController(identifier: "HomeTabs")
-        self.navigationController?.pushViewController(tabViewController!, animated: true)
     }
 }
