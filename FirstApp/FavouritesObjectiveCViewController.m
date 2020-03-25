@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar.topItem setTitle:@"Food Finder"];
+    NSLog(@"Favourites: %@", _username);
 }
 
 @end

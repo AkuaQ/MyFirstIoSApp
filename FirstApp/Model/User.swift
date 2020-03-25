@@ -23,6 +23,10 @@ struct User: UserModelProtocol {
     public var email: String
     public var password: String
 
+    func getEmail() -> String {
+        return self.email
+    }
+
     func addUser(with firstName: String, lastName: String, email: String,
                  and password: String, complete: @escaping ( _ error: String) -> Void) {
         var errorMessage = ""

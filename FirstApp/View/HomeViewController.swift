@@ -8,7 +8,7 @@ class HomeViewController: UIViewController {
                           "Tomato", "Water", "Baking Soda", "Oil", "Flour"]
     var dataFiltered: [String] = []
     var dropButton = DropDown()
-
+    var username = ""
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeSearchBar: UISearchBar!
     var foodList = [FoodDetails]() {
@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         }
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
+        print("Home: \(username)")
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -86,6 +87,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             detailViewController?.image = "noImage"
         }
+        detailViewController?.username = username
         self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

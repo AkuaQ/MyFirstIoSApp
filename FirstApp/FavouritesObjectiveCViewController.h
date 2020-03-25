@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FavouritesObjectiveCViewController : UIViewController
-
+@property NSString *username;
 @end
 
 NS_ASSUME_NONNULL_END

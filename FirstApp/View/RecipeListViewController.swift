@@ -13,6 +13,7 @@ class RecipeListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeSearchBar: UISearchBar!
+    var username = ""
     var foodList = [FoodDetails]() {
         didSet {
             DispatchQueue.main.async {
@@ -48,6 +49,7 @@ extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             detailViewController?.image = "noImage"
         }
+        detailViewController?.username = username
         self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
