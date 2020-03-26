@@ -14,7 +14,9 @@ class SignUpEmailViewController: UIViewController {
         setUpElements()
         self.hideKeyboardWhenTappedAround()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
+    }
     func setUpElements() {
         //Hide the error label
         errorLabel.alpha = 0
