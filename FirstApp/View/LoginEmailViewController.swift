@@ -81,7 +81,6 @@ class LoginEmailViewController: UIViewController {
                 if result == "" {
                     let tabViewController = self.storyboard?.instantiateViewController(identifier: "HomeTabs")
                         as? TabViewController
-                    print(userModel.getEmail(with: email, and: password))
                     tabViewController?.username = userModel.getEmail(with: email, and: password)
                     self.navigationController?.pushViewController(tabViewController!, animated: true)
                 } else {

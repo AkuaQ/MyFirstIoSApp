@@ -20,6 +20,5 @@ class TabViewController: UITabBarController {
         home?.username = username
         favourite?.username = username
         recipeList?.username = username
-        print("Tabs: \(username)")
     }
 }

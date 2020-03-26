@@ -33,7 +33,6 @@ class HomeViewController: UIViewController {
         }
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
-        print("Home: \(username)")
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
