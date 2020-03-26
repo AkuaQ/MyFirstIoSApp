@@ -34,6 +34,7 @@
 		3796271924084F29004C2BDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271824084F29004C2BDE /* User.swift */; };
 		3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271A24084F9B004C2BDE /* UserViewModel.swift */; };
 		37A33626242B0BE0001EB8D0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A33625242B0BE0001EB8D0 /* TabViewController.swift */; };
+		37A3362C242C6DAA001EB8D0 /* FavouriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */; };
 		37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */; };
 		37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */; };
 		7EEEE89CE2103410687BF957 /* Pods_FirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B222FD863115133B4D4EB /* Pods_FirstApp.framework */; };
@@ -95,6 +96,8 @@
 		3796271824084F29004C2BDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3796271A24084F9B004C2BDE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = FirstApp/Model/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		37A33625242B0BE0001EB8D0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		37A3362A242C6DAA001EB8D0 /* FavouriteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteTableViewCell.h; sourceTree = "<group>"; };
+		37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteTableViewCell.m; sourceTree = "<group>"; };
 		37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		684B222FD863115133B4D4EB /* Pods_FirstApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +161,8 @@
 				3761270924278B5A008EBAAE /* RecipeListViewController.swift */,
 				3761270B24279A38008EBAAE /* RecipeCellTableViewCell.swift */,
 				37A33625242B0BE0001EB8D0 /* TabViewController.swift */,
+				37A3362A242C6DAA001EB8D0 /* FavouriteTableViewCell.h */,
+				37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */,
 				3796271B24084F9B004C2BDE /* UserViewModel.swift in Sources */,
 				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
+				37A3362C242C6DAA001EB8D0 /* FavouriteTableViewCell.m in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
 				3761270C24279A38008EBAAE /* RecipeCellTableViewCell.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,

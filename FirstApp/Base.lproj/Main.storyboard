@@ -687,15 +687,15 @@
                                 <rect key="frame" x="0.0" y="185.5" width="375" height="432.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteCell" id="Pmd-xo-cSU">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteCell" rowHeight="100" id="Pmd-xo-cSU" customClass="FavouriteTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pmd-xo-cSU" id="TWo-eW-P3y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-Gv-SFi">
-                                                    <rect key="frame" x="142" y="-24" width="90" height="90"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-Gv-SFi">
+                                                    <rect key="frame" x="16" y="5" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="da3-RP-JHX"/>
                                                         <constraint firstAttribute="height" constant="90" id="nCr-Ev-IM5"/>
@@ -706,8 +706,8 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-lC-L9p">
-                                                    <rect key="frame" x="60" y="1" width="255" height="41"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-lC-L9p">
+                                                    <rect key="frame" x="114" y="29.5" width="255" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym7-iO-Bae">
                                                             <rect key="frame" x="0.0" y="0.0" width="255" height="20.5"/>
@@ -730,11 +730,23 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="0Sc-lC-L9p" firstAttribute="centerY" secondItem="TWo-eW-P3y" secondAttribute="centerY" id="1cE-64-Ash"/>
+                                                <constraint firstItem="EeV-Gv-SFi" firstAttribute="leading" secondItem="TWo-eW-P3y" secondAttribute="leading" constant="16" id="I3J-mB-msH"/>
+                                                <constraint firstItem="EeV-Gv-SFi" firstAttribute="centerY" secondItem="TWo-eW-P3y" secondAttribute="centerY" id="kGd-O8-11T"/>
                                                 <constraint firstItem="0Sc-lC-L9p" firstAttribute="leading" secondItem="EeV-Gv-SFi" secondAttribute="trailing" constant="8" id="ttw-Mv-AcV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientsLabel" destination="JEv-rm-Xhy" id="XkE-0l-ofb"/>
+                                            <outlet property="recipeImageView" destination="EeV-Gv-SFi" id="Ukr-Bf-o7z"/>
+                                            <outlet property="titleLabel" destination="ym7-iO-Bae" id="xMt-lV-yRX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YMM-bB-84l" id="cno-SY-PcS"/>
+                                    <outlet property="delegate" destination="YMM-bB-84l" id="dSc-bf-H18"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -751,6 +763,7 @@
                     <tabBarItem key="tabBarItem" title="Favourites" image="star.fill" catalog="system" id="Vs2-dh-lJg"/>
                     <connections>
                         <outlet property="favouritesLabel" destination="vMP-we-x9F" id="XLL-Fd-UVZ"/>
+                        <outlet property="tableView" destination="nq0-OX-wob" id="EjI-Lt-9Gz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-jG-gmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

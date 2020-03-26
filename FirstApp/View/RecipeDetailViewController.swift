@@ -42,11 +42,14 @@ class RecipeDetailViewController: UIViewController {
         //swiftlint:disable all
         database.collection("favourites").whereField("username", isEqualTo: username).whereField("title",
                                                                                                  isEqualTo: recipeTitle)
-            .getDocuments() {(_, err) in
+            .getDocuments() {(snapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                if (snapshot?.count ?? 0 > 0) {
+                
                 self.favouriteButton.setBackgroundImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
+                }
             }
         }
         //swiftlint:enable all

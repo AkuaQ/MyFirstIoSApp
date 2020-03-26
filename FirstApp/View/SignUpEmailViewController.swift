@@ -14,7 +14,9 @@ class SignUpEmailViewController: UIViewController {
         setUpElements()
         self.hideKeyboardWhenTappedAround()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
+    }
     func setUpElements() {
         //Hide the error label
         errorLabel.alpha = 0
@@ -78,7 +80,10 @@ class SignUpEmailViewController: UIViewController {
             userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password) {(result) in
                 if result == "" {
                     //Transition to the home screen
-                    self.transitionToHome()
+                    let tabViewController = self.storyboard?.instantiateViewController(identifier: "HomeTabs")
+                        as? TabViewController
+                    tabViewController?.username = userCreate.getEmail(with: email, and: password)
+                    self.navigationController?.pushViewController(tabViewController!, animated: true)
                 } else {
                     self.showError(result)
                 }
@@ -89,10 +94,5 @@ class SignUpEmailViewController: UIViewController {
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-
-    func transitionToHome() {
-        let tabViewController = storyboard?.instantiateViewController(identifier: "HomeTabs")
-        self.navigationController?.pushViewController(tabViewController!, animated: true)
     }
 }
