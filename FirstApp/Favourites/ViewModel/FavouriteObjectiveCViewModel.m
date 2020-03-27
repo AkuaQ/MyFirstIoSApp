@@ -9,15 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FavouriteObjectiveCViewModel.h"
 
-@interface FavouriteViewModel ()
-@property (nonatomic, readwrite) FIRFirestore *db;
-@end
-
 @implementation FavouriteViewModel
-/*- (void)initialize {
-        self.db = [FIRFirestore firestore];
-}*/
-
 - (void)printFavourites: (NSString *) username
              completion: (void (^)(NSMutableArray<FavouriteModel*>*))completionBlock; {
     self.db = [FIRFirestore firestore];

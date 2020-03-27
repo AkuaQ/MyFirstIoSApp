@@ -154,13 +154,6 @@
 			path = ../../Pods/Dev_Pod/ViewModel;
 			sourceTree = "<group>";
 		};
-		376CF62623F1429B0030C871 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		377A9777241CF1B200216C32 /* FirstAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +196,6 @@
 				37A3363B242DD865001EB8D0 /* Favourites */,
 				3794CCDF23EBB51400693C03 /* AppDelegate.swift */,
 				3794CCE123EBB51400693C03 /* SceneDelegate.swift */,
-				376CF62623F1429B0030C871 /* View */,
 				3794CCE523EBB51400693C03 /* Main.storyboard */,
 				3794CCE823EBB51400693C03 /* Assets.xcassets */,
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,

@@ -19,8 +19,5 @@ NS_ASSUME_NONNULL_BEGIN
 andIngredients:(NSString *)ingredients
 andWebsite:(NSString *)href
   andImage:(NSString *)thumbnail;
-/*@property (strong, nonatomic) FIRDatabaseReference *ref;
-- (void)readData:(void (^)(NSString *firstName, NSString *lastName, NSString *bio))completion;
-- (void) updateData:(NSString*) firstName : (NSString*) lastName : (NSString*) bio;*/
 @end
 NS_ASSUME_NONNULL_END

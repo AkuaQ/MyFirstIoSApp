@@ -12,6 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface FavouriteViewModel: NSObject
+@property (nonatomic, readwrite) FIRFirestore *db;
 @property NSMutableArray<FavouriteModel*> *collectionArray;
 - (void)printFavourites: (NSString *) username
 completion: (void (^)(NSMutableArray<FavouriteModel*>*))completionBlock;
