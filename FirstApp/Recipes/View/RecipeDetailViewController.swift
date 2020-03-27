@@ -56,7 +56,6 @@ class RecipeDetailViewController: UIViewController {
     }
 
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
-        print("Details: \(username)")
         let currentBackgroundImage = favouriteButton.currentBackgroundImage
         if currentBackgroundImage == UIImage(systemName: "star.fill") {
             favouriteButton.setBackgroundImage(UIImage(systemName: "star"), for: UIControl.State.normal)
