@@ -8,6 +8,8 @@
 
 #import "FavouritesObjectiveCViewController.h"
 #import "FavouriteTableViewCell.h"
+#import "FavouriteObjectiveCViewModel.h"
+#import "FavouriteObjectiveCModel.h"
 
 @interface FavouritesObjectiveCViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -17,55 +19,39 @@
 
 @implementation FavouritesObjectiveCViewController
 
-NSMutableArray *collectionArray;
-NSMutableArray *ingredientsArray;
-NSMutableArray *imageArray;
+FavouriteViewModel *favouriteViewModel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.navigationController.navigationBar.topItem setTitle:@"Food Finder"];
-    self.db = [FIRFirestore firestore];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
    [super viewWillAppear:animated];
-    collectionArray = [[NSMutableArray alloc] init];
-    ingredientsArray = [[NSMutableArray alloc] init];
-    imageArray = [[NSMutableArray alloc] init];
-   [[[self.db collectionWithPath:@"favourites"] queryWhereField:@"username" isEqualTo:self.username]
-   getDocumentsWithCompletion:^(FIRQuerySnapshot *snapshot, NSError *error) {
-     if (error != nil) {
-       NSLog(@"Error getting documents: %@", error);
-     } else {
-       for (FIRDocumentSnapshot *document in snapshot.documents) {
-           [collectionArray addObject:document.data[@"title"]];
-           [ingredientsArray addObject:document.data[@"ingredients"]];
-           [imageArray addObject:document.data[@"thumbnail"]];
-           [self.tableView reloadData];
-       }
-     }
-   }];
+    favouriteViewModel = [[FavouriteViewModel alloc] init];
+    [favouriteViewModel printFavourites:self.username completion:^(NSMutableArray<FavouriteModel*>* result){
+        favouriteViewModel.collectionArray = result;
+        [self.tableView reloadData];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [collectionArray count];
+    return favouriteViewModel.collectionArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"FavouriteCell";
- 
     FavouriteTableViewCell *cell = (FavouriteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
- 
+
     if (cell == nil) {
         cell = [[FavouriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: simpleTableIdentifier];
     }
-    
-    cell.titleLabel.text = [collectionArray objectAtIndex:indexPath.row];
-    cell.ingredientsLabel.text = [ingredientsArray objectAtIndex:indexPath.row];
-    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [imageArray objectAtIndex:indexPath.row]]];
+
+    cell.titleLabel.text = [favouriteViewModel.collectionArray objectAtIndex:indexPath.row].title;
+    cell.ingredientsLabel.text = [favouriteViewModel.collectionArray objectAtIndex:indexPath.row].ingredients;
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [favouriteViewModel.collectionArray objectAtIndex:indexPath.row].thumbnail]];
     cell.imageView.image = [UIImage imageWithData: imageData];
     return cell;
 }

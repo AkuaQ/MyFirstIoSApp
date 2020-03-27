@@ -3,3 +3,5 @@
 //
 #import "FavouritesObjectiveCViewController.h"
 #import "FavouriteTableViewCell.h"
+#import "FavouriteObjectiveCModel.h"
+#import "FavouriteObjectiveCViewModel.h"
