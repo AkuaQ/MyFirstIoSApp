@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSMutableArray<FavouriteModel*> *collectionArray;
 - (void)printFavourites: (NSString *) username
 completion: (void (^)(NSMutableArray<FavouriteModel*>*))completionBlock;
-- (void)addFavourite: (NSString *) username : (NSString *) title;
 @end
 
 NS_ASSUME_NONNULL_END

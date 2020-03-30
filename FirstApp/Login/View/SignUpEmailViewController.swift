@@ -65,6 +65,7 @@ class SignUpEmailViewController: UIViewController {
 
     @IBAction func signUpTapped(_ sender: Any) {
         setUpElements()
+        AnalyticsLoginRepo.signUpPageCreateAccountTapped()
         let error = validateField()
         if error != nil {
             //There's something wrong with the fields, show the error message

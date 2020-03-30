@@ -18,4 +18,12 @@ class ViewController: UIViewController {
         Utilities.styleFilledButton(loginButton)
         Utilities.styleHollowButton(signUpButton)
     }
+
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        AnalyticsLoginRepo.landingPageLoginTapped()
+    }
+
+    @IBAction func signUpButton(_ sender: UIButton) {
+        AnalyticsLoginRepo.landingPageSignUpTapped()
+    }
 }

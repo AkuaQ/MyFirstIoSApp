@@ -10,6 +10,7 @@
 #import "FavouriteTableViewCell.h"
 #import "FavouriteObjectiveCViewModel.h"
 #import "FavouriteObjectiveCModel.h"
+#import <FirstApp-Swift.h>
 
 @interface FavouritesObjectiveCViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,6 +25,7 @@ FavouriteViewModel *favouriteViewModel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar.topItem setTitle:@"Food Finder"];
+    [AnalyticsRecipeRepo favouritePageTabTapped];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

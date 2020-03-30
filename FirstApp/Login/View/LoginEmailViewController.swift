@@ -58,6 +58,7 @@ class LoginEmailViewController: UIViewController {
 
     @IBAction func loginTapped(_ sender: UIButton) {
         setUpElements()
+        AnalyticsLoginRepo.loginPageLoginTapped()
         UIButton.animate(withDuration: 0.2,
                          animations: {
                             sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)

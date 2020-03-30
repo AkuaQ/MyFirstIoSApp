@@ -26,6 +26,7 @@ class RecipeListViewController: UIViewController {
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.navigationBar.topItem?.title = "Recipe List"
+        AnalyticsRecipeRepo.recipeListPageTabTapped()
     }
 }
 
@@ -79,5 +80,6 @@ extension RecipeListViewController: UISearchBarDelegate {
         foodRequest.getSearchResult { [weak self] result in
             self?.foodList = result
         }
+        AnalyticsRecipeRepo.recipeListPageSearched()
     }
 }

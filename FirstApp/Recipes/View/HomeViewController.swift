@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         }
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
+        AnalyticsRecipeRepo.homePageTabTapped()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -116,6 +117,7 @@ extension HomeViewController: UISearchBarDelegate {
         foodRequest.getSearchResult { [weak self] result in
             self?.foodList = result
         }
+        AnalyticsRecipeRepo.homePageSearched()
     }
 }
 

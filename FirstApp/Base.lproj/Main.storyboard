@@ -50,6 +50,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                         <connections>
+                                            <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oFT-b4-fu2"/>
                                             <segue destination="p1x-W9-ioD" kind="show" id="1zw-YJ-JZT"/>
                                         </connections>
                                     </button>
@@ -64,6 +65,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                         <connections>
+                                            <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEv-ZY-zJs"/>
                                             <segue destination="cHN-jd-sqI" kind="show" id="4Bp-k4-VYw"/>
                                         </connections>
                                     </button>

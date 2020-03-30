@@ -31,8 +31,4 @@
     }];
 }
 
-- (void)addFavourite: (NSString *) username : (NSString *) title {
-    
-}
-
 @end

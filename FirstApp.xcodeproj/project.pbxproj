@@ -31,12 +31,15 @@
 		3794CCE723EBB51400693C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCE523EBB51400693C03 /* Main.storyboard */; };
 		3794CCE923EBB51400693C03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCE823EBB51400693C03 /* Assets.xcassets */; };
 		3794CCEC23EBB51400693C03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */; };
-		3796271924084F29004C2BDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796271824084F29004C2BDE /* User.swift */; };
 		37A33626242B0BE0001EB8D0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A33625242B0BE0001EB8D0 /* TabViewController.swift */; };
 		37A3362C242C6DAA001EB8D0 /* FavouriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */; };
 		37A33643242DDC71001EB8D0 /* FavouriteObjectiveCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A33642242DDC71001EB8D0 /* FavouriteObjectiveCModel.m */; };
 		37A33647242DDECE001EB8D0 /* FavouriteObjectiveCViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A33646242DDECE001EB8D0 /* FavouriteObjectiveCViewModel.m */; };
-		37A3364F242E38D1001EB8D0 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3364E242E38D1001EB8D0 /* UserViewModel.swift */; };
+		37A3365D24319715001EB8D0 /* AnalyticsLoginRepoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3365C24319715001EB8D0 /* AnalyticsLoginRepoConstants.swift */; };
+		37A3365F24319797001EB8D0 /* AnalyticsLoginRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3365E24319797001EB8D0 /* AnalyticsLoginRepo.swift */; };
+		37A336622431A2F3001EB8D0 /* AnalyticsRecipeRepoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A336612431A2F3001EB8D0 /* AnalyticsRecipeRepoConstants.swift */; };
+		37A336642431AC32001EB8D0 /* AnalyticsRecipeRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A336632431AC32001EB8D0 /* AnalyticsRecipeRepo.swift */; };
+		37A336682431C22E001EB8D0 /* FavouritesObjectiveCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */; };
 		37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */; };
 		37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */; };
 		7EEEE89CE2103410687BF957 /* Pods_FirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B222FD863115133B4D4EB /* Pods_FirstApp.framework */; };
@@ -95,7 +98,6 @@
 		3794CCED23EBB51400693C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3794CCF223EBB51500693C03 /* FirstAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCF823EBB51500693C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3796271824084F29004C2BDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37A33625242B0BE0001EB8D0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		37A3362A242C6DAA001EB8D0 /* FavouriteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteTableViewCell.h; sourceTree = "<group>"; };
 		37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteTableViewCell.m; sourceTree = "<group>"; };
@@ -103,7 +105,12 @@
 		37A33645242DDDA8001EB8D0 /* FavouriteObjectiveCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteObjectiveCModel.h; sourceTree = "<group>"; };
 		37A33646242DDECE001EB8D0 /* FavouriteObjectiveCViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteObjectiveCViewModel.m; sourceTree = "<group>"; };
 		37A33648242DDEE6001EB8D0 /* FavouriteObjectiveCViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteObjectiveCViewModel.h; sourceTree = "<group>"; };
-		37A3364E242E38D1001EB8D0 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = FirstApp/Favourites/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		37A3365C24319715001EB8D0 /* AnalyticsLoginRepoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLoginRepoConstants.swift; sourceTree = "<group>"; };
+		37A3365E24319797001EB8D0 /* AnalyticsLoginRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLoginRepo.swift; sourceTree = "<group>"; };
+		37A336612431A2F3001EB8D0 /* AnalyticsRecipeRepoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRecipeRepoConstants.swift; sourceTree = "<group>"; };
+		37A336632431AC32001EB8D0 /* AnalyticsRecipeRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRecipeRepo.swift; sourceTree = "<group>"; };
+		37A336662431C22D001EB8D0 /* FirstAppUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirstAppUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouritesObjectiveCUITests.m; sourceTree = "<group>"; };
 		37B2F39623FD01E0009C1FC1 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		684B222FD863115133B4D4EB /* Pods_FirstApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,23 +144,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		374F4DDA24063E9B0074E2DB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3796271824084F29004C2BDE /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		374F4DDB24063F970074E2DB /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				37A3364E242E38D1001EB8D0 /* UserViewModel.swift */,
-			);
-			name = ViewModel;
-			path = ../../Pods/Dev_Pod/ViewModel;
-			sourceTree = "<group>";
-		};
 		377A9777241CF1B200216C32 /* FirstAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +152,8 @@
 				377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */,
 				377A9782241D818E00216C32 /* LoginUITests.swift */,
 				377A9784241E355B00216C32 /* APIUITests.swift */,
+				37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */,
+				37A336662431C22D001EB8D0 /* FirstAppUITests-Bridging-Header.h */,
 			);
 			path = FirstAppUITests;
 			sourceTree = "<group>";
@@ -261,9 +253,8 @@
 		37A3364C242E37A9001EB8D0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				37A3365B243196FC001EB8D0 /* AnalyticsRepo */,
 				37A3364D242E37D9001EB8D0 /* View */,
-				374F4DDA24063E9B0074E2DB /* Model */,
-				374F4DDB24063F970074E2DB /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -281,6 +272,7 @@
 		37A33650242E391F001EB8D0 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				37A336602431A180001EB8D0 /* AnalyticsRepo */,
 				37A33651242E394D001EB8D0 /* View */,
 			);
 			path = Recipes;
@@ -306,6 +298,24 @@
 				3761270B24279A38008EBAAE /* RecipeCellTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		37A3365B243196FC001EB8D0 /* AnalyticsRepo */ = {
+			isa = PBXGroup;
+			children = (
+				37A3365C24319715001EB8D0 /* AnalyticsLoginRepoConstants.swift */,
+				37A3365E24319797001EB8D0 /* AnalyticsLoginRepo.swift */,
+			);
+			path = AnalyticsRepo;
+			sourceTree = "<group>";
+		};
+		37A336602431A180001EB8D0 /* AnalyticsRepo */ = {
+			isa = PBXGroup;
+			children = (
+				37A336612431A2F3001EB8D0 /* AnalyticsRecipeRepoConstants.swift */,
+				37A336632431AC32001EB8D0 /* AnalyticsRecipeRepo.swift */,
+			);
+			path = AnalyticsRepo;
 			sourceTree = "<group>";
 		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
@@ -400,6 +410,7 @@
 				TargetAttributes = {
 					377A9775241CF1B100216C32 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 3794CCDB23EBB51400693C03;
 					};
 					3794CCDB23EBB51400693C03 = {
@@ -547,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				377A9781241CFE8600216C32 /* XCTUIApplicationExtension.swift in Sources */,
+				37A336682431C22E001EB8D0 /* FavouritesObjectiveCUITests.m in Sources */,
 				377A9783241D818E00216C32 /* LoginUITests.swift in Sources */,
 				377A9785241E355B00216C32 /* APIUITests.swift in Sources */,
 				377A9779241CF1B200216C32 /* SignUpUITests.swift in Sources */,
@@ -559,12 +571,12 @@
 			files = (
 				376127032424A0B1008EBAAE /* FavouritesObjectiveCViewController.m in Sources */,
 				37A33643242DDC71001EB8D0 /* FavouriteObjectiveCModel.m in Sources */,
-				3796271924084F29004C2BDE /* User.swift in Sources */,
+				37A3365D24319715001EB8D0 /* AnalyticsLoginRepoConstants.swift in Sources */,
 				3761270A24278B5A008EBAAE /* RecipeListViewController.swift in Sources */,
 				37A33626242B0BE0001EB8D0 /* TabViewController.swift in Sources */,
+				37A336642431AC32001EB8D0 /* AnalyticsRecipeRepo.swift in Sources */,
 				3760CD0F240E3A3C005DD6F3 /* WebViewController.swift in Sources */,
 				3794CCE423EBB51400693C03 /* ViewController.swift in Sources */,
-				37A3364F242E38D1001EB8D0 /* UserViewModel.swift in Sources */,
 				37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */,
 				376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */,
 				3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */,
@@ -572,7 +584,9 @@
 				376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */,
 				37A3362C242C6DAA001EB8D0 /* FavouriteTableViewCell.m in Sources */,
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
+				37A3365F24319797001EB8D0 /* AnalyticsLoginRepo.swift in Sources */,
 				3761270C24279A38008EBAAE /* RecipeCellTableViewCell.swift in Sources */,
+				37A336622431A2F3001EB8D0 /* AnalyticsRecipeRepoConstants.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,
 				37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */,
 			);
@@ -628,6 +642,7 @@
 		377A977E241CF1B200216C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstAppUITests/Info.plist;
@@ -638,6 +653,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FirstAppUITests/FirstAppUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FirstApp;
@@ -647,6 +664,7 @@
 		377A977F241CF1B200216C32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstAppUITests/Info.plist;
@@ -657,6 +675,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FirstAppUITests/FirstAppUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FirstApp;
