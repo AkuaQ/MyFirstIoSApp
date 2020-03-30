@@ -12,6 +12,7 @@
 #import "FavouriteObjectiveCModel.h"
 #import <FirstApp-Swift.h>
 #import <Dev_Pod-Swift.h>
+#import <Dev_Pod-umbrella.h>
 
 @interface FavouritesObjectiveCViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
