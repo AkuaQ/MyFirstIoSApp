@@ -64,8 +64,15 @@
     XCUIElement* searchRecipes = application.searchFields[@"Search for recipes"];
     [searchRecipes tap];
     [searchRecipes typeText:@"Chocolate cake"];
-    [searchRecipes.keys[@"search"] tap];
+    XCUIElement* search = application.buttons[@"search"];
+    [search tap];
     sleep(8);
+    XCUIElement* recipe = application.staticTexts[@"Tim and Tracy's Chocolate Cake (Boiled)"];
+    [recipe tap];
+    /*XCUIElement* favouriteButton = application.buttons[@"favouriteButton"];
+    [favouriteButton tap];*/
+    XCUIElement* backButton = application.buttons[@"Recipe List"];
+    [backButton tap];
     XCUIElement* tabFavourites = application.tabBars.buttons[@"Favourites"];
     [tabFavourites tap];
     sleep(2);

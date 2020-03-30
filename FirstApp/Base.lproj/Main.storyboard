@@ -945,6 +945,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-OF-QNH">
                                 <rect key="frame" x="305" y="455" width="53" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="favouritesButtons"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="Wk6-yc-8in"/>
                                     <constraint firstAttribute="height" constant="30" id="gMr-ft-Kot"/>
@@ -1038,7 +1039,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="244" height="390"/>
+        <image name="Background" width="1200" height="1000"/>
         <image name="backgroundImage" width="720" height="1280"/>
         <image name="facebook" width="32" height="32"/>
         <image name="food" width="3067" height="4600"/>
