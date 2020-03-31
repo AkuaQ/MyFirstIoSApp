@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Dev_Pod
 
 class WebViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
@@ -32,6 +33,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         self.activityIndicator.startAnimating()
         self.webView.navigationDelegate = self
         self.activityIndicator.hidesWhenStopped = true
+        AnalyticsRecipeRepo.webPageBrowsed()
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

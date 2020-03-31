@@ -65,6 +65,7 @@ class SignUpEmailViewController: UIViewController {
 
     @IBAction func signUpTapped(_ sender: Any) {
         setUpElements()
+        AnalyticsLoginRepo.signUpPageCreateAccountTapped()
         let error = validateField()
         if error != nil {
             //There's something wrong with the fields, show the error message
@@ -76,7 +77,7 @@ class SignUpEmailViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Create the user
-            let userCreate = UserViewModel()
+            let userCreate = UserViewModel(view: self)
             userCreate.addUser(with: firstName, lastName: lastName, email: email, and: password) {(result) in
                 if result == "" {
                     //Transition to the home screen
@@ -96,3 +97,5 @@ class SignUpEmailViewController: UIViewController {
         errorLabel.alpha = 1
     }
 }
+
+extension SignUpEmailViewController: UserViewProtocol {}

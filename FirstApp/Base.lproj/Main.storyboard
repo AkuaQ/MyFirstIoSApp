@@ -50,6 +50,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                         <connections>
+                                            <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oFT-b4-fu2"/>
                                             <segue destination="p1x-W9-ioD" kind="show" id="1zw-YJ-JZT"/>
                                         </connections>
                                     </button>
@@ -64,6 +65,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                         <connections>
+                                            <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEv-ZY-zJs"/>
                                             <segue destination="cHN-jd-sqI" kind="show" id="4Bp-k4-VYw"/>
                                         </connections>
                                     </button>
@@ -695,10 +697,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-Gv-SFi">
-                                                    <rect key="frame" x="16" y="5" width="90" height="90"/>
+                                                    <rect key="frame" x="16" y="25" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="da3-RP-JHX"/>
-                                                        <constraint firstAttribute="height" constant="90" id="nCr-Ev-IM5"/>
+                                                        <constraint firstAttribute="width" constant="50" id="da3-RP-JHX"/>
+                                                        <constraint firstAttribute="height" constant="50" id="nCr-Ev-IM5"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iml-6k-ZDc">
@@ -707,7 +709,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-lC-L9p">
-                                                    <rect key="frame" x="114" y="29.5" width="255" height="41"/>
+                                                    <rect key="frame" x="106" y="29.5" width="255" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym7-iO-Bae">
                                                             <rect key="frame" x="0.0" y="0.0" width="255" height="20.5"/>
@@ -731,9 +733,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0Sc-lC-L9p" firstAttribute="centerY" secondItem="TWo-eW-P3y" secondAttribute="centerY" id="1cE-64-Ash"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Sc-lC-L9p" secondAttribute="trailing" constant="14" id="DaN-8J-1BS"/>
                                                 <constraint firstItem="EeV-Gv-SFi" firstAttribute="leading" secondItem="TWo-eW-P3y" secondAttribute="leading" constant="16" id="I3J-mB-msH"/>
                                                 <constraint firstItem="EeV-Gv-SFi" firstAttribute="centerY" secondItem="TWo-eW-P3y" secondAttribute="centerY" id="kGd-O8-11T"/>
-                                                <constraint firstItem="0Sc-lC-L9p" firstAttribute="leading" secondItem="EeV-Gv-SFi" secondAttribute="trailing" constant="8" id="ttw-Mv-AcV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -943,6 +945,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-OF-QNH">
                                 <rect key="frame" x="305" y="455" width="53" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="favouritesButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="Wk6-yc-8in"/>
                                     <constraint firstAttribute="height" constant="30" id="gMr-ft-Kot"/>
@@ -1036,7 +1039,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="244" height="390"/>
+        <image name="Background" width="1200" height="1000"/>
         <image name="backgroundImage" width="720" height="1280"/>
         <image name="facebook" width="32" height="32"/>
         <image name="food" width="3067" height="4600"/>

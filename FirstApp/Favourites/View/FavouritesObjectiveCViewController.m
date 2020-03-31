@@ -10,6 +10,9 @@
 #import "FavouriteTableViewCell.h"
 #import "FavouriteObjectiveCViewModel.h"
 #import "FavouriteObjectiveCModel.h"
+#import <FirstApp-Swift.h>
+#import <Dev_Pod-Swift.h>
+#import <Dev_Pod-umbrella.h>
 
 @interface FavouritesObjectiveCViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,6 +27,7 @@ FavouriteViewModel *favouriteViewModel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar.topItem setTitle:@"Food Finder"];
+    [AnalyticsRecipeRepo favouritePageTabTapped];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -39,7 +43,9 @@ FavouriteViewModel *favouriteViewModel;
 {
     return favouriteViewModel.collectionArray.count;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"FavouriteCell";

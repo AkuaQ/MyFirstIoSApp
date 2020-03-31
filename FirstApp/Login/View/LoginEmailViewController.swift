@@ -58,6 +58,7 @@ class LoginEmailViewController: UIViewController {
 
     @IBAction func loginTapped(_ sender: UIButton) {
         setUpElements()
+        AnalyticsLoginRepo.loginPageLoginTapped()
         UIButton.animate(withDuration: 0.2,
                          animations: {
                             sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
@@ -76,7 +77,7 @@ class LoginEmailViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //Signing in the user
-            let userModel = UserViewModel()
+            let userModel = UserViewModel(view: self)
             userModel.loginUser(with: email, and: password) {(result) in
                 if result == "" {
                     let tabViewController = self.storyboard?.instantiateViewController(identifier: "HomeTabs")
@@ -95,3 +96,5 @@ class LoginEmailViewController: UIViewController {
         errorLabel.alpha = 1
     }
 }
+
+extension LoginEmailViewController: UserViewProtocol {}
