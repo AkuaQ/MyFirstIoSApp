@@ -24,7 +24,7 @@
 
 - (void)testGivenRecipeReturnNotNil{
     FavouriteModel* favouriteModel = [FavouriteModel alloc];
-    
+
     favouriteModel = [favouriteModel initWithName:@"Cookies" andIngredients:@"butter, eggs, flour, sugar" andWebsite:@"www.recipe.com" andImage:@"www.thumbnail_recipe.com"];
     XCTAssertNotNil(favouriteModel);
 }

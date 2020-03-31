@@ -142,6 +142,7 @@
 		377A9777241CF1B200216C32 /* FirstAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				37A336662431C22D001EB8D0 /* FirstAppUITests-Bridging-Header.h */,
 				37E75D942432F36A0014AA9C /* Recipe */,
 				37E75D932432F35B0014AA9C /* Login */,
 				377A977A241CF1B200216C32 /* Info.plist */,
@@ -351,7 +352,6 @@
 		37E75D942432F36A0014AA9C /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				37A336662431C22D001EB8D0 /* FirstAppUITests-Bridging-Header.h */,
 				377A9784241E355B00216C32 /* APIUITests.swift */,
 				37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */,
 			);

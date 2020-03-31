@@ -43,7 +43,9 @@ FavouriteViewModel *favouriteViewModel;
 {
     return favouriteViewModel.collectionArray.count;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"FavouriteCell";

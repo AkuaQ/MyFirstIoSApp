@@ -12,7 +12,7 @@ class UserViewModelUnitTests: XCTestCase {
     var userViewModel: UserViewModel!
     var user: UserModel!
     override func setUp() {
-        userViewModel = UserViewModel()
+        userViewModel = UserViewModel(view: self)
         user = UserModel(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
     }
 
@@ -26,3 +26,4 @@ class UserViewModelUnitTests: XCTestCase {
         }
     }
 }
+extension UserViewModelUnitTests: UserViewProtocol {}
