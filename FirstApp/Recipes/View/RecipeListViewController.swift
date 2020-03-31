@@ -13,6 +13,7 @@ class RecipeListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeSearchBar: UISearchBar!
+    var username = ""
     var foodList = [FoodDetails]() {
         didSet {
             DispatchQueue.main.async {
@@ -24,6 +25,8 @@ class RecipeListViewController: UIViewController {
         super.viewDidLoad()
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
+        self.navigationController?.navigationBar.topItem?.title = "Recipe List"
+        AnalyticsRecipeRepo.recipeListPageTabTapped()
     }
 }
 
@@ -39,13 +42,15 @@ extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
         let foods = foodList[indexPath.row]
         detailViewController?.recipeTitle = foods.title
         detailViewController?.recipeIngredients = foods.ingredients
-        detailViewController?.navbar = "Recipe List"
+        detailViewController?.navbar = "Recipe Details"
+        detailViewController?.sideNavBar = "Recipe List"
         detailViewController?.website = foods.href
         if !(foods.thumbnail == "") {
             detailViewController?.image = foods.thumbnail
         } else {
             detailViewController?.image = "noImage"
         }
+        detailViewController?.username = username
         self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,5 +80,6 @@ extension RecipeListViewController: UISearchBarDelegate {
         foodRequest.getSearchResult { [weak self] result in
             self?.foodList = result
         }
+        AnalyticsRecipeRepo.recipeListPageSearched()
     }
 }

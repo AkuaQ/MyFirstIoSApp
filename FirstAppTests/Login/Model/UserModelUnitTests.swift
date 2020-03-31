@@ -7,15 +7,16 @@
 //
 
 import XCTest
+import Dev_Pod
 @testable import FirstApp
 
 class UserModelUnitTests: XCTestCase {
 
-    var user: User!
+    var user: UserModel!
     var repo: UserModelProtocol!
     override func setUp() {
-        repo = User(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
-        user = User(firstName: "Kim", lastName: "Possible", email: "kim@p.com", password: "CallMeMeetMe")
+        repo = UserModel(firstName: "TestName", lastName: "TestSurname", email: "TestEmail", password: "Test&Password")
+        user = UserModel(firstName: "Kim", lastName: "Possible", email: "kim@p.com", password: "CallMeMeetMe")
     }
 
     override func tearDown() {
