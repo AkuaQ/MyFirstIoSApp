@@ -945,7 +945,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-OF-QNH">
                                 <rect key="frame" x="305" y="455" width="53" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="favouritesButtons"/>
+                                <accessibility key="accessibilityConfiguration" identifier="favouritesButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="Wk6-yc-8in"/>
                                     <constraint firstAttribute="height" constant="30" id="gMr-ft-Kot"/>

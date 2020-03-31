@@ -38,6 +38,8 @@
 		37B2F3A123FDBF2C009C1FC1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */; };
 		37E75D742432869C0014AA9C /* AnalyticsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E75D732432869C0014AA9C /* AnalyticsUnitTests.swift */; };
 		37E75D78243292870014AA9C /* UserViewModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E75D77243292870014AA9C /* UserViewModelUnitTests.swift */; };
+		37E75D882432ED200014AA9C /* FavouritesObjectiveCUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */; };
+		37E75D8A2432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E75D892432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m */; };
 		7EEEE89CE2103410687BF957 /* Pods_FirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B222FD863115133B4D4EB /* Pods_FirstApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,9 @@
 		37B2F3A023FDBF2C009C1FC1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		37E75D732432869C0014AA9C /* AnalyticsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsUnitTests.swift; sourceTree = "<group>"; };
 		37E75D77243292870014AA9C /* UserViewModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelUnitTests.swift; sourceTree = "<group>"; };
+		37E75D862432ED1F0014AA9C /* FirstAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirstAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouritesObjectiveCUnitTests.m; sourceTree = "<group>"; };
+		37E75D892432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewModelObjectiveCUnitTests.m; sourceTree = "<group>"; };
 		684B222FD863115133B4D4EB /* Pods_FirstApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F22AD3E794198475D1EAA69 /* Pods-FirstApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.release.xcconfig"; path = "Target Support Files/Pods-FirstApp/Pods-FirstApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,12 +142,10 @@
 		377A9777241CF1B200216C32 /* FirstAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				377A9778241CF1B200216C32 /* SignUpUITests.swift */,
+				37E75D942432F36A0014AA9C /* Recipe */,
+				37E75D932432F35B0014AA9C /* Login */,
 				377A977A241CF1B200216C32 /* Info.plist */,
 				377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */,
-				377A9782241D818E00216C32 /* LoginUITests.swift */,
-				377A9784241E355B00216C32 /* APIUITests.swift */,
-				37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */,
 				37A336662431C22D001EB8D0 /* FirstAppUITests-Bridging-Header.h */,
 			);
 			path = FirstAppUITests;
@@ -191,14 +194,11 @@
 		3794CCF523EBB51500693C03 /* FirstAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				37E75D902432F2EB0014AA9C /* Recipe */,
+				37E75D8C2432F2AF0014AA9C /* Login */,
 				3794CCF823EBB51500693C03 /* Info.plist */,
-				375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */,
-				375E7B732412373D00536863 /* UserModelUnitTests.swift */,
-				375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */,
-				375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */,
-				375E7B9F2416196200536863 /* UserMock.swift */,
 				37E75D732432869C0014AA9C /* AnalyticsUnitTests.swift */,
-				37E75D77243292870014AA9C /* UserViewModelUnitTests.swift */,
+				37E75D862432ED1F0014AA9C /* FirstAppTests-Bridging-Header.h */,
 			);
 			path = FirstAppTests;
 			sourceTree = "<group>";
@@ -214,10 +214,9 @@
 		37A3364B242E3772001EB8D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37E75D8B2432F13C0014AA9C /* Cells */,
 				376127022424A0B1008EBAAE /* FavouritesObjectiveCViewController.m */,
 				376127012424A0B1008EBAAE /* FavouritesObjectiveCViewController.h */,
-				37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */,
-				37A3362A242C6DAA001EB8D0 /* FavouriteTableViewCell.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +267,95 @@
 				3761270B24279A38008EBAAE /* RecipeCellTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		37E75D8B2432F13C0014AA9C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				37A3362B242C6DAA001EB8D0 /* FavouriteTableViewCell.m */,
+				37A3362A242C6DAA001EB8D0 /* FavouriteTableViewCell.h */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		37E75D8C2432F2AF0014AA9C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				37E75D8F2432F2DC0014AA9C /* Model */,
+				37E75D8E2432F2CB0014AA9C /* ViewModel */,
+				37E75D8D2432F2C00014AA9C /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		37E75D8D2432F2C00014AA9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37E75D8E2432F2CB0014AA9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37E75D77243292870014AA9C /* UserViewModelUnitTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		37E75D8F2432F2DC0014AA9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				375E7B732412373D00536863 /* UserModelUnitTests.swift */,
+				375E7B9F2416196200536863 /* UserMock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37E75D902432F2EB0014AA9C /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				37E75D922432F3190014AA9C /* Model */,
+				37E75D912432F3090014AA9C /* ViewModel */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		37E75D912432F3090014AA9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */,
+				37E75D892432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		37E75D922432F3190014AA9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */,
+				37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37E75D932432F35B0014AA9C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				377A9778241CF1B200216C32 /* SignUpUITests.swift */,
+				377A9782241D818E00216C32 /* LoginUITests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		37E75D942432F36A0014AA9C /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				377A9784241E355B00216C32 /* APIUITests.swift */,
+				37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */,
+			);
+			path = Recipe;
 			sourceTree = "<group>";
 		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
@@ -371,6 +459,7 @@
 					};
 					3794CCF123EBB51500693C03 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 3794CCDB23EBB51400693C03;
 					};
 				};
@@ -543,8 +632,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				375E7BA02416196200536863 /* UserMock.swift in Sources */,
+				37E75D8A2432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m in Sources */,
 				375E7B7224122FD800536863 /* UtilitiesUnitTests.swift in Sources */,
 				37E75D742432869C0014AA9C /* AnalyticsUnitTests.swift in Sources */,
+				37E75D882432ED200014AA9C /* FavouritesObjectiveCUnitTests.m in Sources */,
 				37E75D78243292870014AA9C /* UserViewModelUnitTests.swift in Sources */,
 				375E7B9E2416179300536863 /* RecipeViewModelServiceTests.swift in Sources */,
 				375E7B9C2416170400536863 /* RecipeModelUnitTests.swift in Sources */,
@@ -793,6 +884,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FirstAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -803,6 +895,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FirstAppTests/FirstAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirstApp.app/FirstApp";
@@ -815,6 +909,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FirstAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -825,6 +920,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FirstAppTests/FirstAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirstApp.app/FirstApp";

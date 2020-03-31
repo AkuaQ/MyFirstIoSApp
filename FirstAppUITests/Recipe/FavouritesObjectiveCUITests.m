@@ -69,13 +69,19 @@
     sleep(8);
     XCUIElement* recipe = application.staticTexts[@"Tim and Tracy's Chocolate Cake (Boiled)"];
     [recipe tap];
-    /*XCUIElement* favouriteButton = application.buttons[@"favouriteButton"];
-    [favouriteButton tap];*/
+    XCUIElement* favouriteButton = application.buttons[@"favouritesButton"];
+    [favouriteButton tap];
     XCUIElement* backButton = application.buttons[@"Recipe List"];
     [backButton tap];
     XCUIElement* tabFavourites = application.tabBars.buttons[@"Favourites"];
     [tabFavourites tap];
-    sleep(2);
+    sleep(8);
+    [tabRecipes tap];
+    [recipe tap];
+    [favouriteButton tap];
+    [backButton tap];
+    [tabFavourites tap];
+     sleep(8);
     XCTAssertTrue(application.staticTexts[@"My Favourites:"].exists);
 }
 
