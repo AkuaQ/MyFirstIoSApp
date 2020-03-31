@@ -142,9 +142,11 @@
 		377A9777241CF1B200216C32 /* FirstAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				377A9782241D818E00216C32 /* LoginUITests.swift */,
+				377A9778241CF1B200216C32 /* SignUpUITests.swift */,
+				377A9784241E355B00216C32 /* APIUITests.swift */,
+				37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */,
 				37A336662431C22D001EB8D0 /* FirstAppUITests-Bridging-Header.h */,
-				37E75D942432F36A0014AA9C /* Recipe */,
-				37E75D932432F35B0014AA9C /* Login */,
 				377A977A241CF1B200216C32 /* Info.plist */,
 				377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */,
 			);
@@ -338,24 +340,6 @@
 				37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		37E75D932432F35B0014AA9C /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				377A9778241CF1B200216C32 /* SignUpUITests.swift */,
-				377A9782241D818E00216C32 /* LoginUITests.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		37E75D942432F36A0014AA9C /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				377A9784241E355B00216C32 /* APIUITests.swift */,
-				37A336672431C22E001EB8D0 /* FavouritesObjectiveCUITests.m */,
-			);
-			path = Recipe;
 			sourceTree = "<group>";
 		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
