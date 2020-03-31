@@ -1,9 +1,9 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
+platform :ios, '13.2'
 target 'FirstApp' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+
+use_frameworks!
+
 
   # Pods for FirstApp
 
@@ -12,12 +12,14 @@ target 'FirstApp' do
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Core'
 	pod 'DropDown'
-	#pod 'Dev_Pod', :git => 'https://github.com/AkuaQ/Dev_Pod.git'
-pod 'Dev_Pod', :path => '/Users/aafraneokese/Documents/Git/Dev_Pod'
+	pod 'Dev_Pod', :git => 'https://github.com/AkuaQ/Dev_Pod.git'
+#pod 'Dev_Pod', :path => '/Users/aafraneokese/Documents/Git/Dev_Pod'
 
   target 'FirstAppTests' do
-    inherit! :search_paths
+    
     # Pods for testing
+	inherit! :search_paths
+	pod 'Dev_Pod', :git => 'https://github.com/AkuaQ/Dev_Pod.git'
   end
 
 end
