@@ -318,28 +318,12 @@
 		37E75D902432F2EB0014AA9C /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				37E75D922432F3190014AA9C /* Model */,
-				37E75D912432F3090014AA9C /* ViewModel */,
-			);
-			path = Recipe;
-			sourceTree = "<group>";
-		};
-		37E75D912432F3090014AA9C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
+				375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */,
+				37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */,
 				375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */,
 				37E75D892432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		37E75D922432F3190014AA9C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */,
-				37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */,
-			);
-			path = Model;
+			path = Recipe;
 			sourceTree = "<group>";
 		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
