@@ -287,7 +287,7 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
-  - Dev_Pod (from `https://github.com/AkuaQ/Dev_Pod.git`)
+  - Dev_Pod (from `/Users/aafraneokese/Documents/Git/Dev_Pod`)
   - DropDown
   - Firebase/Analytics
   - Firebase/Auth
@@ -322,12 +322,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Dev_Pod:
-    :git: https://github.com/AkuaQ/Dev_Pod.git
-
-CHECKOUT OPTIONS:
-  Dev_Pod:
-    :commit: 51d46957c7bf12455550496e6144ac9bcbca6df5
-    :git: https://github.com/AkuaQ/Dev_Pod.git
+    :path: "/Users/aafraneokese/Documents/Git/Dev_Pod"
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -355,6 +350,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: d2bc5ea0936dc25a12fb83435125dd6c5048c97e
+PODFILE CHECKSUM: 44cef1d313145d7466cd1e4c45a6c6ef51c3b3e3
 
 COCOAPODS: 1.8.4
