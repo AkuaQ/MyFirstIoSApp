@@ -11,64 +11,157 @@
    10|       |
    11|       |class APIUITests: XCTestCase {
    12|       |
-   13|      1|    override func setUp() {
-   14|      1|        continueAfterFailure = false
-   15|      1|    }
+   13|      0|    override func setUp() {
+   14|      0|        continueAfterFailure = false
+   15|      0|    }
    16|       |
-   17|      1|    override func tearDown() {
-   18|      1|        // Put teardown code here. This method is called after the invocation of each test method in the class.
-   19|      1|    }
-   20|       |     /*func textExample2() {
-   21|       |       app.tables["Empty list"].searchFields["Search for ingredients"].tap()
-   22|       |        
-   23|       |        
-   24|       |        app2.buttons[
-   25|       |     "Search"].tap()
-   26|       |        app2.tables
-   27|       |         .staticTexts[
-   28|       |            "Fish Mayonnaise Recipe"].tap()
-   29|       |        
-   30|       |        app.buttons["View Instructions"].tap()
-   31|       |        
-   32|       |        
-   33|       |        app.navigationBars["FirstApp.WebView"].buttons["Back"].tap()
-   34|       |    }*/
-   35|      1|    func testGivenCorrectSearchReturnSuccessfulDetailAndWebsite() {
-   36|      1|        let application = XCUIApplication()
-   37|      1|        application.launch()
-   38|      1|        application.buttons["Login"].tap()
-   39|      1|        application.textFields["emailLogin"].tap()
-   40|      1|        application.tapKeys(text: "tester")
-   41|      1|        application.keys["more"].tap()
-   42|      1|        application.keys["@"].tap()
-   43|      1|        application.keys["more"].tap()
-   44|      1|        application.tapKeys(text: "test")
-   45|      1|        application.keys["more"].tap()
-   46|      1|        application.keys["."].tap()
-   47|      1|        application.keys["more"].tap()
-   48|      1|        application.tapKeys(text: "com")
-   49|      1|        application.secureTextFields["passwordLogin"].tap()
-   50|      1|        application.tapKeys(text: "testpassword")
-   51|      1|        application.keys["more"].tap()
-   52|      1|        application.keys["1"].tap()
-   53|      1|        application.keys["?"].tap()
-   54|      1|        application.keys["more"].tap()
-   55|      1|        application.buttons["Log in"].tap()
-   56|      1|        sleep(8)
-   57|      1|        application.searchFields[
-   58|      1|            "Search for ingredients"].tap()
-   59|      1|        application.keys[
-   60|      1|        "F"].tap()
-   61|      1|        application.tapKeys(text: "ish")
-   62|      1|        application.buttons[
-   63|      1|            "Search"].tap()
-   64|      1|        sleep(2)
-   65|      1|        application.staticTexts["Delicious Fish Curry Recipe"].tap()
-   66|      1|        sleep(2)
-   67|      1|        application.buttons["View Instructions"].tap()
-   68|      1|        sleep(8)
-   69|      1|    }
-   70|       |}
+   17|      0|    override func tearDown() {
+   18|      0|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   19|      0|    }
+   20|       |
+   21|      0|    func testGivenCorrectIngredientsSearchReturnSuccessfulDetailAndWebsite() {
+   22|      0|        let application = XCUIApplication()
+   23|      0|        application.launch()
+   24|      0|        application.buttons["Login"].tap()
+   25|      0|        application.textFields["emailLogin"].tap()
+   26|      0|        application.textFields["emailLogin"].typeText("tester@test.com")
+   27|      0|        application.secureTextFields["passwordLogin"].tap()
+   28|      0|        application.tapKeys(text: "testpassword")
+   29|      0|        application.keys["more"].tap()
+   30|      0|        application.keys["1"].tap()
+   31|      0|        application.keys["?"].tap()
+   32|      0|        application.keys["more"].tap()
+   33|      0|        application.buttons["Log in"].tap()
+   34|      0|        sleep(8)
+   35|      0|        application.searchFields[
+   36|      0|            "Search for ingredients"].tap()
+   37|      0|        application.searchFields["Search for ingredients"].typeText("Fish")
+   38|      0|        application.buttons[
+   39|      0|            "Search"].tap()
+   40|      0|        application.staticTexts["Fish"].tap()
+   41|      0|       application.staticTexts["Delicious Fish Curry Recipe"].tap()
+   42|      0|        sleep(2)
+   43|      0|        application.buttons["View Instructions"].tap()
+   44|      0|        sleep(8)
+   45|      0|    }
+   46|       |
+   47|      0|    func testGivenCorrectRecipesSearchReturnSuccessfulDetailAndWebsite() {
+   48|      0|        let application = XCUIApplication()
+   49|      0|        application.launch()
+   50|      0|        application.buttons["Login"].tap()
+   51|      0|        application.textFields["emailLogin"].tap()
+   52|      0|        application.textFields["emailLogin"].typeText("tester@test.com")
+   53|      0|        application.secureTextFields["passwordLogin"].tap()
+   54|      0|        application.tapKeys(text: "testpassword")
+   55|      0|        application.keys["more"].tap()
+   56|      0|        application.keys["1"].tap()
+   57|      0|        application.keys["?"].tap()
+   58|      0|        application.keys["more"].tap()
+   59|      0|        application.buttons["Log in"].tap()
+   60|      0|        sleep(8)
+   61|      0|        application.tabBars.buttons["Recipe List"].tap()
+   62|      0|        application.searchFields[
+   63|      0|            "Search for recipes"].tap()
+   64|      0|        application.searchFields["Search for recipes"].typeText("Chocolate cake")
+   65|      0|        application.buttons[
+   66|      0|        "Search"].tap()
+   67|      0|        sleep(8)
+   68|      0|       application.staticTexts["Tim and Tracy's Chocolate Cake (Boiled)"].tap()
+   69|      0|        sleep(2)
+   70|      0|        application.buttons["View Instructions"].tap()
+   71|      0|        sleep(8)
+   72|      0|    }
+   73|       |}
+
+/Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppUITests/FavouritesObjectiveCUITests.m:
+    1|       |//
+    2|       |//  FavouritesObjectiveCUITests.m
+    3|       |//  FirstAppUITests
+    4|       |//
+    5|       |//  Created by Akua Afrane-Okese on 2020/03/30.
+    6|       |//  Copyright © 2020 Akua Afrane-Okese. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |#import <XCTest/XCTest.h>
+   10|       |
+   11|       |@interface FavouritesObjectiveCUITests : XCTestCase
+   12|       |
+   13|       |@end
+   14|       |
+   15|       |@implementation FavouritesObjectiveCUITests
+   16|       |
+   17|      0|- (void)setUp {
+   18|      0|    // Put setup code here. This method is called before the invocation of each test method in the class.
+   19|      0|    
+   20|      0|    // In UI tests it is usually best to stop immediately when a failure occurs.
+   21|      0|    self.continueAfterFailure = NO;
+   22|      0|}
+   23|       |
+   24|      0|- (void)tearDown {
+   25|      0|}
+   26|       |
+   27|      0|- (void)testGivenFavouritesTabReturnSuccess {
+   28|      0|        XCUIApplication *application = [[XCUIApplication alloc] init];
+   29|      0|    [application launch];
+   30|      0|    XCUIElement* loginButton = application.buttons[@"Login"];
+   31|      0|    [loginButton tap];
+   32|      0|    XCUIElement* emailLogin = application.textFields[@"emailLogin"];
+   33|      0|    [emailLogin tap];
+   34|      0|    [emailLogin typeText:@"tester@test.com"];
+   35|      0|    XCUIElement* password = application.secureTextFields[@"passwordLogin"];
+   36|      0|    [password tap];
+   37|      0|    [password typeText: @"testpassword1?"];
+   38|      0|    XCUIElement* logInButton = application.buttons[@"Log in"];
+   39|      0|    [logInButton tap];
+   40|      0|    sleep(8);
+   41|      0|    XCUIElement* tabFavourites = application.tabBars.buttons[@"Favourites"];
+   42|      0|    [tabFavourites tap];
+   43|      0|    sleep(2);
+   44|      0|    XCTAssertTrue(application.staticTexts[@"My Favourites:"].exists);
+   45|      0|}
+   46|       |
+   47|      0|- (void)testGivenFavouritesListAddRemoveFavouriteReturnSuccess {
+   48|      0|        XCUIApplication *application = [[XCUIApplication alloc] init];
+   49|      0|    [application launch];
+   50|      0|    XCUIElement* loginButton = application.buttons[@"Login"];
+   51|      0|    [loginButton tap];
+   52|      0|    XCUIElement* emailLogin = application.textFields[@"emailLogin"];
+   53|      0|    [emailLogin tap];
+   54|      0|    [emailLogin typeText:@"tester@test.com"];
+   55|      0|    XCUIElement* password = application.secureTextFields[@"passwordLogin"];
+   56|      0|    [password tap];
+   57|      0|    [password typeText: @"testpassword1?"];
+   58|      0|    XCUIElement* logInButton = application.buttons[@"Log in"];
+   59|      0|    [logInButton tap];
+   60|      0|    sleep(8);
+   61|      0|    XCUIElement* tabRecipes = application.tabBars.buttons[@"Recipe List"];
+   62|      0|    [tabRecipes tap];
+   63|      0|    sleep(2);
+   64|      0|    XCUIElement* searchRecipes = application.searchFields[@"Search for recipes"];
+   65|      0|    [searchRecipes tap];
+   66|      0|    [searchRecipes typeText:@"Chocolate cake"];
+   67|      0|    XCUIElement* search = application.buttons[@"search"];
+   68|      0|    [search tap];
+   69|      0|    sleep(8);
+   70|      0|    XCUIElement* recipe = application.staticTexts[@"Tim and Tracy's Chocolate Cake (Boiled)"];
+   71|      0|    [recipe tap];
+   72|      0|    XCUIElement* favouriteButton = application.buttons[@"favouritesButton"];
+   73|      0|    [favouriteButton tap];
+   74|      0|    XCUIElement* backButton = application.buttons[@"Recipe List"];
+   75|      0|    [backButton tap];
+   76|      0|    XCUIElement* tabFavourites = application.tabBars.buttons[@"Favourites"];
+   77|      0|    [tabFavourites tap];
+   78|      0|    sleep(8);
+   79|      0|    [tabRecipes tap];
+   80|      0|    [recipe tap];
+   81|      0|    [favouriteButton tap];
+   82|      0|    [backButton tap];
+   83|      0|    [tabFavourites tap];
+   84|      0|     sleep(8);
+   85|      0|    XCTAssertTrue(application.staticTexts[@"My Favourites:"].exists);
+   86|      0|}
+   87|       |
+   88|       |@end
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppUITests/LoginUITests.swift:
     1|       |//
@@ -83,108 +176,108 @@
    10|       |
    11|       |class LoginUITests: XCTestCase {
    12|       |
-   13|      5|    override func setUp() {
-   14|      5|    }
+   13|      0|    override func setUp() {
+   14|      0|    }
    15|       |
-   16|      5|    override func tearDown() {
-   17|      5|        // Put teardown code here. This method is called after the invocation of each test method in the class.
-   18|      5|    }
+   16|      0|    override func tearDown() {
+   17|      0|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   18|      0|    }
    19|       |
-   20|      1|    func testGivenIncorrectUsernameCredsReturnFailure() {
-   21|      1|        let application = XCUIApplication()
-   22|      1|        application.launch()
-   23|      1|        application.buttons["Login"].tap()
-   24|      1|        application.textFields["emailLogin"].tap()
-   25|      1|        application.tapKeys(text: "tester")
-   26|      1|        application.keys["more"].tap()
-   27|      1|        application.keys["@"].tap()
-   28|      1|        application.keys["more"].tap()
-   29|      1|        application.tapKeys(text: "test")
-   30|      1|        application.keys["more"].tap()
-   31|      1|        application.keys["."].tap()
-   32|      1|        application.keys["more"].tap()
-   33|      1|        application.tapKeys(text: "com")
-   34|      1|        application.secureTextFields["passwordLogin"].tap()
-   35|      1|        application.tapKeys(text: "test")
-   36|      1|        application.keys["more"].tap()
-   37|      1|        application.keys["1"].tap()
-   38|      1|        application.keys["?"].tap()
-   39|      1|        application.keys["more"].tap()
-   40|      1|        application.buttons["Log in"].tap()
-   41|      1|        sleep(4)
-   42|      1|    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
-   43|      1|    }
+   20|      0|    func testGivenIncorrectUsernameCredsReturnFailure() {
+   21|      0|        let application = XCUIApplication()
+   22|      0|        application.launch()
+   23|      0|        application.buttons["Login"].tap()
+   24|      0|        application.textFields["emailLogin"].tap()
+   25|      0|        application.tapKeys(text: "tester")
+   26|      0|        application.keys["more"].tap()
+   27|      0|        application.keys["@"].tap()
+   28|      0|        application.keys["more"].tap()
+   29|      0|        application.tapKeys(text: "test")
+   30|      0|        application.keys["more"].tap()
+   31|      0|        application.keys["."].tap()
+   32|      0|        application.keys["more"].tap()
+   33|      0|        application.tapKeys(text: "com")
+   34|      0|        application.secureTextFields["passwordLogin"].tap()
+   35|      0|        application.tapKeys(text: "test")
+   36|      0|        application.keys["more"].tap()
+   37|      0|        application.keys["1"].tap()
+   38|      0|        application.keys["?"].tap()
+   39|      0|        application.keys["more"].tap()
+   40|      0|        application.buttons["Log in"].tap()
+   41|      0|        sleep(4)
+   42|      0|    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
+   43|      0|    }
    44|       |
-   45|      1|    func testGivenEmptyUsernameFieldsReturnFailure() {
-   46|      1|        let application = XCUIApplication()
-   47|      1|        application.launch()
-   48|      1|        application.buttons["Login"].tap()
-   49|      1|        application.buttons["Log in"].tap()
-   50|      1|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
-   51|      1|    }
+   45|      0|    func testGivenEmptyUsernameFieldsReturnFailure() {
+   46|      0|        let application = XCUIApplication()
+   47|      0|        application.launch()
+   48|      0|        application.buttons["Login"].tap()
+   49|      0|        application.buttons["Log in"].tap()
+   50|      0|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
+   51|      0|    }
    52|       |
-   53|      1|    func testGivenEmptyPasswordFieldsReturnFailure() {
-   54|      1|        let application = XCUIApplication()
-   55|      1|        application.launch()
-   56|      1|       application.buttons["Login"].tap()
-   57|      1|        application.textFields["emailLogin"].tap()
-   58|      1|        application.tapKeys(text: "tester")
-   59|      1|        application.buttons["Log in"].tap()
-   60|      1|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
-   61|      1|    }
+   53|      0|    func testGivenEmptyPasswordFieldsReturnFailure() {
+   54|      0|        let application = XCUIApplication()
+   55|      0|        application.launch()
+   56|      0|       application.buttons["Login"].tap()
+   57|      0|        application.textFields["emailLogin"].tap()
+   58|      0|        application.tapKeys(text: "tester")
+   59|      0|        application.buttons["Log in"].tap()
+   60|      0|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
+   61|      0|    }
    62|       |
-   63|      1|    func testGivenNoExistingUserCredsReturnFailure() {
-   64|      1|        let application = XCUIApplication()
-   65|      1|        application.launch()
-   66|      1|        application.buttons["Login"].tap()
-   67|      1|        application.textFields["emailLogin"].tap()
-   68|      1|        application.tapKeys(text: "wrongtester")
-   69|      1|        application.keys["more"].tap()
-   70|      1|        application.keys["5"].tap()
-   71|      1|        application.keys["more"].tap()
-   72|      1|        application.keys["more"].tap()
-   73|      1|        application.keys["@"].tap()
-   74|      1|        application.keys["more"].tap()
-   75|      1|        application.tapKeys(text: "test")
-   76|      1|        application.keys["more"].tap()
-   77|      1|        application.keys["."].tap()
-   78|      1|        application.keys["more"].tap()
-   79|      1|        application.tapKeys(text: "com")
-   80|      1|        application.secureTextFields["passwordLogin"].tap()
-   81|      1|        application.tapKeys(text: "wrongtestpassword")
-   82|      1|        application.keys["more"].tap()
-   83|      1|        application.keys["1"].tap()
-   84|      1|        application.keys["?"].tap()
-   85|      1|        application.keys["more"].tap()
-   86|      1|        application.buttons["Log in"].tap()
-   87|      1|        sleep(4)
-   88|      1|    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
-   89|      1|    }
+   63|      0|    func testGivenNoExistingUserCredsReturnFailure() {
+   64|      0|        let application = XCUIApplication()
+   65|      0|        application.launch()
+   66|      0|        application.buttons["Login"].tap()
+   67|      0|        application.textFields["emailLogin"].tap()
+   68|      0|        application.tapKeys(text: "wrongtester")
+   69|      0|        application.keys["more"].tap()
+   70|      0|        application.keys["5"].tap()
+   71|      0|        application.keys["more"].tap()
+   72|      0|        application.keys["more"].tap()
+   73|      0|        application.keys["@"].tap()
+   74|      0|        application.keys["more"].tap()
+   75|      0|        application.tapKeys(text: "test")
+   76|      0|        application.keys["more"].tap()
+   77|      0|        application.keys["."].tap()
+   78|      0|        application.keys["more"].tap()
+   79|      0|        application.tapKeys(text: "com")
+   80|      0|        application.secureTextFields["passwordLogin"].tap()
+   81|      0|        application.tapKeys(text: "wrongtestpassword")
+   82|      0|        application.keys["more"].tap()
+   83|      0|        application.keys["1"].tap()
+   84|      0|        application.keys["?"].tap()
+   85|      0|        application.keys["more"].tap()
+   86|      0|        application.buttons["Log in"].tap()
+   87|      0|        sleep(4)
+   88|      0|    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
+   89|      0|    }
    90|       |
-   91|      1|    func testGivenCorrectCredsReturnSuccess() {
-   92|      1|        let application = XCUIApplication()
-   93|      1|        application.launch()
-   94|      1|        application.buttons["Login"].tap()
-   95|      1|        application.textFields["emailLogin"].tap()
-   96|      1|        application.tapKeys(text: "tester")
-   97|      1|        application.keys["more"].tap()
-   98|      1|        application.keys["@"].tap()
-   99|      1|        application.keys["more"].tap()
-  100|      1|        application.tapKeys(text: "test")
-  101|      1|        application.keys["more"].tap()
-  102|      1|        application.keys["."].tap()
-  103|      1|        application.keys["more"].tap()
-  104|      1|        application.tapKeys(text: "com")
-  105|      1|        application.secureTextFields["passwordLogin"].tap()
-  106|      1|        application.tapKeys(text: "testpassword")
-  107|      1|        application.keys["more"].tap()
-  108|      1|        application.keys["1"].tap()
-  109|      1|        application.keys["?"].tap()
-  110|      1|        application.keys["more"].tap()
-  111|      1|        application.buttons["Log in"].tap()
-  112|      1|        sleep(8)
-  113|      1|    XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
-  114|      1|    }
+   91|      0|    func testGivenCorrectCredsReturnSuccess() {
+   92|      0|        let application = XCUIApplication()
+   93|      0|        application.launch()
+   94|      0|        application.buttons["Login"].tap()
+   95|      0|        application.textFields["emailLogin"].tap()
+   96|      0|        application.tapKeys(text: "tester")
+   97|      0|        application.keys["more"].tap()
+   98|      0|        application.keys["@"].tap()
+   99|      0|        application.keys["more"].tap()
+  100|      0|        application.tapKeys(text: "test")
+  101|      0|        application.keys["more"].tap()
+  102|      0|        application.keys["."].tap()
+  103|      0|        application.keys["more"].tap()
+  104|      0|        application.tapKeys(text: "com")
+  105|      0|        application.secureTextFields["passwordLogin"].tap()
+  106|      0|        application.tapKeys(text: "testpassword")
+  107|      0|        application.keys["more"].tap()
+  108|      0|        application.keys["1"].tap()
+  109|      0|        application.keys["?"].tap()
+  110|      0|        application.keys["more"].tap()
+  111|      0|        application.buttons["Log in"].tap()
+  112|      0|        sleep(8)
+  113|      0|    XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
+  114|      0|    }
   115|       |}
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppUITests/SignUpUITests.swift:
@@ -200,156 +293,156 @@
    10|       |
    11|       |class SignUpUITests: XCTestCase {
    12|       |
-   13|      7|    override func setUp() {
-   14|      7|        continueAfterFailure = false
-   15|      7|    }
+   13|      0|    override func setUp() {
+   14|      0|        continueAfterFailure = false
+   15|      0|    }
    16|       |
-   17|      7|    override func tearDown() {
-   18|      7|        // Put teardown code here. This method is called after the invocation of each test method in the class.
-   19|      7|    }
+   17|      0|    override func tearDown() {
+   18|      0|        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   19|      0|    }
    20|       |
-   21|      1|    func testGivenIncorrectPasswordReturnFailure() {
-   22|      1|        // UI tests must launch the application that they test.
-   23|      1|        let application = XCUIApplication()
-   24|      1|        application.launch()
-   25|      1|        application.buttons["Sign up"].tap()
-   26|      1|        application.textFields["firstName"].tap()
-   27|      1|        application.tapKeys(text: "test")
-   28|      1|        application.textFields["lastName"].tap()
-   29|      1|        application.tapKeys(text: "test")
-   30|      1|        application.keys["space"].tap()
-   31|      1|        application.tapKeys(text: "last")
-   32|      1|        application.keys["space"].tap()
-   33|      1|        application.tapKeys(text: "name")
-   34|      1|        application.textFields["emailSignUp"].tap()
-   35|      1|        application.tapKeys(text: "testtestcom")
-   36|      1|        application.secureTextFields["passwordSignUp"].tap()
-   37|      1|        application.tapKeys(text: "testssword")
-   38|      1|        application.buttons["Create Account"].tap()
-   39|      1|        XCTAssert(application.staticTexts[
-   40|      1|            "Please make sure your password is at least characters, contains a special character and a number."].exists)
-   41|      1|        // Use recording to get started writing UI tests.
-   42|      1|        // Use XCTAssert and related functions to verify your tests produce the correct results.
-   43|      1|    }
+   21|      0|    func testGivenIncorrectPasswordReturnFailure() {
+   22|      0|        // UI tests must launch the application that they test.
+   23|      0|        let application = XCUIApplication()
+   24|      0|        application.launch()
+   25|      0|        application.buttons["Sign up"].tap()
+   26|      0|        application.textFields["firstName"].tap()
+   27|      0|        application.tapKeys(text: "test")
+   28|      0|        application.textFields["lastName"].tap()
+   29|      0|        application.tapKeys(text: "test")
+   30|      0|        application.keys["space"].tap()
+   31|      0|        application.tapKeys(text: "last")
+   32|      0|        application.keys["space"].tap()
+   33|      0|        application.tapKeys(text: "name")
+   34|      0|        application.textFields["emailSignUp"].tap()
+   35|      0|        application.tapKeys(text: "testtestcom")
+   36|      0|        application.secureTextFields["passwordSignUp"].tap()
+   37|      0|        application.tapKeys(text: "testssword")
+   38|      0|        application.buttons["Create Account"].tap()
+   39|      0|        XCTAssert(application.staticTexts[
+   40|      0|            "Please make sure your password is at least characters, contains a special character and a number."].exists)
+   41|      0|        // Use recording to get started writing UI tests.
+   42|      0|        // Use XCTAssert and related functions to verify your tests produce the correct results.
+   43|      0|    }
    44|       |
-   45|      1|    func testGivenReturningUserReturnFailure() {
-   46|      1|        let application = XCUIApplication()
-   47|      1|        application.launch()
-   48|      1|        application.buttons["Sign up"].tap()
-   49|      1|        application.textFields["firstName"].tap()
-   50|      1|        application.tapKeys(text: "tester")
-   51|      1|        application.textFields["lastName"].tap()
-   52|      1|        application.tapKeys(text: "tester")
-   53|      1|        application.keys["space"].tap()
-   54|      1|        application.tapKeys(text: "last")
-   55|      1|        application.keys["space"].tap()
-   56|      1|        application.tapKeys(text: "name")
-   57|      1|        application.textFields["emailSignUp"].tap()
-   58|      1|        application.tapKeys(text: "test")
-   59|      1|        application.keys["more"].tap()
-   60|      1|        application.keys["@"].tap()
-   61|      1|        application.keys["more"].tap()
-   62|      1|        application.tapKeys(text: "test")
-   63|      1|        application.keys["more"].tap()
-   64|      1|        application.keys["."].tap()
-   65|      1|        application.keys["more"].tap()
-   66|      1|        application.tapKeys(text: "com")
-   67|      1|        application.secureTextFields["passwordSignUp"].tap()
-   68|      1|        application.tapKeys(text: "testpassword")
-   69|      1|        application.keys["more"].tap()
-   70|      1|        application.keys["1"].tap()
-   71|      1|        application.keys["?"].tap()
-   72|      1|        application.keys["more"].tap()
-   73|      1|        application.buttons["Create Account"].tap()
-   74|      1|        sleep(4)
-   75|      1|        XCTAssert(application.staticTexts["Error creating user"].exists)
-   76|      1|    }
+   45|      0|    func testGivenReturningUserReturnFailure() {
+   46|      0|        let application = XCUIApplication()
+   47|      0|        application.launch()
+   48|      0|        application.buttons["Sign up"].tap()
+   49|      0|        application.textFields["firstName"].tap()
+   50|      0|        application.tapKeys(text: "tester")
+   51|      0|        application.textFields["lastName"].tap()
+   52|      0|        application.tapKeys(text: "tester")
+   53|      0|        application.keys["space"].tap()
+   54|      0|        application.tapKeys(text: "last")
+   55|      0|        application.keys["space"].tap()
+   56|      0|        application.tapKeys(text: "name")
+   57|      0|        application.textFields["emailSignUp"].tap()
+   58|      0|        application.tapKeys(text: "test")
+   59|      0|        application.keys["more"].tap()
+   60|      0|        application.keys["@"].tap()
+   61|      0|        application.keys["more"].tap()
+   62|      0|        application.tapKeys(text: "test")
+   63|      0|        application.keys["more"].tap()
+   64|      0|        application.keys["."].tap()
+   65|      0|        application.keys["more"].tap()
+   66|      0|        application.tapKeys(text: "com")
+   67|      0|        application.secureTextFields["passwordSignUp"].tap()
+   68|      0|        application.tapKeys(text: "testpassword")
+   69|      0|        application.keys["more"].tap()
+   70|      0|        application.keys["1"].tap()
+   71|      0|        application.keys["?"].tap()
+   72|      0|        application.keys["more"].tap()
+   73|      0|        application.buttons["Create Account"].tap()
+   74|      0|        sleep(4)
+   75|      0|        XCTAssert(application.staticTexts["Error creating user"].exists)
+   76|      0|    }
    77|       |
-   78|      1|     func testGivenEmptyFieldsReturnFailure() {
-   79|      1|        let application = XCUIApplication()
-   80|      1|        application.launch()
-   81|      1|        application.buttons["Sign up"].tap()
-   82|      1|        application.buttons["Create Account"].tap()
-   83|      1|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
-   84|      1|    }
+   78|      0|     func testGivenEmptyFieldsReturnFailure() {
+   79|      0|        let application = XCUIApplication()
+   80|      0|        application.launch()
+   81|      0|        application.buttons["Sign up"].tap()
+   82|      0|        application.buttons["Create Account"].tap()
+   83|      0|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
+   84|      0|    }
    85|       |
-   86|      1|     func testGivenEmptyLastNameFieldsReturnFailure() {
-   87|      1|        let application = XCUIApplication()
-   88|      1|        application.launch()
-   89|      1|        application.buttons["Sign up"].tap()
-   90|      1|        application.textFields["firstName"].tap()
-   91|      1|        application.tapKeys(text: "tester")
-   92|      1|        application.buttons["Create Account"].tap()
-   93|      1|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
-   94|      1|    }
+   86|      0|     func testGivenEmptyLastNameFieldsReturnFailure() {
+   87|      0|        let application = XCUIApplication()
+   88|      0|        application.launch()
+   89|      0|        application.buttons["Sign up"].tap()
+   90|      0|        application.textFields["firstName"].tap()
+   91|      0|        application.tapKeys(text: "tester")
+   92|      0|        application.buttons["Create Account"].tap()
+   93|      0|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
+   94|      0|    }
    95|       |
-   96|      1| func testGivenEmptyEmailFieldsReturnFailure() {
-   97|      1|        let application = XCUIApplication()
-   98|      1|        application.launch()
-   99|      1|        application.buttons["Sign up"].tap()
-  100|      1|        application.textFields["firstName"].tap()
-  101|      1|        application.tapKeys(text: "tester")
-  102|      1|        application.textFields["lastName"].tap()
-  103|      1|        application.tapKeys(text: "tester")
-  104|      1|        application.buttons["Create Account"].tap()
-  105|      1|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
-  106|      1|    }
+   96|      0| func testGivenEmptyEmailFieldsReturnFailure() {
+   97|      0|        let application = XCUIApplication()
+   98|      0|        application.launch()
+   99|      0|        application.buttons["Sign up"].tap()
+  100|      0|        application.textFields["firstName"].tap()
+  101|      0|        application.tapKeys(text: "tester")
+  102|      0|        application.textFields["lastName"].tap()
+  103|      0|        application.tapKeys(text: "tester")
+  104|      0|        application.buttons["Create Account"].tap()
+  105|      0|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
+  106|      0|    }
   107|       |
-  108|      1|    func testGivenEmptyPasswordFieldsReturnFailure() {
-  109|      1|        let application = XCUIApplication()
-  110|      1|        application.launch()
-  111|      1|        application.buttons["Sign up"].tap()
-  112|      1|        application.textFields["firstName"].tap()
-  113|      1|        application.tapKeys(text: "tester")
-  114|      1|        application.textFields["lastName"].tap()
-  115|      1|        application.tapKeys(text: "tester")
-  116|      1|        application.textFields["emailSignUp"].tap()
-  117|      1|        application.tapKeys(text: "tester")
-  118|      1|        application.buttons["Create Account"].tap()
-  119|      1|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
-  120|      1|    }
+  108|      0|    func testGivenEmptyPasswordFieldsReturnFailure() {
+  109|      0|        let application = XCUIApplication()
+  110|      0|        application.launch()
+  111|      0|        application.buttons["Sign up"].tap()
+  112|      0|        application.textFields["firstName"].tap()
+  113|      0|        application.tapKeys(text: "tester")
+  114|      0|        application.textFields["lastName"].tap()
+  115|      0|        application.tapKeys(text: "tester")
+  116|      0|        application.textFields["emailSignUp"].tap()
+  117|      0|        application.tapKeys(text: "tester")
+  118|      0|        application.buttons["Create Account"].tap()
+  119|      0|        XCTAssert(application.staticTexts["Please fill in all fields"].exists)
+  120|      0|    }
   121|       |
-  122|      1|    func testGivenCorrectCredsReturnSuccess() {
-  123|      1|        let application = XCUIApplication()
-  124|      1|        application.launch()
-  125|      1|        application.buttons["Sign up"].tap()
-  126|      1|        application.textFields["firstName"].tap()
-  127|      1|        application.tapKeys(text: "tester")
-  128|      1|        application.keys["more"].tap()
-  129|      1|        application.keys["0"].tap()
-  130|      1|        application.keys["more"].tap()
-  131|      1|        application.textFields["lastName"].tap()
-  132|      1|        application.tapKeys(text: "tester")
-  133|      1|        application.keys["more"].tap()
-  134|      1|        application.keys["0"].tap()
-  135|      1|        application.keys["more"].tap()
-  136|      1|        application.keys["space"].tap()
-  137|      1|        application.tapKeys(text: "last")
-  138|      1|        application.keys["space"].tap()
-  139|      1|        application.tapKeys(text: "name")
-  140|      1|        application.textFields["emailSignUp"].tap()
-  141|      1|        application.tapKeys(text: "tester")
-  142|      1|        application.keys["more"].tap()
-  143|      1|        application.keys["0"].tap()
-  144|      1|        application.keys["more"].tap()
-  145|      1|        application.keys["more"].tap()
-  146|      1|        application.keys["@"].tap()
-  147|      1|        application.keys["more"].tap()
-  148|      1|        application.tapKeys(text: "test")
-  149|      1|        application.keys["more"].tap()
-  150|      1|        application.keys["."].tap()
-  151|      1|        application.keys["more"].tap()
-  152|      1|        application.tapKeys(text: "com")
-  153|      1|        application.secureTextFields["passwordSignUp"].tap()
-  154|      1|        application.tapKeys(text: "testpassword")
-  155|      1|        application.keys["more"].tap()
-  156|      1|        application.keys["1"].tap()
-  157|      1|        application.keys["?"].tap()
-  158|      1|        application.keys["more"].tap()
-  159|      1|        application.buttons["Create Account"].tap()
-  160|      1|        sleep(8)
-  161|      1|        XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
-  162|      1|    }
+  122|      0|    func testGivenCorrectCredsReturnSuccess() {
+  123|      0|        let application = XCUIApplication()
+  124|      0|        application.launch()
+  125|      0|        application.buttons["Sign up"].tap()
+  126|      0|        application.textFields["firstName"].tap()
+  127|      0|        application.tapKeys(text: "tester")
+  128|      0|        application.keys["more"].tap()
+  129|      0|        application.keys["0"].tap()
+  130|      0|        application.keys["more"].tap()
+  131|      0|        application.textFields["lastName"].tap()
+  132|      0|        application.tapKeys(text: "tester")
+  133|      0|        application.keys["more"].tap()
+  134|      0|        application.keys["0"].tap()
+  135|      0|        application.keys["more"].tap()
+  136|      0|        application.keys["space"].tap()
+  137|      0|        application.tapKeys(text: "last")
+  138|      0|        application.keys["space"].tap()
+  139|      0|        application.tapKeys(text: "name")
+  140|      0|        application.textFields["emailSignUp"].tap()
+  141|      0|        application.tapKeys(text: "tester")
+  142|      0|        application.keys["more"].tap()
+  143|      0|        application.keys["0"].tap()
+  144|      0|        application.keys["more"].tap()
+  145|      0|        application.keys["more"].tap()
+  146|      0|        application.keys["@"].tap()
+  147|      0|        application.keys["more"].tap()
+  148|      0|        application.tapKeys(text: "test")
+  149|      0|        application.keys["more"].tap()
+  150|      0|        application.keys["."].tap()
+  151|      0|        application.keys["more"].tap()
+  152|      0|        application.tapKeys(text: "com")
+  153|      0|        application.secureTextFields["passwordSignUp"].tap()
+  154|      0|        application.tapKeys(text: "testpassword")
+  155|      0|        application.keys["more"].tap()
+  156|      0|        application.keys["1"].tap()
+  157|      0|        application.keys["?"].tap()
+  158|      0|        application.keys["more"].tap()
+  159|      0|        application.buttons["Create Account"].tap()
+  160|      0|        sleep(8)
+  161|      0|        XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
+  162|      0|    }
   163|       |}
 
 /Users/aafraneokese/Documents/Git/MyFirstIoSApp/FirstAppUITests/XCTUIApplicationExtension.swift:
@@ -365,65 +458,65 @@
    10|       |
    11|       |extension XCUIApplication {
    12|       |
-   13|     11|    func tapA() { keys["a"].tap() }
+   13|      0|    func tapA() { keys["a"].tap() }
    14|      0|    func tapB() { keys["b"].tap() }
-   15|      7|    func tapC() { keys["c"].tap() }
-   16|      6|    func tapD() { keys["d"].tap() }
-   17|     53|    func tapE() { keys["e"].tap() }
+   15|      0|    func tapC() { keys["c"].tap() }
+   16|      0|    func tapD() { keys["d"].tap() }
+   17|      0|    func tapE() { keys["e"].tap() }
    18|      0|    func tapF() { keys["f"].tap() }
-   19|      2|    func tapG() { keys["g"].tap() }
-   20|      1|    func tapH() { keys["h"].tap() }
-   21|      1|    func tapI() { keys["i"].tap() }
+   19|      0|    func tapG() { keys["g"].tap() }
+   20|      0|    func tapH() { keys["h"].tap() }
+   21|      0|    func tapI() { keys["i"].tap() }
    22|      0|    func tapJ() { keys["j"].tap() }
    23|      0|    func tapK() { keys["k"].tap() }
-   24|      3|    func tapL() { keys["l"].tap() }
-   25|     10|    func tapM() { keys["m"].tap() }
-   26|      5|    func tapN() { keys["n"].tap() }
-   27|     15|    func tapO() { keys["o"].tap() }
-   28|      5|    func tapP() { keys["p"].tap() }
+   24|      0|    func tapL() { keys["l"].tap() }
+   25|      0|    func tapM() { keys["m"].tap() }
+   26|      0|    func tapN() { keys["n"].tap() }
+   27|      0|    func tapO() { keys["o"].tap() }
+   28|      0|    func tapP() { keys["p"].tap() }
    29|      0|    func tapQ() { keys["q"].tap() }
-   30|     24|    func tapR() { keys["r"].tap() }
-   31|     50|    func tapS() { keys["s"].tap() }
-   32|     71|    func tapT() { keys["t"].tap() }
+   30|      0|    func tapR() { keys["r"].tap() }
+   31|      0|    func tapS() { keys["s"].tap() }
+   32|      0|    func tapT() { keys["t"].tap() }
    33|      0|    func tapU() { keys["u"].tap() }
    34|      0|    func tapV() { keys["v"].tap() }
-   35|      8|    func tapW() { keys["w"].tap() }
+   35|      0|    func tapW() { keys["w"].tap() }
    36|      0|    func tapX() { keys["x"].tap() }
    37|      0|    func tapY() { keys["y"].tap() }
    38|      0|    func tapZ() { keys["z"].tap() }
    39|       |// swiftlint:disable:next cyclomatic_complexity
-   40|     46|    func tapKeys(text: String) {
-   41|    272|        for character in text {
-   42|    272|            switch character {
-   43|    272|            case "a": tapA()
-   44|    272|            case "b": tapB()
-   45|    272|            case "c": tapC()
-   46|    272|            case "d": tapD()
-   47|    272|            case "e": tapE()
-   48|    272|            case "f": tapF()
-   49|    272|            case "g": tapG()
-   50|    272|            case "h": tapH()
-   51|    272|            case "i": tapI()
-   52|    272|            case "j": tapJ()
-   53|    272|            case "k": tapK()
-   54|    272|            case "l": tapL()
-   55|    272|            case "m": tapM()
-   56|    272|            case "n": tapN()
-   57|    272|            case "o": tapO()
-   58|    272|            case "p": tapP()
-   59|    272|            case "q": tapQ()
-   60|    272|            case "r": tapR()
-   61|    272|            case "s": tapS()
-   62|    272|            case "t": tapT()
-   63|    272|            case "u": tapU()
-   64|    272|            case "v": tapV()
-   65|    272|            case "w": tapW()
-   66|    272|            case "x": tapX()
-   67|    272|            case "y": tapY()
-   68|    272|            case "z": tapZ()
-   69|    272|            default: XCTFail("Unknown Character")
-   70|    272|            }
-   71|    272|        }
-   72|     46|    }
+   40|      0|    func tapKeys(text: String) {
+   41|      0|        for character in text {
+   42|      0|            switch character {
+   43|      0|            case "a": tapA()
+   44|      0|            case "b": tapB()
+   45|      0|            case "c": tapC()
+   46|      0|            case "d": tapD()
+   47|      0|            case "e": tapE()
+   48|      0|            case "f": tapF()
+   49|      0|            case "g": tapG()
+   50|      0|            case "h": tapH()
+   51|      0|            case "i": tapI()
+   52|      0|            case "j": tapJ()
+   53|      0|            case "k": tapK()
+   54|      0|            case "l": tapL()
+   55|      0|            case "m": tapM()
+   56|      0|            case "n": tapN()
+   57|      0|            case "o": tapO()
+   58|      0|            case "p": tapP()
+   59|      0|            case "q": tapQ()
+   60|      0|            case "r": tapR()
+   61|      0|            case "s": tapS()
+   62|      0|            case "t": tapT()
+   63|      0|            case "u": tapU()
+   64|      0|            case "v": tapV()
+   65|      0|            case "w": tapW()
+   66|      0|            case "x": tapX()
+   67|      0|            case "y": tapY()
+   68|      0|            case "z": tapZ()
+   69|      0|            default: XCTFail("Unknown Character")
+   70|      0|            }
+   71|      0|        }
+   72|      0|    }
    73|       |}
 
