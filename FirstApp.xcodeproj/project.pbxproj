@@ -198,8 +198,14 @@
 		3794CCF523EBB51500693C03 /* FirstAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				37E75D902432F2EB0014AA9C /* Recipe */,
-				37E75D8C2432F2AF0014AA9C /* Login */,
+				375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */,
+				37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */,
+				375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */,
+				37E75D892432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m */,
+				375E7B732412373D00536863 /* UserModelUnitTests.swift */,
+				375E7B9F2416196200536863 /* UserMock.swift */,
+				37E75D77243292870014AA9C /* UserViewModelUnitTests.swift */,
+				375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */,
 				3794CCF823EBB51500693C03 /* Info.plist */,
 				37E75D732432869C0014AA9C /* AnalyticsUnitTests.swift */,
 				37E75D862432ED1F0014AA9C /* FirstAppTests-Bridging-Header.h */,
@@ -282,52 +288,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		37E75D8C2432F2AF0014AA9C /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				37E75D8F2432F2DC0014AA9C /* Model */,
-				37E75D8E2432F2CB0014AA9C /* ViewModel */,
-				37E75D8D2432F2C00014AA9C /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		37E75D8D2432F2C00014AA9C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		37E75D8E2432F2CB0014AA9C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				37E75D77243292870014AA9C /* UserViewModelUnitTests.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		37E75D8F2432F2DC0014AA9C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				375E7B732412373D00536863 /* UserModelUnitTests.swift */,
-				375E7B9F2416196200536863 /* UserMock.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		37E75D902432F2EB0014AA9C /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */,
-				37E75D872432ED200014AA9C /* FavouritesObjectiveCUnitTests.m */,
-				375E7B9D2416179300536863 /* RecipeViewModelServiceTests.swift */,
-				37E75D892432F07F0014AA9C /* FavouritesViewModelObjectiveCUnitTests.m */,
-			);
-			path = Recipe;
-			sourceTree = "<group>";
-		};
 		A8C1645A36DA521CD621E4FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +341,7 @@
 				3794CCDA23EBB51400693C03 /* Resources */,
 				6F8CE0EAC3CA4F4AF260FF9D /* [CP] Embed Pods Frameworks */,
 				376CF66323F2C2AD0030C871 /* ShellScript */,
+				3787F2272434C0A2007EA793 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -502,6 +463,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		3787F2272434C0A2007EA793 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		6F8CE0EAC3CA4F4AF260FF9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -673,6 +653,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -833,6 +814,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -878,6 +860,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = FirstAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

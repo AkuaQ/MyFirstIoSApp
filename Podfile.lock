@@ -164,6 +164,8 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
   - Dev_Pod (0.1.0):
     - Firebase
     - Firebase/Analytics
@@ -172,6 +174,7 @@ PODS:
     - Firebase/Firestore
     - SwiftLint
   - DropDown (2.3.13)
+  - Fabric (1.10.2)
   - Firebase (6.20.0):
     - Firebase/Core (= 6.20.0)
   - Firebase/Analytics (6.20.0):
@@ -287,8 +290,10 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - Crashlytics
   - Dev_Pod (from `https://github.com/AkuaQ/Dev_Pod.git`)
   - DropDown
+  - Fabric
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -298,7 +303,9 @@ SPEC REPOS:
   trunk:
     - abseil
     - BoringSSL-GRPC
+    - Crashlytics
     - DropDown
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -332,8 +339,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Dev_Pod: c2c6423956064207ca427838c69ddb1fbeaaae3b
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: fe7f74012742ab403451dd283e6909b8f1fb348a
   FirebaseAnalytics: 572e467f3d977825266e8ccd52674aa3e6f47eac
   FirebaseAuth: 648892fd0afeb27ef97c1d2e667329855f1004bc
@@ -355,6 +364,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 0644b28ef2db7c22dedba1699e2d97e0f4ba59c7
+PODFILE CHECKSUM: 3927c385b6acced3b8a4bd9147806e3e093dd02b
 
 COCOAPODS: 1.8.4
