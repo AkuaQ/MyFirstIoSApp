@@ -18,8 +18,8 @@
 		3761270C24279A38008EBAAE /* RecipeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761270B24279A38008EBAAE /* RecipeCellTableViewCell.swift */; };
 		376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62923F143B50030C871 /* LoginEmailViewController.swift */; };
 		376CF62C23F146950030C871 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF62B23F146950030C871 /* SignUpEmailViewController.swift */; };
-		376CF63023F27D4A0030C871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */; };
 		376CF63223F27FCA0030C871 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CF63123F27FCA0030C871 /* HomeViewController.swift */; };
+		376D54A82436687B008CE12C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376D54A72436687B008CE12C /* GoogleService-Info.plist */; };
 		377A9779241CF1B200216C32 /* SignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9778241CF1B200216C32 /* SignUpUITests.swift */; };
 		377A9781241CFE8600216C32 /* XCTUIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */; };
 		377A9783241D818E00216C32 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9782241D818E00216C32 /* LoginUITests.swift */; };
@@ -77,8 +77,8 @@
 		3761270B24279A38008EBAAE /* RecipeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellTableViewCell.swift; sourceTree = "<group>"; };
 		376CF62923F143B50030C871 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
 		376CF62B23F146950030C871 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
-		376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		376CF63123F27FCA0030C871 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		376D54A72436687B008CE12C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		377A9776241CF1B100216C32 /* FirstAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		377A9778241CF1B200216C32 /* SignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITests.swift; sourceTree = "<group>"; };
 		377A977A241CF1B200216C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 				3794CCE823EBB51400693C03 /* Assets.xcassets */,
 				3794CCEA23EBB51400693C03 /* LaunchScreen.storyboard */,
 				3794CCED23EBB51400693C03 /* Info.plist */,
-				376CF62F23F27D4A0030C871 /* GoogleService-Info.plist */,
+				376D54A72436687B008CE12C /* GoogleService-Info.plist */,
 				376127002424A0B1008EBAAE /* FirstApp-Bridging-Header.h */,
 			);
 			path = FirstApp;
@@ -431,7 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3794CCEC23EBB51400693C03 /* LaunchScreen.storyboard in Resources */,
-				376CF63023F27D4A0030C871 /* GoogleService-Info.plist in Resources */,
+				376D54A82436687B008CE12C /* GoogleService-Info.plist in Resources */,
 				3794CCE923EBB51400693C03 /* Assets.xcassets in Resources */,
 				3794CCE723EBB51400693C03 /* Main.storyboard in Resources */,
 			);
