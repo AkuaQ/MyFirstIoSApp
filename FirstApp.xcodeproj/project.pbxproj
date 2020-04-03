@@ -821,7 +821,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstApp;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FoodFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FirstApp/FirstApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -844,7 +844,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FirstApp;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FoodFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FirstApp/FirstApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
