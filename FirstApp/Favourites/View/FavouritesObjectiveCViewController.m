@@ -26,7 +26,7 @@ FavouriteViewModel *favouriteViewModel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar.topItem setTitle:@"Food Finder"];
+    [self.navigationController.navigationBar.topItem setTitle:@"Favourites"];
     [AnalyticsRecipeRepo favouritePageTabTapped];
 }
 
@@ -37,6 +37,10 @@ FavouriteViewModel *favouriteViewModel;
         favouriteViewModel.collectionArray = result;
         [self.tableView reloadData];
     }];
+}
+- (IBAction)aboutButtonTapped:(UIButton *)sender {
+    UIViewController *pageController       = [[self storyboard] instantiateViewControllerWithIdentifier:@"PageViewController"];
+    [self.navigationController pushViewController:pageController animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
