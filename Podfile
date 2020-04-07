@@ -13,6 +13,7 @@ use_frameworks!
 	pod 'Firebase/Core'
 	pod 'Fabric'
 	pod 'Crashlytics'
+	pod 'Firebase/Performance'
 	pod 'DropDown'
 	pod 'Dev_Pod', :git => 'https://github.com/AkuaQ/Dev_Pod.git'
 #pod 'Dev_Pod', :path => '/Users/aafraneokese/Documents/Git/Dev_Pod'
