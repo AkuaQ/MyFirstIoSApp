@@ -13,7 +13,7 @@ public struct AboutResults: Decodable {
 }
 
 public struct AboutModel: Decodable {
-    var id: Int?
+    var aboutId: Int?
     var title: String
     var description: String
 }

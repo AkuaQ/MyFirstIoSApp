@@ -757,16 +757,23 @@
                                     <action selector="aboutButtonTapped:" destination="YMM-bB-84l" eventType="touchUpInside" id="a4D-gN-e5c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whU-l7-hy3">
+                                <rect key="frame" x="16" y="31" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="bottom" secondItem="h9f-ZK-wLw" secondAttribute="bottom" id="0Qe-4T-r9S"/>
                             <constraint firstItem="e9A-yT-Eif" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h9f-ZK-wLw" secondAttribute="leading" id="1Pa-ec-uHv"/>
                             <constraint firstItem="vMP-we-x9F" firstAttribute="centerX" secondItem="Lb4-b0-Il1" secondAttribute="centerX" id="Ba6-54-nsC"/>
+                            <constraint firstItem="e9A-yT-Eif" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="whU-l7-hy3" secondAttribute="trailing" constant="8" symbolic="YES" id="Hzr-zn-XPI"/>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="leading" secondItem="h9f-ZK-wLw" secondAttribute="leading" id="NnV-Vm-WMN"/>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="top" secondItem="vMP-we-x9F" secondAttribute="bottom" constant="66" id="X9o-gx-67E"/>
+                            <constraint firstItem="whU-l7-hy3" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="31" id="YiK-0c-MHG"/>
                             <constraint firstItem="h9f-ZK-wLw" firstAttribute="trailing" secondItem="e9A-yT-Eif" secondAttribute="trailing" constant="18" id="a79-Dm-OAS"/>
                             <constraint firstItem="e9A-yT-Eif" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="31" id="da0-yb-PlO"/>
+                            <constraint firstItem="whU-l7-hy3" firstAttribute="leading" secondItem="h9f-ZK-wLw" secondAttribute="leading" constant="16" id="eZD-fP-qIy"/>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="trailing" secondItem="h9f-ZK-wLw" secondAttribute="trailing" id="kJl-Mk-3AU"/>
                             <constraint firstItem="vMP-we-x9F" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="99" id="oea-7X-rGn"/>
                         </constraints>
@@ -968,7 +975,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JsU-Nv-1SU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3536.8000000000002" y="843.32833583208401"/>
+            <point key="canvasLocation" x="3537" y="893"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="VrH-1T-NaQ">
