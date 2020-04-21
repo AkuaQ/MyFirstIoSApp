@@ -39,7 +39,7 @@ class LoginUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Log in"].tap()
         sleep(4)
-    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
+    XCTAssertFalse(application.staticTexts["What are your ingredients?"].exists)
     }
 
     func testGivenEmptyUsernameFieldsReturnFailure() {
@@ -85,7 +85,7 @@ class LoginUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Log in"].tap()
         sleep(4)
-    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
+    XCTAssertFalse(application.staticTexts["What are your ingredients?"].exists)
     }
 
     func testGivenCorrectCredsReturnSuccess() {
@@ -110,6 +110,6 @@ class LoginUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Log in"].tap()
         sleep(8)
-    XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
+    XCTAssert(application.staticTexts["What are your ingredients?"].exists)
     }
 }

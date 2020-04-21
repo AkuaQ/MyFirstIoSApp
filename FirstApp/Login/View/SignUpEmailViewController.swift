@@ -8,15 +8,17 @@ class SignUpEmailViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
         self.hideKeyboardWhenTappedAround()
+
+        let gradientView = Gradient(frame: self.backgroundView.bounds)
+        self.backgroundView.insertSubview(gradientView, at: 0)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = "DVT Showcase"
-    }
+
     func setUpElements() {
         //Hide the error label
         errorLabel.alpha = 0
@@ -27,6 +29,7 @@ class SignUpEmailViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
+        Utilities.styleBackgroundView(backgroundView)
     }
 
     //Check the fields and validate that the data is correct.
@@ -40,24 +43,29 @@ class SignUpEmailViewController: UIViewController {
         let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if firstName == "" {
             Utilities.styleErrorTextField(firstNameTextField)
+            LoginAnimations.shakeTextfield(firstNameTextField)
             return "Please fill in all fields"
         }
         if lastName == "" {
             Utilities.styleErrorTextField(lastNameTextField)
+            LoginAnimations.shakeTextfield(lastNameTextField)
             return "Please fill in all fields"
         }
         if email == "" {
             Utilities.styleErrorTextField(emailTextField)
+            LoginAnimations.shakeTextfield(emailTextField)
             return "Please fill in all fields"
         }
         if password == "" {
             Utilities.styleErrorTextField(passwordTextField)
+            LoginAnimations.shakeTextfield(passwordTextField)
             return "Please fill in all fields"
         }        //Check if password secure
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if Constants.isPasswordValid(cleanedPassword) == false {
             //Password isn't secure enough
             Utilities.styleErrorTextField(passwordTextField)
+            LoginAnimations.shakeTextfield(passwordTextField)
             return "Please make sure your password is at least characters, contains a special character and a number."
         }
         return nil
@@ -65,6 +73,7 @@ class SignUpEmailViewController: UIViewController {
 
     @IBAction func signUpTapped(_ sender: Any) {
         setUpElements()
+        LoginAnimations.pulseButton(signUpButton)
         AnalyticsLoginRepo.signUpPageCreateAccountTapped()
         let error = validateField()
         if error != nil {

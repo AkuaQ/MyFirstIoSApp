@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import  Dev_Pod
 
 class RecipeCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var recipeImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        Utilities.styleBackgroundCardView(backgroundCardView)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Dev_Pod
 
 class CellTableViewCell: UITableViewCell {
 
@@ -17,15 +18,6 @@ class CellTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        updateUI()
-    }
-
-  func updateUI() {
-        backgroundCardView.backgroundColor = UIColor.white
-        backgroundCardView.layer.cornerRadius = 3
-        backgroundCardView.layer.masksToBounds = false
-        backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        backgroundCardView.layer.shadowOpacity = 0.8
+        Utilities.styleBackgroundCardView(backgroundCardView)
     }
 }

@@ -158,6 +158,6 @@ class SignUpUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Create Account"].tap()
         sleep(8)
-        XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
+        XCTAssert(application.staticTexts["What are your ingredients?"].exists)
     }
 }

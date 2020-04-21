@@ -15,6 +15,7 @@ extension UIViewController {
 }
 
 class LoginEmailViewController: UIViewController {
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -26,6 +27,9 @@ class LoginEmailViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
         self.hideKeyboardWhenTappedAround()
+
+        let gradientView = Gradient(frame: self.backgroundView.bounds)
+        self.backgroundView.insertSubview(gradientView, at: 0)
     }
 
     func setUpElements() {
@@ -36,6 +40,7 @@ class LoginEmailViewController: UIViewController {
         Utilities.styleFilledButton(loginButton)
         facebookButton.layer.cornerRadius = facebookButton.frame.width/2
         googleButton.layer.cornerRadius = googleButton.frame.width/2
+        Utilities.styleBackgroundView(backgroundView)
     }
 
     //Check the fields and validate that the data is correct.
@@ -47,10 +52,12 @@ class LoginEmailViewController: UIViewController {
         let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if email == "" {
             Utilities.styleErrorTextField(emailTextField)
+            LoginAnimations.shakeTextfield(emailTextField)
             return "Please fill in all fields"
         }
         if password == "" {
             Utilities.styleErrorTextField(passwordTextField)
+            LoginAnimations.shakeTextfield(passwordTextField)
             return "Please fill in all fields"
         }        //Check if password secure
         return nil
@@ -59,15 +66,7 @@ class LoginEmailViewController: UIViewController {
     @IBAction func loginTapped(_ sender: UIButton) {
         setUpElements()
         AnalyticsLoginRepo.loginPageLoginTapped()
-        UIButton.animate(withDuration: 0.2,
-                         animations: {
-                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
-        },
-                         completion: { _ in
-                            UIButton.animate(withDuration: 0.2, animations: {
-                                sender.transform = CGAffineTransform.identity
-                            })
-        })
+        LoginAnimations.pulseButton(loginButton)
         let error = validateField()
         if error != nil {
             //There's something wrong with the fields, show the error message
