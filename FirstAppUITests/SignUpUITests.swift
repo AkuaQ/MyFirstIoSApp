@@ -9,8 +9,11 @@
 import XCTest
 
 class SignUpUITests: XCTestCase {
+    var application: XCUIApplication!
 
     override func setUp() {
+        application = XCUIApplication()
+        setupSnapshot(application)
         continueAfterFailure = false
     }
 
@@ -20,7 +23,6 @@ class SignUpUITests: XCTestCase {
 
     func testGivenIncorrectPasswordReturnFailure() {
         // UI tests must launch the application that they test.
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.textFields["firstName"].tap()
@@ -43,7 +45,6 @@ class SignUpUITests: XCTestCase {
     }
 
     func testGivenReturningUserReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.textFields["firstName"].tap()
@@ -76,7 +77,6 @@ class SignUpUITests: XCTestCase {
     }
 
      func testGivenEmptyFieldsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.buttons["Create Account"].tap()
@@ -84,7 +84,6 @@ class SignUpUITests: XCTestCase {
     }
 
      func testGivenEmptyLastNameFieldsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.textFields["firstName"].tap()
@@ -94,7 +93,6 @@ class SignUpUITests: XCTestCase {
     }
 
  func testGivenEmptyEmailFieldsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.textFields["firstName"].tap()
@@ -106,7 +104,6 @@ class SignUpUITests: XCTestCase {
     }
 
     func testGivenEmptyPasswordFieldsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.textFields["firstName"].tap()
@@ -120,7 +117,6 @@ class SignUpUITests: XCTestCase {
     }
 
     func testGivenCorrectCredsReturnSuccess() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Sign up"].tap()
         application.textFields["firstName"].tap()
@@ -156,6 +152,7 @@ class SignUpUITests: XCTestCase {
         application.keys["1"].tap()
         application.keys["?"].tap()
         application.keys["more"].tap()
+        snapshot("SignInScreen")
         application.buttons["Create Account"].tap()
         sleep(8)
         XCTAssert(application.staticTexts["What are your ingredients?"].exists)
