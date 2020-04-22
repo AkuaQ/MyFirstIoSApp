@@ -9,8 +9,10 @@
 import XCTest
 
 class APIUITests: XCTestCase {
-
+    var application: XCUIApplication!
     override func setUp() {
+        application = XCUIApplication()
+        setupSnapshot(application)
         continueAfterFailure = false
     }
 
@@ -19,7 +21,6 @@ class APIUITests: XCTestCase {
     }
 
     func testGivenCorrectIngredientsSearchReturnSuccessfulDetailAndWebsite() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
@@ -34,18 +35,20 @@ class APIUITests: XCTestCase {
         sleep(8)
         application.searchFields[
             "Search for ingredients"].tap()
+        snapshot("HomeScreen")
         application.searchFields["Search for ingredients"].typeText("Fish")
         application.buttons[
             "Search"].tap()
         application.staticTexts["Fish"].tap()
+        snapshot("HomeResultsScreen")
        application.staticTexts["Delicious Fish Curry Recipe"].tap()
         sleep(2)
+        snapshot("DetailScreen")
         application.buttons["View Instructions"].tap()
         sleep(8)
     }
 
     func testGivenCorrectRecipesSearchReturnSuccessfulDetailAndWebsite() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
