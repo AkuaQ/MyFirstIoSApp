@@ -13,6 +13,7 @@ class RecipeListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeSearchBar: UISearchBar!
+    @IBOutlet weak var instructionLabel: UILabel!
     var username = ""
     var foodList = [FoodDetails]() {
         didSet {
@@ -26,13 +27,14 @@ class RecipeListViewController: UIViewController {
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.navigationBar.topItem?.title = "Recipe List"
+        recipeSearchBar.searchTextField.leftView?.tintColor = UIColor(named: "PurplePink")
         AnalyticsRecipeRepo.recipeListPageTabTapped()
     }
 }
 
 extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 160
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -80,6 +82,7 @@ extension RecipeListViewController: UISearchBarDelegate {
         foodRequest.getSearchResult { [weak self] result in
             self?.foodList = result
         }
+        RecipeAnimations.fadeLabel(instructionLabel)
         AnalyticsRecipeRepo.recipeListPageSearched()
     }
 }

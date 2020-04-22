@@ -9,8 +9,11 @@
 import XCTest
 
 class LoginUITests: XCTestCase {
+    var application: XCUIApplication!
 
     override func setUp() {
+        application = XCUIApplication()
+        setupSnapshot(application)
     }
 
     override func tearDown() {
@@ -18,7 +21,6 @@ class LoginUITests: XCTestCase {
     }
 
     func testGivenIncorrectUsernameCredsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
@@ -39,11 +41,10 @@ class LoginUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Log in"].tap()
         sleep(4)
-    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
+    XCTAssertFalse(application.staticTexts["What are your ingredients?"].exists)
     }
 
     func testGivenEmptyUsernameFieldsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Login"].tap()
         application.buttons["Log in"].tap()
@@ -51,7 +52,6 @@ class LoginUITests: XCTestCase {
     }
 
     func testGivenEmptyPasswordFieldsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
        application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
@@ -61,7 +61,6 @@ class LoginUITests: XCTestCase {
     }
 
     func testGivenNoExistingUserCredsReturnFailure() {
-        let application = XCUIApplication()
         application.launch()
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
@@ -85,12 +84,12 @@ class LoginUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Log in"].tap()
         sleep(4)
-    XCTAssertFalse(application.staticTexts["What are your Ingredients?"].exists)
+    XCTAssertFalse(application.staticTexts["What are your ingredients?"].exists)
     }
 
     func testGivenCorrectCredsReturnSuccess() {
-        let application = XCUIApplication()
         application.launch()
+        snapshot("WelcomeScreen")
         application.buttons["Login"].tap()
         application.textFields["emailLogin"].tap()
         application.tapKeys(text: "tester")
@@ -108,8 +107,9 @@ class LoginUITests: XCTestCase {
         application.keys["1"].tap()
         application.keys["?"].tap()
         application.keys["more"].tap()
+        snapshot("LoginScreen")
         application.buttons["Log in"].tap()
         sleep(8)
-    XCTAssert(application.staticTexts["What are your Ingredients?"].exists)
+    XCTAssert(application.staticTexts["What are your ingredients?"].exists)
     }
 }

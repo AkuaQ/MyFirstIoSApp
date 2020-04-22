@@ -16,7 +16,7 @@ public struct AboutRequest {
     public func getAboutResult(completionHandler: @escaping([AboutModel]) -> Void) {
        dataTask?.cancel()
 
-        let serverString = "http://localhost:8080/about"
+        let serverString = "https://peaceful-waters-87229.herokuapp.com/about"
         guard let resourceURL = URL(string: serverString) else {fatalError()}
         let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, response, error in
             if let error = error {

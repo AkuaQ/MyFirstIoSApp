@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     var username = ""
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeSearchBar: UISearchBar!
+    @IBOutlet weak var instructionLabel: UILabel!
     var foodList = [FoodDetails]() {
         didSet {
             DispatchQueue.main.async {
@@ -22,7 +23,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataFiltered = data
-
         dropButton.anchorView = recipeSearchBar
         dropButton.bottomOffset = CGPoint(x: 0, y: (dropButton.anchorView?.plainView.bounds.height)!)
         dropButton.backgroundColor = .white
@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         }
         recipeSearchBar.delegate = self
         self.hideKeyboardWhenTappedAround()
+        recipeSearchBar.searchTextField.leftView?.tintColor = UIColor(named: "PurplePink")
         AnalyticsRecipeRepo.homePageTabTapped()
     }
 
@@ -50,7 +51,7 @@ class HomeViewController: UIViewController {
         for object: UIView in ((searchBar.subviews[0] )).subviews {
             if let zKey = object as? UIButton {
                 let btn: UIButton = zKey
-                btn.setTitleColor(UIColor.white, for: .normal)
+                btn.setTitleColor(.white, for: .normal)
             }
         }
     }
@@ -69,7 +70,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 160
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -117,6 +118,7 @@ extension HomeViewController: UISearchBarDelegate {
         foodRequest.getSearchResult { [weak self] result in
             self?.foodList = result
         }
+        RecipeAnimations.fadeLabel(instructionLabel)
         AnalyticsRecipeRepo.homePageSearched()
     }
 }

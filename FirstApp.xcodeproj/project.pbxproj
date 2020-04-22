@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C46118536226CEC1B767C09 /* Pods_FirstAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AFB699FC1C4CA6E7F729DD /* Pods_FirstAppTests.framework */; };
+		371C1BC6244F234F00B47127 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C1BC5244F234E00B47127 /* SnapshotHelper.swift */; };
 		375E7B7224122FD800536863 /* UtilitiesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */; };
 		375E7B742412373D00536863 /* UserModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B732412373D00536863 /* UserModelUnitTests.swift */; };
 		375E7B9C2416170400536863 /* RecipeModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */; };
@@ -24,6 +25,20 @@
 		377A9781241CFE8600216C32 /* XCTUIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */; };
 		377A9783241D818E00216C32 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9782241D818E00216C32 /* LoginUITests.swift */; };
 		377A9785241E355B00216C32 /* APIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9784241E355B00216C32 /* APIUITests.swift */; };
+		378D919A2448547300DBBE11 /* BeVietnam-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */; };
+		378D919B2448547300DBBE11 /* BeVietnam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */; };
+		378D919C2448547300DBBE11 /* BeVietnam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */; };
+		378D919D2448547300DBBE11 /* BeVietnam-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918F2448547300DBBE11 /* BeVietnam-SemiBoldItalic.ttf */; };
+		378D919E2448547300DBBE11 /* BeVietnam-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91902448547300DBBE11 /* BeVietnam-BoldItalic.ttf */; };
+		378D919F2448547300DBBE11 /* BeVietnam-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91912448547300DBBE11 /* BeVietnam-ThinItalic.ttf */; };
+		378D91A02448547300DBBE11 /* BeVietnam-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91922448547300DBBE11 /* BeVietnam-SemiBold.ttf */; };
+		378D91A12448547300DBBE11 /* BeVietnam-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91932448547300DBBE11 /* BeVietnam-MediumItalic.ttf */; };
+		378D91A22448547300DBBE11 /* BeVietnam-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91942448547300DBBE11 /* BeVietnam-Thin.ttf */; };
+		378D91A32448547300DBBE11 /* BeVietnam-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91952448547300DBBE11 /* BeVietnam-Medium.ttf */; };
+		378D91A42448547300DBBE11 /* BeVietnam-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91962448547300DBBE11 /* BeVietnam-ExtraBoldItalic.ttf */; };
+		378D91A52448547300DBBE11 /* BeVietnam-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91972448547300DBBE11 /* BeVietnam-LightItalic.ttf */; };
+		378D91A62448547300DBBE11 /* BeVietnam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91982448547300DBBE11 /* BeVietnam-Bold.ttf */; };
+		378D91A72448547300DBBE11 /* BeVietnam-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D91992448547300DBBE11 /* BeVietnam-ExtraBold.ttf */; };
 		3794CCE023EBB51400693C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCDF23EBB51400693C03 /* AppDelegate.swift */; };
 		3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE123EBB51400693C03 /* SceneDelegate.swift */; };
 		3794CCE423EBB51400693C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794CCE323EBB51400693C03 /* ViewController.swift */; };
@@ -67,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		371C1BC5244F234E00B47127 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		375E7B7124122FD800536863 /* UtilitiesUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesUnitTests.swift; sourceTree = "<group>"; };
 		375E7B732412373D00536863 /* UserModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelUnitTests.swift; sourceTree = "<group>"; };
 		375E7B9B2416170400536863 /* RecipeModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModelUnitTests.swift; sourceTree = "<group>"; };
@@ -88,6 +104,20 @@
 		377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTUIApplicationExtension.swift; sourceTree = "<group>"; };
 		377A9782241D818E00216C32 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		377A9784241E355B00216C32 /* APIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUITests.swift; sourceTree = "<group>"; };
+		378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Italic.ttf"; sourceTree = "<group>"; };
+		378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Regular.ttf"; sourceTree = "<group>"; };
+		378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Light.ttf"; sourceTree = "<group>"; };
+		378D918F2448547300DBBE11 /* BeVietnam-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		378D91902448547300DBBE11 /* BeVietnam-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-BoldItalic.ttf"; sourceTree = "<group>"; };
+		378D91912448547300DBBE11 /* BeVietnam-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-ThinItalic.ttf"; sourceTree = "<group>"; };
+		378D91922448547300DBBE11 /* BeVietnam-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-SemiBold.ttf"; sourceTree = "<group>"; };
+		378D91932448547300DBBE11 /* BeVietnam-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-MediumItalic.ttf"; sourceTree = "<group>"; };
+		378D91942448547300DBBE11 /* BeVietnam-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Thin.ttf"; sourceTree = "<group>"; };
+		378D91952448547300DBBE11 /* BeVietnam-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Medium.ttf"; sourceTree = "<group>"; };
+		378D91962448547300DBBE11 /* BeVietnam-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		378D91972448547300DBBE11 /* BeVietnam-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-LightItalic.ttf"; sourceTree = "<group>"; };
+		378D91982448547300DBBE11 /* BeVietnam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Bold.ttf"; sourceTree = "<group>"; };
+		378D91992448547300DBBE11 /* BeVietnam-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-ExtraBold.ttf"; sourceTree = "<group>"; };
 		3794CCDC23EBB51400693C03 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794CCDF23EBB51400693C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3794CCE123EBB51400693C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +197,7 @@
 		377A9777241CF1B200216C32 /* FirstAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				371C1BC5244F234E00B47127 /* SnapshotHelper.swift */,
 				377A9782241D818E00216C32 /* LoginUITests.swift */,
 				377A9778241CF1B200216C32 /* SignUpUITests.swift */,
 				377A9784241E355B00216C32 /* APIUITests.swift */,
@@ -176,6 +207,35 @@
 				377A9780241CFE8600216C32 /* XCTUIApplicationExtension.swift */,
 			);
 			path = FirstAppUITests;
+			sourceTree = "<group>";
+		};
+		378D918A2448547300DBBE11 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				378D918B2448547300DBBE11 /* Be Vietnam */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		378D918B2448547300DBBE11 /* Be Vietnam */ = {
+			isa = PBXGroup;
+			children = (
+				378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */,
+				378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */,
+				378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */,
+				378D918F2448547300DBBE11 /* BeVietnam-SemiBoldItalic.ttf */,
+				378D91902448547300DBBE11 /* BeVietnam-BoldItalic.ttf */,
+				378D91912448547300DBBE11 /* BeVietnam-ThinItalic.ttf */,
+				378D91922448547300DBBE11 /* BeVietnam-SemiBold.ttf */,
+				378D91932448547300DBBE11 /* BeVietnam-MediumItalic.ttf */,
+				378D91942448547300DBBE11 /* BeVietnam-Thin.ttf */,
+				378D91952448547300DBBE11 /* BeVietnam-Medium.ttf */,
+				378D91962448547300DBBE11 /* BeVietnam-ExtraBoldItalic.ttf */,
+				378D91972448547300DBBE11 /* BeVietnam-LightItalic.ttf */,
+				378D91982448547300DBBE11 /* BeVietnam-Bold.ttf */,
+				378D91992448547300DBBE11 /* BeVietnam-ExtraBold.ttf */,
+			);
+			path = "Be Vietnam";
 			sourceTree = "<group>";
 		};
 		3794CCD323EBB51400693C03 = {
@@ -203,6 +263,7 @@
 		3794CCDE23EBB51400693C03 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				378D918A2448547300DBBE11 /* Font */,
 				37B1D97A243BD26600ACE0C4 /* About */,
 				37A33650242E391F001EB8D0 /* Recipes */,
 				37A3364C242E37A9001EB8D0 /* Login */,
@@ -408,7 +469,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Akua Afrane-Okese";
 				TargetAttributes = {
 					377A9775241CF1B100216C32 = {
@@ -460,9 +521,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B1DDCC243C9FE400ACE0C4 /* GoogleService-Info.plist in Resources */,
+				378D91A32448547300DBBE11 /* BeVietnam-Medium.ttf in Resources */,
+				378D91A12448547300DBBE11 /* BeVietnam-MediumItalic.ttf in Resources */,
+				378D91A62448547300DBBE11 /* BeVietnam-Bold.ttf in Resources */,
 				3794CCEC23EBB51400693C03 /* LaunchScreen.storyboard in Resources */,
+				378D91A22448547300DBBE11 /* BeVietnam-Thin.ttf in Resources */,
+				378D919A2448547300DBBE11 /* BeVietnam-Italic.ttf in Resources */,
 				3794CCE923EBB51400693C03 /* Assets.xcassets in Resources */,
 				3794CCE723EBB51400693C03 /* Main.storyboard in Resources */,
+				378D91A42448547300DBBE11 /* BeVietnam-ExtraBoldItalic.ttf in Resources */,
+				378D919F2448547300DBBE11 /* BeVietnam-ThinItalic.ttf in Resources */,
+				378D919D2448547300DBBE11 /* BeVietnam-SemiBoldItalic.ttf in Resources */,
+				378D91A52448547300DBBE11 /* BeVietnam-LightItalic.ttf in Resources */,
+				378D919E2448547300DBBE11 /* BeVietnam-BoldItalic.ttf in Resources */,
+				378D91A02448547300DBBE11 /* BeVietnam-SemiBold.ttf in Resources */,
+				378D919B2448547300DBBE11 /* BeVietnam-Regular.ttf in Resources */,
+				378D91A72448547300DBBE11 /* BeVietnam-ExtraBold.ttf in Resources */,
+				378D919C2448547300DBBE11 /* BeVietnam-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +716,7 @@
 				377A9783241D818E00216C32 /* LoginUITests.swift in Sources */,
 				377A9785241E355B00216C32 /* APIUITests.swift in Sources */,
 				377A9779241CF1B200216C32 /* SignUpUITests.swift in Sources */,
+				371C1BC6244F234F00B47127 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
