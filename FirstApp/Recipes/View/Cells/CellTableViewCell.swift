@@ -20,4 +20,10 @@ class CellTableViewCell: UITableViewCell {
         super.awakeFromNib()
         Utilities.styleBackgroundCardView(backgroundCardView)
     }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        titleLabel.textColor = selected ? .white : UIColor(named: "PurplePink")
+        backgroundCardView.backgroundColor = selected ? UIColor(named: "PurplePink") : .white
+    }
 }

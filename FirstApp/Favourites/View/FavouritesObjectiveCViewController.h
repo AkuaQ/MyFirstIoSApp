@@ -12,7 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FavouritesObjectiveCViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FavouritesObjectiveCViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate,
+UIImagePickerControllerDelegate>
 @property NSString *username;
 @property (nonatomic, readwrite) FIRFirestore *db;
 @end

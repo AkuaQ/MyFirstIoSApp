@@ -13,31 +13,56 @@
 #import <FirstApp-Swift.h>
 #import <Dev_Pod-Swift.h>
 #import <Dev_Pod-umbrella.h>
+#import <CoreData/CoreData.h>
 
 @interface FavouritesObjectiveCViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *favouritesLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UIButton *profileImageButton;
+@property ProfileRepo* profileImageRepo;
+@property UIImage* profileImage;
 @end
 
 @implementation FavouritesObjectiveCViewController
 
 FavouriteViewModel *favouriteViewModel;
+UIImagePickerController *imagePicker;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.profileImageRepo = [[ProfileRepo alloc] init];
     [self.navigationController.navigationBar.topItem setTitle:@"Favourites"];
     [AnalyticsRecipeRepo favouritePageTabTapped];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
    [super viewWillAppear:animated];
+    self.profileImageRepo = [[ProfileRepo alloc] init];
+    self.profileImage = [self.profileImageRepo fetch];
+    self.profileImageView.image = self.profileImage;
     favouriteViewModel = [[FavouriteViewModel alloc] init];
     [favouriteViewModel printFavourites:self.username completion:^(NSMutableArray<FavouriteModel*>* result){
         favouriteViewModel.collectionArray = result;
         [self.tableView reloadData];
     }];
 }
+- (IBAction)profileImageButtonTapped:(id)sender {
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker  didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    self.profileImageRepo = [[ProfileRepo alloc] init];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self.profileImageRepo save:UIImagePNGRepresentation(image)];
+    
+    self.profileImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [imagePicker dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)aboutButtonTapped:(UIButton *)sender {
     UIViewController *pageController       = [[self storyboard] instantiateViewControllerWithIdentifier:@"PageViewController"];
     [self.navigationController pushViewController:pageController animated:YES];
