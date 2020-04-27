@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n65-aw-Kn4">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -27,17 +27,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-bd-gk2">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-bd-gk2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-6a-iVp">
-                                <rect key="frame" x="45" y="267" width="285" height="201"/>
+                                <rect key="frame" x="45" y="311" width="324" height="201"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get a recipe with ingredients in your kitchen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IH-Et-E1S">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="59"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="59"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSt-eO-fz6" userLabel="ThirdButton">
-                                        <rect key="frame" x="0.0" y="71" width="285" height="59"/>
+                                        <rect key="frame" x="0.0" y="71" width="324" height="59"/>
                                         <color key="backgroundColor" red="0.78431372549019607" green="0.52941176470588236" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="s2p-45-p80">
@@ -66,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBU-g9-4tk">
-                                        <rect key="frame" x="0.0" y="142" width="285" height="59"/>
+                                        <rect key="frame" x="0.0" y="142" width="324" height="59"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <state key="normal" title="Sign up">
@@ -83,7 +83,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Finder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-E9-Ncp">
-                                <rect key="frame" x="108" y="131" width="159" height="128"/>
+                                <rect key="frame" x="108" y="175" width="198" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="kUy-Ny-wWW">
                                         <variation key="heightClass=compact-widthClass=compact" constant="87"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="5ge-E9-Ncp" firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="sUU-6a-iVp" secondAttribute="centerX" id="8Hk-Ar-bHc"/>
                             <constraint firstItem="5ge-E9-Ncp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87" id="A3L-U9-Gnm">
                                 <variation key="heightClass=compact-widthClass=compact" constant="18"/>
-                                <variation key="heightClass=compact-widthClass=regular" constant="37"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="13"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="138"/>
                             </constraint>
                             <constraint firstItem="sUU-6a-iVp" firstAttribute="top" secondItem="5ge-E9-Ncp" secondAttribute="bottom" constant="8" id="BGo-Px-LY3">
@@ -136,14 +136,14 @@
             <objects>
                 <viewController id="cHN-jd-sqI" customClass="SignUpEmailViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTA-Us-zGh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="KLG-Xc-e5I">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="KLG-Xc-e5I">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-59-hWa">
-                                <rect key="frame" x="80" y="82" width="215" height="76"/>
+                                <rect key="frame" x="80" y="126" width="254" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="KCa-BD-EaV">
                                         <variation key="heightClass=compact-widthClass=compact" constant="62"/>
@@ -160,23 +160,26 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0a-VP-Y69" userLabel="BackgroundView">
-                                <rect key="frame" x="22" y="173" width="331" height="368"/>
+                                <rect key="frame" x="22" y="217" width="370" height="368"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="368" id="g4P-hj-RWJ"/>
+                                    <constraint firstAttribute="height" constant="368" id="g4P-hj-RWJ">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="203"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="540"/>
+                                    </constraint>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-Ni-dqS">
-                                <rect key="frame" x="50" y="191" width="275" height="332"/>
+                                <rect key="frame" x="50" y="235" width="314" height="332"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uI8-wK-pMH">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="124"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="124"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5jw-lV-Rg5">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-jG-N8P">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -185,20 +188,28 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xe4-od-6t8">
-                                                        <rect key="frame" x="0.0" y="23" width="275" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="firstName"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="cgM-GQ-bpg">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                            </constraint>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                        </variation>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-ml-vc3">
-                                                <rect key="frame" x="0.0" y="67" width="275" height="57"/>
+                                                <rect key="frame" x="0.0" y="67" width="314" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7D-Ng-QbY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -207,28 +218,36 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-Ec-AU5">
-                                                        <rect key="frame" x="0.0" y="23" width="275" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="lastName"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="zJa-WR-BT2">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                            </constraint>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                        </variation>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <variation key="heightClass=compact-widthClass=compact" axis="horizontal" distribution="fillEqually" spacing="10"/>
                                         <variation key="heightClass=compact-widthClass=regular" axis="horizontal" distribution="fillEqually" spacing="10"/>
-                                        <variation key="heightClass=regular-widthClass=regular" spacing="30"/>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="10"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WAe-76-EJR">
-                                        <rect key="frame" x="0.0" y="134" width="275" height="124"/>
+                                        <rect key="frame" x="0.0" y="134" width="314" height="124"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="e25-z7-PZV">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giU-R0-WUk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -237,20 +256,28 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-W7-uuZ">
-                                                        <rect key="frame" x="0.0" y="23" width="275" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="emailSignUp"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="wg1-NF-fyc">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                        </variation>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="BRc-Mh-WEQ">
-                                                <rect key="frame" x="0.0" y="67" width="275" height="57"/>
+                                                <rect key="frame" x="0.0" y="67" width="314" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-kv-2t1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -259,22 +286,30 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-mA-rxS">
-                                                        <rect key="frame" x="0.0" y="23" width="275" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="passwordSignUp"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="Y28-9h-BOo">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                            </constraint>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                        </variation>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <variation key="heightClass=compact-widthClass=compact" axis="horizontal" distribution="fillEqually" spacing="10"/>
                                         <variation key="heightClass=compact-widthClass=regular" axis="horizontal" distribution="fillEqually" spacing="10"/>
-                                        <variation key="heightClass=regular-widthClass=regular" spacing="30"/>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="10"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4A-p2-Pha">
-                                        <rect key="frame" x="0.0" y="268" width="275" height="34"/>
+                                        <rect key="frame" x="0.0" y="268" width="314" height="34"/>
                                         <color key="backgroundColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="tpO-qd-XBb">
@@ -285,19 +320,25 @@
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="24"/>
+                                        </variation>
                                         <connections>
                                             <action selector="signUpTapped:" destination="cHN-jd-sqI" eventType="touchUpInside" id="Qge-tr-nbf"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nav-VP-6Yc">
-                                        <rect key="frame" x="0.0" y="312" width="275" height="20"/>
+                                        <rect key="frame" x="0.0" y="312" width="314" height="20"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="24"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" spacing="7"/>
-                                <variation key="heightClass=regular-widthClass=regular" spacing="30"/>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="10"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -311,9 +352,10 @@
                             <constraint firstItem="v0a-VP-Y69" firstAttribute="leading" secondItem="OVy-7s-DGC" secondAttribute="leading" constant="22" id="SpZ-uL-7w9"/>
                             <constraint firstItem="4d0-Ni-dqS" firstAttribute="top" secondItem="0hv-59-hWa" secondAttribute="bottom" constant="33" id="UqQ-25-isF"/>
                             <constraint firstItem="0hv-59-hWa" firstAttribute="centerX" secondItem="JTA-Us-zGh" secondAttribute="centerX" id="Xh4-2J-2HA"/>
-                            <constraint firstItem="v0a-VP-Y69" firstAttribute="leading" secondItem="nav-VP-6Yc" secondAttribute="trailing" constant="-303" id="fOF-b6-Ebv"/>
                             <constraint firstItem="0hv-59-hWa" firstAttribute="leading" secondItem="OVy-7s-DGC" secondAttribute="leading" constant="80" id="k4R-S3-1gZ"/>
-                            <constraint firstItem="0hv-59-hWa" firstAttribute="top" secondItem="OVy-7s-DGC" secondAttribute="top" constant="38" id="qUo-jP-GyK"/>
+                            <constraint firstItem="0hv-59-hWa" firstAttribute="top" secondItem="OVy-7s-DGC" secondAttribute="top" constant="38" id="qUo-jP-GyK">
+                                <variation key="heightClass=compact-widthClass=regular" constant="22"/>
+                            </constraint>
                             <constraint firstItem="4d0-Ni-dqS" firstAttribute="leading" secondItem="OVy-7s-DGC" secondAttribute="leading" constant="50" id="sMb-oK-34P"/>
                             <constraint firstItem="KLG-Xc-e5I" firstAttribute="top" secondItem="JTA-Us-zGh" secondAttribute="topMargin" id="tdE-yl-tcu"/>
                             <constraint firstItem="OVy-7s-DGC" firstAttribute="trailing" secondItem="4d0-Ni-dqS" secondAttribute="trailing" constant="50" id="upF-4r-Dn1"/>
@@ -335,25 +377,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7w-mS-IR0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856.8" y="517.6911544227886"/>
+            <point key="canvasLocation" x="1856.25" y="517.39130434782612"/>
         </scene>
         <!--Login Email View Controller-->
         <scene sceneID="rIj-N0-rKJ">
             <objects>
                 <viewController id="p1x-W9-ioD" customClass="LoginEmailViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLK-c7-AvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="4Mb-cK-UjV">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="4Mb-cK-UjV">
+                                <rect key="frame" x="-39" y="88" width="492" height="808"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mj-O9-nsZ" userLabel="BackgroundView">
-                                <rect key="frame" x="22" y="164" width="331" height="270"/>
+                                <rect key="frame" x="22" y="207.99999999999997" width="370" height="270.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VPt-tn-oiC">
-                                <rect key="frame" x="93" y="94" width="189" height="42"/>
+                                <rect key="frame" x="93" y="138" width="228" height="42"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="42"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -365,16 +407,16 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-uU-ok4">
-                                <rect key="frame" x="50" y="174" width="275" height="214"/>
+                                <rect key="frame" x="50" y="218" width="314" height="214"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-Ta-Tla">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xs8-zo-8JV">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbz-H0-UdV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -383,23 +425,28 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-5h-4tA">
-                                                        <rect key="frame" x="0.0" y="23" width="275" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="emailLogin"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="7Dv-KO-nxz">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                                            </constraint>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
-                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="19"/>
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
                                                         </variation>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="d6u-aj-ReJ">
-                                                <rect key="frame" x="0.0" y="63" width="275" height="57"/>
+                                                <rect key="frame" x="0.0" y="63" width="314" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toT-X1-842">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -408,14 +455,19 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZV-4M-JeC">
-                                                        <rect key="frame" x="0.0" y="23" width="275" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="passwordLogin"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="j29-1P-1Le">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                                            </constraint>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
-                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
                                                         </variation>
                                                     </textField>
                                                 </subviews>
@@ -424,7 +476,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="10"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tL5-0a-vJ1">
-                                        <rect key="frame" x="0.0" y="140" width="275" height="34"/>
+                                        <rect key="frame" x="0.0" y="140" width="314" height="34"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.53725490196078429" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Jww-KZ-r84">
@@ -446,24 +498,27 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                            <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="24"/>
                                         </variation>
                                         <connections>
                                             <action selector="loginTapped:" destination="p1x-W9-ioD" eventType="touchUpInside" id="LBb-Uk-ZDA"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P49-EI-itF">
-                                        <rect key="frame" x="0.0" y="194" width="275" height="20"/>
+                                        <rect key="frame" x="0.0" y="194" width="314" height="20"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="24"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" spacing="10"/>
                                 <variation key="heightClass=compact-widthClass=regular" spacing="10"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-d9-gqk">
-                                <rect key="frame" x="157.5" y="395.5" width="60" height="30"/>
+                                <rect key="frame" x="177" y="439.66666666666669" width="60" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-np-tTg">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -493,18 +548,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnL-6W-dar">
-                                <rect key="frame" x="41" y="433.5" width="275" height="20"/>
+                                <rect key="frame" x="41" y="477.66666666666669" width="332" height="20"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="24"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4Mb-cK-UjV" firstAttribute="top" secondItem="Ql3-Rz-fjO" secondAttribute="top" id="2f9-J2-Tzl"/>
                             <constraint firstItem="mnL-6W-dar" firstAttribute="top" secondItem="2Mj-O9-nsZ" secondAttribute="bottom" constant="-0.5" id="4Jd-BC-eB1"/>
+                            <constraint firstItem="4Mb-cK-UjV" firstAttribute="leading" secondItem="jLK-c7-AvJ" secondAttribute="leadingMargin" constant="-59" id="6tr-HV-5HH"/>
                             <constraint firstItem="mnL-6W-dar" firstAttribute="leading" secondItem="Ql3-Rz-fjO" secondAttribute="leading" constant="41" id="ARv-91-yCI"/>
-                            <constraint firstItem="2Mj-O9-nsZ" firstAttribute="top" secondItem="VPt-tn-oiC" secondAttribute="bottom" constant="28" id="JJP-4c-1Zh"/>
                             <constraint firstItem="Ql3-Rz-fjO" firstAttribute="trailing" secondItem="8BC-uU-ok4" secondAttribute="trailing" constant="50" id="Lc1-zQ-ZK1"/>
                             <constraint firstItem="kxk-d9-gqk" firstAttribute="top" secondItem="8BC-uU-ok4" secondAttribute="bottom" constant="7.6666666666666288" id="NVY-P4-gXs"/>
                             <constraint firstItem="VPt-tn-oiC" firstAttribute="top" secondItem="Ql3-Rz-fjO" secondAttribute="top" constant="50" id="OAv-NY-vcF">
@@ -517,19 +575,18 @@
                                 <variation key="heightClass=compact-widthClass=regular" constant="21"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="59"/>
                             </constraint>
-                            <constraint firstItem="2Mj-O9-nsZ" firstAttribute="leading" secondItem="Ql3-Rz-fjO" secondAttribute="leading" constant="22" id="UFB-ZN-rPZ"/>
-                            <constraint firstItem="4Mb-cK-UjV" firstAttribute="leading" secondItem="Ql3-Rz-fjO" secondAttribute="leading" id="Y66-d3-fYg"/>
                             <constraint firstItem="2Mj-O9-nsZ" firstAttribute="leading" secondItem="Ql3-Rz-fjO" secondAttribute="leading" constant="22" id="ZZy-pK-Tf6"/>
-                            <constraint firstItem="2Mj-O9-nsZ" firstAttribute="top" secondItem="VPt-tn-oiC" secondAttribute="bottom" constant="28" id="f7Y-Dh-HUb"/>
+                            <constraint firstItem="2Mj-O9-nsZ" firstAttribute="top" secondItem="VPt-tn-oiC" secondAttribute="bottom" constant="28" id="f7Y-Dh-HUb">
+                                <variation key="heightClass=compact-widthClass=regular" constant="9"/>
+                            </constraint>
                             <constraint firstItem="4Mb-cK-UjV" firstAttribute="centerX" secondItem="8BC-uU-ok4" secondAttribute="centerX" id="fz4-xa-Oow"/>
                             <constraint firstItem="Ql3-Rz-fjO" firstAttribute="trailing" secondItem="2Mj-O9-nsZ" secondAttribute="trailing" constant="22" id="gYi-PN-9f2"/>
-                            <constraint firstItem="Ql3-Rz-fjO" firstAttribute="trailing" secondItem="mnL-6W-dar" secondAttribute="trailing" constant="59" id="h6Y-vl-nJp"/>
+                            <constraint firstItem="Ql3-Rz-fjO" firstAttribute="trailing" secondItem="mnL-6W-dar" secondAttribute="trailing" constant="41" id="h6Y-vl-nJp"/>
                             <constraint firstItem="kxk-d9-gqk" firstAttribute="centerX" secondItem="jLK-c7-AvJ" secondAttribute="centerX" id="iNm-7N-Clp"/>
                             <constraint firstItem="8BC-uU-ok4" firstAttribute="leading" secondItem="Ql3-Rz-fjO" secondAttribute="leading" constant="50" id="mHL-Xc-UOU"/>
-                            <constraint firstItem="4Mb-cK-UjV" firstAttribute="bottom" secondItem="Ql3-Rz-fjO" secondAttribute="bottom" id="oZ7-cs-x8c"/>
+                            <constraint firstItem="4Mb-cK-UjV" firstAttribute="bottom" secondItem="jLK-c7-AvJ" secondAttribute="bottom" id="oZ7-cs-x8c"/>
                             <constraint firstItem="VPt-tn-oiC" firstAttribute="centerX" secondItem="jLK-c7-AvJ" secondAttribute="centerX" id="rDP-EL-fAC"/>
                             <constraint firstItem="VPt-tn-oiC" firstAttribute="leading" secondItem="Ql3-Rz-fjO" secondAttribute="leading" constant="93" id="uLO-4y-k23"/>
-                            <constraint firstItem="Ql3-Rz-fjO" firstAttribute="trailing" secondItem="2Mj-O9-nsZ" secondAttribute="trailing" constant="22" id="uxs-xG-R4t"/>
                             <constraint firstItem="mnL-6W-dar" firstAttribute="top" secondItem="kxk-d9-gqk" secondAttribute="bottom" constant="8" symbolic="YES" id="xXk-wz-dX5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ql3-Rz-fjO"/>
@@ -576,14 +633,14 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="eWZ-fv-AiR" customClass="HomeViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVR-2O-4Hr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Icz-bc-gcu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="749"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search for ingredients" translucent="NO" id="OHv-hZ-U5M">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -591,14 +648,14 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="160" id="hwz-vA-GnY" customClass="CellTableViewCell" customModule="FirstApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="160"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwz-vA-GnY" id="Pnb-55-9Od">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzc-vr-RHN">
-                                                    <rect key="frame" x="8" y="11" width="359" height="138"/>
+                                                    <rect key="frame" x="8" y="11" width="398" height="138"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ysl-ss-qjF">
@@ -613,15 +670,21 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUG-Ov-X6L">
                                                             <rect key="frame" x="0.0" y="0.0" width="214" height="20"/>
-                                                            <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="17"/>
                                                             <color key="textColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="21"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F2-WK-j4c">
                                                             <rect key="frame" x="0.0" y="20" width="214" height="20"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                            </variation>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
@@ -658,10 +721,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are your ingredients?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyK-dC-OLE">
-                                <rect key="frame" x="85.5" y="323.5" width="204.5" height="20"/>
+                                <rect key="frame" x="105.00000000000001" y="438" width="204.33333333333337" height="20"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="24"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="Primary Gray Colour"/>
@@ -692,24 +758,24 @@
             <objects>
                 <viewController storyboardIdentifier="FavouritesObjectiveCViewController" id="YMM-bB-84l" customClass="FavouritesObjectiveCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lb4-b0-Il1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Favourites:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-we-x9F">
-                                <rect key="frame" x="118.5" y="99" width="138" height="40"/>
+                                <rect key="frame" x="138.33333333333337" y="281" width="137.66666666666663" height="40"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nq0-OX-wob">
-                                <rect key="frame" x="0.0" y="205" width="375" height="413"/>
+                                <rect key="frame" x="0.0" y="374" width="414" height="439"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteCell" rowHeight="118" id="Pmd-xo-cSU" customClass="FavouriteTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pmd-xo-cSU" id="TWo-eW-P3y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-Gv-SFi">
@@ -725,19 +791,25 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-lC-L9p">
-                                                    <rect key="frame" x="106" y="39" width="255" height="40"/>
+                                                    <rect key="frame" x="145" y="39" width="255" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym7-iO-Bae">
                                                             <rect key="frame" x="0.0" y="0.0" width="255" height="20"/>
-                                                            <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="17"/>
                                                             <color key="textColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="21"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-rm-Xhy">
                                                             <rect key="frame" x="0.0" y="20" width="255" height="20"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                            </variation>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
@@ -767,36 +839,60 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9A-yT-Eif">
-                                <rect key="frame" x="315" y="31" width="42" height="30"/>
+                                <rect key="frame" x="354" y="75" width="42" height="30"/>
                                 <state key="normal" title="About"/>
                                 <connections>
                                     <action selector="aboutButtonTapped:" destination="YMM-bB-84l" eventType="touchUpInside" id="a4D-gN-e5c"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="fzx-tp-f9n">
+                                <rect key="frame" x="75" y="127" width="264" height="128"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-e0-sWh">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="128"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s69-RL-spt">
+                                        <rect key="frame" x="163" y="49" width="101" height="30"/>
+                                        <state key="normal" title="Change Profile"/>
+                                        <connections>
+                                            <action selector="profileImageButtonTapped:" destination="YMM-bB-84l" eventType="touchUpInside" id="ZD4-cD-Fzq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Ug-e0-sWh" firstAttribute="top" secondItem="fzx-tp-f9n" secondAttribute="topMargin" id="t7C-bH-6y2"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="bottom" secondItem="h9f-ZK-wLw" secondAttribute="bottom" id="0Qe-4T-r9S"/>
                             <constraint firstItem="e9A-yT-Eif" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h9f-ZK-wLw" secondAttribute="leading" id="1Pa-ec-uHv"/>
+                            <constraint firstItem="fzx-tp-f9n" firstAttribute="leading" secondItem="h9f-ZK-wLw" secondAttribute="leading" constant="75" id="AmG-fb-xrN"/>
                             <constraint firstItem="vMP-we-x9F" firstAttribute="centerX" secondItem="Lb4-b0-Il1" secondAttribute="centerX" id="Ba6-54-nsC"/>
+                            <constraint firstItem="fzx-tp-f9n" firstAttribute="centerX" secondItem="Lb4-b0-Il1" secondAttribute="centerX" id="JTv-eG-zf6"/>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="leading" secondItem="h9f-ZK-wLw" secondAttribute="leading" id="NnV-Vm-WMN"/>
-                            <constraint firstItem="nq0-OX-wob" firstAttribute="top" secondItem="vMP-we-x9F" secondAttribute="bottom" constant="66" id="X9o-gx-67E"/>
+                            <constraint firstItem="nq0-OX-wob" firstAttribute="top" secondItem="vMP-we-x9F" secondAttribute="bottom" constant="53" id="X9o-gx-67E"/>
+                            <constraint firstItem="fzx-tp-f9n" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="83" id="Yef-8k-h9m"/>
                             <constraint firstItem="h9f-ZK-wLw" firstAttribute="trailing" secondItem="e9A-yT-Eif" secondAttribute="trailing" constant="18" id="a79-Dm-OAS"/>
                             <constraint firstItem="e9A-yT-Eif" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="31" id="da0-yb-PlO"/>
+                            <constraint firstItem="vMP-we-x9F" firstAttribute="top" secondItem="fzx-tp-f9n" secondAttribute="bottom" constant="26" id="hrj-gh-sHB"/>
                             <constraint firstItem="nq0-OX-wob" firstAttribute="trailing" secondItem="h9f-ZK-wLw" secondAttribute="trailing" id="kJl-Mk-3AU"/>
-                            <constraint firstItem="vMP-we-x9F" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="99" id="oea-7X-rGn"/>
+                            <constraint firstItem="vMP-we-x9F" firstAttribute="top" secondItem="h9f-ZK-wLw" secondAttribute="top" constant="237" id="oea-7X-rGn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h9f-ZK-wLw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favourites" image="star.fill" catalog="system" id="Vs2-dh-lJg"/>
                     <connections>
                         <outlet property="favouritesLabel" destination="vMP-we-x9F" id="XLL-Fd-UVZ"/>
+                        <outlet property="profileImageButton" destination="s69-RL-spt" id="0YQ-fo-Jma"/>
+                        <outlet property="profileImageView" destination="5Ug-e0-sWh" id="SGT-hX-cw6"/>
                         <outlet property="tableView" destination="nq0-OX-wob" id="EjI-Lt-9Gz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-jG-gmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3536.8000000000002" y="162.3688155922039"/>
+            <point key="canvasLocation" x="3536.2318840579715" y="162.05357142857142"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Hz3-T2-bWU">
@@ -813,11 +909,11 @@
             <objects>
                 <viewController storyboardIdentifier="RecipePageViewController" id="TVe-oR-xQT" customClass="RecipePageViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nnn-A6-mhp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYg-hh-Kdu">
-                                <rect key="frame" x="151.5" y="316.5" width="72.5" height="34"/>
+                                <rect key="frame" x="171" y="431.33333333333331" width="72.333333333333314" height="33.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -843,11 +939,11 @@
             <objects>
                 <viewController storyboardIdentifier="FavouritePageViewController" id="AoN-x4-tqV" customClass="FavouritePageViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WaK-Vw-4mH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmj-jE-CVg">
-                                <rect key="frame" x="153" y="317.5" width="69" height="32"/>
+                                <rect key="frame" x="172.66666666666666" y="432" width="69" height="32"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -873,29 +969,29 @@
             <objects>
                 <viewController id="aAz-3R-tfW" customClass="RecipeListViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mec-nC-vi6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KP5-zo-6J4">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="749"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search for recipes" id="y5g-jU-5nc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="160" id="1cV-0N-P7S" customClass="RecipeCellTableViewCell" customModule="FirstApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="160"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cV-0N-P7S" id="vFy-iM-z7B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4a-Vg-aCp">
-                                                    <rect key="frame" x="8" y="11" width="359" height="138"/>
+                                                    <rect key="frame" x="8" y="11" width="398" height="138"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWN-YS-J67">
@@ -913,6 +1009,9 @@
                                                             <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="17"/>
                                                             <color key="textColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="21"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzS-l5-q23">
                                                             <rect key="frame" x="0.0" y="20" width="214" height="20"/>
@@ -954,10 +1053,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in a recipe of interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz9-f9-fTX">
-                                <rect key="frame" x="88" y="323.5" width="199.5" height="20"/>
+                                <rect key="frame" x="107.33333333333333" y="438" width="199.33333333333337" height="20"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="24"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="Primary Gray Colour"/>
@@ -987,73 +1089,122 @@
             <objects>
                 <viewController storyboardIdentifier="RecipeDetailViewController" id="ezr-2x-5nj" customClass="RecipeDetailViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2P0-sC-Sqa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-2a-L3L">
-                                <rect key="frame" x="17" y="80.5" width="341" height="506"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-2a-L3L">
+                                <rect key="frame" x="36.666666666666657" y="191" width="341" height="514"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OsM-dK-h3D">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SlO-jn-XuM">
                                         <rect key="frame" x="0.0" y="0.0" width="341" height="315"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="UaE-07-3Js">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="315"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="341" id="cjV-lE-3vr">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="610"/>
-                                            </constraint>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bo-a5-xch">
-                                        <rect key="frame" x="0.0" y="333" width="341" height="72"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="B8o-Pa-xk7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BeVietnam-Bold" family="Be Vietnam" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XM0-VJ-fTm">
-                                        <rect key="frame" x="0.0" y="423" width="341" height="25"/>
-                                        <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-pb-OPM">
-                                        <rect key="frame" x="0.0" y="466" width="341" height="40"/>
-                                        <color key="backgroundColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="6Zg-43-HHS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="17"/>
-                                        <state key="normal" title="View Instructions">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="linkButtonTapped:" destination="ezr-2x-5nj" eventType="touchUpInside" id="QEK-ZW-Mkx"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OsM-dK-h3D">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="315"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="UaE-07-3Js">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="315"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="341" id="cjV-lE-3vr">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="610"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-3P-MeJ">
+                                        <rect key="frame" x="0.0" y="321" width="341" height="193"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bo-a5-xch">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="66"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="66" id="B8o-Pa-xk7">
+                                                        <variation key="heightClass=compact-widthClass=compact" constant="91"/>
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="96"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BeVietnam-Bold" family="Be Vietnam" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BeVietnam-Bold" family="Be Vietnam" pointSize="27"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XM0-VJ-fTm">
+                                                <rect key="frame" x="0.0" y="76" width="341" height="25"/>
+                                                <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="21"/>
+                                                </variation>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="0WU-yN-8wJ">
+                                                <rect key="frame" x="0.0" y="111" width="341" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulw-1g-lbp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-OF-QNH">
+                                                        <rect key="frame" x="154.33333333333334" y="0.33333333333333037" width="32" height="31.666666666666668"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="favouritesButton"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="VnW-hT-Hso"/>
+                                                            <constraint firstAttribute="height" constant="32" id="gMr-ft-Kot"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.7843137255" green="0.52941176469999995" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <state key="normal" backgroundImage="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="favouriteButtonTapped:" destination="ezr-2x-5nj" eventType="touchUpInside" id="wNs-9g-gqA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lca-uj-hIz">
+                                                        <rect key="frame" x="186.33333333333337" y="0.0" width="154.66666666666663" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Lca-uj-hIz" firstAttribute="width" secondItem="ulw-1g-lbp" secondAttribute="width" id="jN5-8B-76y"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-pb-OPM">
+                                                <rect key="frame" x="0.0" y="153" width="341" height="40"/>
+                                                <color key="backgroundColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="341" id="67q-in-cEa">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="610"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="40" id="6Zg-43-HHS">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="55"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="17"/>
+                                                <state key="normal" title="View Instructions">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="21"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="linkButtonTapped:" destination="ezr-2x-5nj" eventType="touchUpInside" id="QEK-ZW-Mkx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=compact-widthClass=regular" spacing="34"/>
+                                    </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="52"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-OF-QNH">
-                                <rect key="frame" x="305" y="362.5" width="53" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="favouritesButton"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="Wk6-yc-8in"/>
-                                    <constraint firstAttribute="height" constant="30" id="gMr-ft-Kot"/>
-                                </constraints>
-                                <color key="tintColor" red="0.7843137255" green="0.52941176469999995" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" backgroundImage="star" catalog="system"/>
-                                <connections>
-                                    <action selector="favouriteButtonTapped:" destination="ezr-2x-5nj" eventType="touchUpInside" id="wNs-9g-gqA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nII-OF-QNH" firstAttribute="leading" secondItem="OsM-dK-h3D" secondAttribute="trailing" constant="-53" id="Aph-rh-t5W"/>
                             <constraint firstItem="ehh-2a-L3L" firstAttribute="centerY" secondItem="2P0-sC-Sqa" secondAttribute="centerY" id="UNp-5J-KGH"/>
-                            <constraint firstItem="nII-OF-QNH" firstAttribute="top" secondItem="OsM-dK-h3D" secondAttribute="bottom" constant="-33" id="rHo-vY-gDX"/>
                             <constraint firstItem="ehh-2a-L3L" firstAttribute="centerX" secondItem="2P0-sC-Sqa" secondAttribute="centerX" id="wQc-f5-BQn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lbj-xJ-EGm"/>
@@ -1075,11 +1226,11 @@
             <objects>
                 <viewController storyboardIdentifier="WebViewController" id="BxT-lr-IJ0" customClass="WebViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xTr-Cv-hZY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoF-bp-gPv">
-                                <rect key="frame" x="67" y="269" width="241" height="129"/>
+                                <rect key="frame" x="67" y="313" width="280" height="270"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -1087,7 +1238,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8sH-Rz-vIi">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1095,7 +1246,9 @@
                         <constraints>
                             <constraint firstItem="CoF-bp-gPv" firstAttribute="leading" secondItem="XW8-EH-LYD" secondAttribute="leading" constant="67" id="IEI-Wg-e5Z"/>
                             <constraint firstItem="8sH-Rz-vIi" firstAttribute="centerX" secondItem="xTr-Cv-hZY" secondAttribute="centerX" id="Yhl-Gh-nI1"/>
-                            <constraint firstItem="CoF-bp-gPv" firstAttribute="top" secondItem="XW8-EH-LYD" secondAttribute="top" constant="269" id="cCc-hm-Qww"/>
+                            <constraint firstItem="CoF-bp-gPv" firstAttribute="top" secondItem="XW8-EH-LYD" secondAttribute="top" constant="269" id="cCc-hm-Qww">
+                                <variation key="heightClass=compact-widthClass=regular" constant="95"/>
+                            </constraint>
                             <constraint firstItem="CoF-bp-gPv" firstAttribute="centerX" secondItem="xTr-Cv-hZY" secondAttribute="centerX" id="ffB-JE-XX2"/>
                             <constraint firstItem="8sH-Rz-vIi" firstAttribute="centerY" secondItem="xTr-Cv-hZY" secondAttribute="centerY" id="o2l-Ka-sEg"/>
                             <constraint firstItem="CoF-bp-gPv" firstAttribute="centerY" secondItem="xTr-Cv-hZY" secondAttribute="centerY" id="ohf-EA-53r"/>
@@ -1118,8 +1271,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n65-aw-Kn4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7DR-NP-r4v">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1132,11 +1286,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="facebook" width="32" height="32"/>
-        <image name="google-1" width="32" height="32"/>
+        <image name="facebook" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="google-1" width="21.333333969116211" height="21.333333969116211"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="landing" width="389.5" height="694.5"/>
+        <image name="landing" width="259.66665649414062" height="463"/>
+        <image name="profile" width="224.33332824707031" height="224.33332824707031"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="Primary Gray Colour">
