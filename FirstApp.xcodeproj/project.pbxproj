@@ -26,7 +26,7 @@
 		377A9783241D818E00216C32 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9782241D818E00216C32 /* LoginUITests.swift */; };
 		377A9785241E355B00216C32 /* APIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9784241E355B00216C32 /* APIUITests.swift */; };
 		3789C9C92456E74500387E51 /* FirstApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3789C9C72456E74500387E51 /* FirstApp.xcdatamodeld */; };
-		3789C9CB245719E700387E51 /* Trying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789C9CA245719E700387E51 /* Trying.swift */; };
+		3789C9CB245719E700387E51 /* ProfileRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789C9CA245719E700387E51 /* ProfileRepo.swift */; };
 		378D919A2448547300DBBE11 /* BeVietnam-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */; };
 		378D919B2448547300DBBE11 /* BeVietnam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */; };
 		378D919C2448547300DBBE11 /* BeVietnam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */; };
@@ -107,7 +107,7 @@
 		377A9782241D818E00216C32 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		377A9784241E355B00216C32 /* APIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUITests.swift; sourceTree = "<group>"; };
 		3789C9C82456E74500387E51 /* FirstApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstApp.xcdatamodel; sourceTree = "<group>"; };
-		3789C9CA245719E700387E51 /* Trying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trying.swift; sourceTree = "<group>"; };
+		3789C9CA245719E700387E51 /* ProfileRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepo.swift; sourceTree = "<group>"; };
 		378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Italic.ttf"; sourceTree = "<group>"; };
 		378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Regular.ttf"; sourceTree = "<group>"; };
 		378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Light.ttf"; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				37A3364B242E3772001EB8D0 /* View */,
-				3789C9CA245719E700387E51 /* Trying.swift */,
+				3789C9CA245719E700387E51 /* ProfileRepo.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -748,7 +748,7 @@
 				3794CCE223EBB51400693C03 /* SceneDelegate.swift in Sources */,
 				37B1D98A243BF04A00ACE0C4 /* FavouritePageViewController.swift in Sources */,
 				3761270C24279A38008EBAAE /* RecipeCellTableViewCell.swift in Sources */,
-				3789C9CB245719E700387E51 /* Trying.swift in Sources */,
+				3789C9CB245719E700387E51 /* ProfileRepo.swift in Sources */,
 				376CF62A23F143B50030C871 /* LoginEmailViewController.swift in Sources */,
 				37B2F39723FD01E0009C1FC1 /* CellTableViewCell.swift in Sources */,
 			);

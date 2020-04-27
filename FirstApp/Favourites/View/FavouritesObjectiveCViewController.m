@@ -40,7 +40,6 @@ UIImagePickerController *imagePicker;
    [super viewWillAppear:animated];
     self.profileImageRepo = [[ProfileRepo alloc] init];
     self.profileImage = [self.profileImageRepo fetch];
-    NSLog(@"%@Profile: ", self.profileImage);
     self.profileImageView.image = self.profileImage;
     favouriteViewModel = [[FavouriteViewModel alloc] init];
     [favouriteViewModel printFavourites:self.username completion:^(NSMutableArray<FavouriteModel*>* result){
@@ -57,14 +56,11 @@ UIImagePickerController *imagePicker;
 
 - (void)imagePickerController:(UIImagePickerController *)picker  didFinishPickingMediaWithInfo:(NSDictionary *)info{
     self.profileImageRepo = [[ProfileRepo alloc] init];
-    //[self.profileImageRepo saveWithName:[info objectForKey:UIImagePickerControllerOriginalImage]];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [self.profileImageRepo save:UIImagePNGRepresentation(image)];
     
     self.profileImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"%@TTT", UIImagePNGRepresentation(image));
-    //self.profileImageView.image = img;
 }
 
 - (IBAction)aboutButtonTapped:(UIButton *)sender {
