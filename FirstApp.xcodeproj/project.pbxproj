@@ -27,6 +27,14 @@
 		377A9785241E355B00216C32 /* APIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A9784241E355B00216C32 /* APIUITests.swift */; };
 		3789C9C92456E74500387E51 /* FirstApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3789C9C72456E74500387E51 /* FirstApp.xcdatamodeld */; };
 		3789C9CB245719E700387E51 /* ProfileRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789C9CA245719E700387E51 /* ProfileRepo.swift */; };
+		3789CBC22458A4D500387E51 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3789CBC02458A4D500387E51 /* Interface.storyboard */; };
+		3789CBC42458A4D700387E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3789CBC32458A4D700387E51 /* Assets.xcassets */; };
+		3789CBCB2458A4D800387E51 /* FoodFinderWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3789CBCA2458A4D800387E51 /* FoodFinderWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3789CBD02458A4D800387E51 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789CBCF2458A4D800387E51 /* InterfaceController.swift */; };
+		3789CBD22458A4D800387E51 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789CBD12458A4D800387E51 /* ExtensionDelegate.swift */; };
+		3789CBD42458A4D800387E51 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789CBD32458A4D800387E51 /* NotificationController.swift */; };
+		3789CBD62458A4D800387E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3789CBD52458A4D800387E51 /* Assets.xcassets */; };
+		3789CBDB2458A4D800387E51 /* FoodFinderWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3789CBBE2458A4D500387E51 /* FoodFinderWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		378D919A2448547300DBBE11 /* BeVietnam-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */; };
 		378D919B2448547300DBBE11 /* BeVietnam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */; };
 		378D919C2448547300DBBE11 /* BeVietnam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */; };
@@ -74,6 +82,20 @@
 			remoteGlobalIDString = 3794CCDB23EBB51400693C03;
 			remoteInfo = FirstApp;
 		};
+		3789CBCC2458A4D800387E51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3794CCD423EBB51400693C03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3789CBC92458A4D800387E51;
+			remoteInfo = "FoodFinderWatch Extension";
+		};
+		3789CBD92458A4D800387E51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3794CCD423EBB51400693C03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3789CBBD2458A4D500387E51;
+			remoteInfo = FoodFinderWatch;
+		};
 		3794CCF323EBB51500693C03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3794CCD423EBB51400693C03 /* Project object */;
@@ -82,6 +104,31 @@
 			remoteInfo = FirstApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3789CBDC2458A4D800387E51 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3789CBDB2458A4D800387E51 /* FoodFinderWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3789CBDF2458A4D800387E51 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3789CBCB2458A4D800387E51 /* FoodFinderWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		371C1BC5244F234E00B47127 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -108,6 +155,17 @@
 		377A9784241E355B00216C32 /* APIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUITests.swift; sourceTree = "<group>"; };
 		3789C9C82456E74500387E51 /* FirstApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstApp.xcdatamodel; sourceTree = "<group>"; };
 		3789C9CA245719E700387E51 /* ProfileRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepo.swift; sourceTree = "<group>"; };
+		3789CBBE2458A4D500387E51 /* FoodFinderWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFinderWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3789CBC12458A4D500387E51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3789CBC32458A4D700387E51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3789CBC52458A4D700387E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3789CBCA2458A4D800387E51 /* FoodFinderWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FoodFinderWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3789CBCF2458A4D800387E51 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3789CBD12458A4D800387E51 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		3789CBD32458A4D800387E51 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3789CBD52458A4D800387E51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3789CBD72458A4D800387E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3789CBD82458A4D800387E51 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		378D918C2448547300DBBE11 /* BeVietnam-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Italic.ttf"; sourceTree = "<group>"; };
 		378D918D2448547300DBBE11 /* BeVietnam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Regular.ttf"; sourceTree = "<group>"; };
 		378D918E2448547300DBBE11 /* BeVietnam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BeVietnam-Light.ttf"; sourceTree = "<group>"; };
@@ -169,6 +227,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3789CBC72458A4D800387E51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3794CCD923EBB51400693C03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +278,29 @@
 			path = FirstAppUITests;
 			sourceTree = "<group>";
 		};
+		3789CBBF2458A4D500387E51 /* FoodFinderWatch */ = {
+			isa = PBXGroup;
+			children = (
+				3789CBC02458A4D500387E51 /* Interface.storyboard */,
+				3789CBC32458A4D700387E51 /* Assets.xcassets */,
+				3789CBC52458A4D700387E51 /* Info.plist */,
+			);
+			path = FoodFinderWatch;
+			sourceTree = "<group>";
+		};
+		3789CBCE2458A4D800387E51 /* FoodFinderWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3789CBCF2458A4D800387E51 /* InterfaceController.swift */,
+				3789CBD12458A4D800387E51 /* ExtensionDelegate.swift */,
+				3789CBD32458A4D800387E51 /* NotificationController.swift */,
+				3789CBD52458A4D800387E51 /* Assets.xcassets */,
+				3789CBD72458A4D800387E51 /* Info.plist */,
+				3789CBD82458A4D800387E51 /* PushNotificationPayload.apns */,
+			);
+			path = "FoodFinderWatch Extension";
+			sourceTree = "<group>";
+		};
 		378D918A2448547300DBBE11 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +336,8 @@
 				3794CCDE23EBB51400693C03 /* FirstApp */,
 				3794CCF523EBB51500693C03 /* FirstAppTests */,
 				377A9777241CF1B200216C32 /* FirstAppUITests */,
+				3789CBBF2458A4D500387E51 /* FoodFinderWatch */,
+				3789CBCE2458A4D800387E51 /* FoodFinderWatch Extension */,
 				3794CCDD23EBB51400693C03 /* Products */,
 				A8C1645A36DA521CD621E4FB /* Pods */,
 				253AE8E7DBED27A1ABCEF69E /* Frameworks */,
@@ -260,6 +350,8 @@
 				3794CCDC23EBB51400693C03 /* FirstApp.app */,
 				3794CCF223EBB51500693C03 /* FirstAppTests.xctest */,
 				377A9776241CF1B100216C32 /* FirstAppUITests.xctest */,
+				3789CBBE2458A4D500387E51 /* FoodFinderWatch.app */,
+				3789CBCA2458A4D800387E51 /* FoodFinderWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,6 +519,40 @@
 			productReference = 377A9776241CF1B100216C32 /* FirstAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		3789CBBD2458A4D500387E51 /* FoodFinderWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3789CBE32458A4D800387E51 /* Build configuration list for PBXNativeTarget "FoodFinderWatch" */;
+			buildPhases = (
+				3789CBBC2458A4D500387E51 /* Resources */,
+				3789CBDF2458A4D800387E51 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3789CBCD2458A4D800387E51 /* PBXTargetDependency */,
+			);
+			name = FoodFinderWatch;
+			productName = FoodFinderWatch;
+			productReference = 3789CBBE2458A4D500387E51 /* FoodFinderWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		3789CBC92458A4D800387E51 /* FoodFinderWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3789CBE22458A4D800387E51 /* Build configuration list for PBXNativeTarget "FoodFinderWatch Extension" */;
+			buildPhases = (
+				3789CBC62458A4D800387E51 /* Sources */,
+				3789CBC72458A4D800387E51 /* Frameworks */,
+				3789CBC82458A4D800387E51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FoodFinderWatch Extension";
+			productName = "FoodFinderWatch Extension";
+			productReference = 3789CBCA2458A4D800387E51 /* FoodFinderWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		3794CCDB23EBB51400693C03 /* FirstApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3794CCFB23EBB51500693C03 /* Build configuration list for PBXNativeTarget "FirstApp" */;
@@ -438,10 +564,12 @@
 				376CF66323F2C2AD0030C871 /* ShellScript */,
 				3787F2272434C0A2007EA793 /* ShellScript */,
 				99BBA325D26867533439500E /* [CP] Embed Pods Frameworks */,
+				3789CBDC2458A4D800387E51 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3789CBDA2458A4D800387E51 /* PBXTargetDependency */,
 			);
 			name = FirstApp;
 			productName = FirstApp;
@@ -474,7 +602,8 @@
 		3794CCD423EBB51400693C03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Akua Afrane-Okese";
 				TargetAttributes = {
@@ -482,6 +611,12 @@
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
 						TestTargetID = 3794CCDB23EBB51400693C03;
+					};
+					3789CBBD2458A4D500387E51 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					3789CBC92458A4D800387E51 = {
+						CreatedOnToolsVersion = 11.4.1;
 					};
 					3794CCDB23EBB51400693C03 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -510,6 +645,8 @@
 				3794CCDB23EBB51400693C03 /* FirstApp */,
 				3794CCF123EBB51500693C03 /* FirstAppTests */,
 				377A9775241CF1B100216C32 /* FirstAppUITests */,
+				3789CBBD2458A4D500387E51 /* FoodFinderWatch */,
+				3789CBC92458A4D800387E51 /* FoodFinderWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -519,6 +656,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3789CBBC2458A4D500387E51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3789CBC42458A4D700387E51 /* Assets.xcassets in Resources */,
+				3789CBC22458A4D500387E51 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3789CBC82458A4D800387E51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3789CBD62458A4D800387E51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +880,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3789CBC62458A4D800387E51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3789CBD42458A4D800387E51 /* NotificationController.swift in Sources */,
+				3789CBD22458A4D800387E51 /* ExtensionDelegate.swift in Sources */,
+				3789CBD02458A4D800387E51 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3794CCD823EBB51400693C03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -778,6 +942,16 @@
 			target = 3794CCDB23EBB51400693C03 /* FirstApp */;
 			targetProxy = 377A977B241CF1B200216C32 /* PBXContainerItemProxy */;
 		};
+		3789CBCD2458A4D800387E51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3789CBC92458A4D800387E51 /* FoodFinderWatch Extension */;
+			targetProxy = 3789CBCC2458A4D800387E51 /* PBXContainerItemProxy */;
+		};
+		3789CBDA2458A4D800387E51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3789CBBD2458A4D500387E51 /* FoodFinderWatch */;
+			targetProxy = 3789CBD92458A4D800387E51 /* PBXContainerItemProxy */;
+		};
 		3794CCF423EBB51500693C03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3794CCDB23EBB51400693C03 /* FirstApp */;
@@ -786,6 +960,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3789CBC02458A4D500387E51 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3789CBC12458A4D500387E51 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		3794CCE523EBB51400693C03 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -848,6 +1030,86 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FirstApp;
+			};
+			name = Release;
+		};
+		3789CBDD2458A4D800387E51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
+				IBSC_MODULE = FoodFinderWatch_Extension;
+				INFOPLIST_FILE = FoodFinderWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FoodFinder.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		3789CBDE2458A4D800387E51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
+				IBSC_MODULE = FoodFinderWatch_Extension;
+				INFOPLIST_FILE = FoodFinderWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FoodFinder.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		3789CBE02458A4D800387E51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FoodFinderWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FoodFinder.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		3789CBE12458A4D800387E51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FoodFinderWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.FoodFinder.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -1071,6 +1333,24 @@
 			buildConfigurations = (
 				377A977E241CF1B200216C32 /* Debug */,
 				377A977F241CF1B200216C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3789CBE22458A4D800387E51 /* Build configuration list for PBXNativeTarget "FoodFinderWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3789CBE02458A4D800387E51 /* Debug */,
+				3789CBE12458A4D800387E51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3789CBE32458A4D800387E51 /* Build configuration list for PBXNativeTarget "FoodFinderWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3789CBDD2458A4D800387E51 /* Debug */,
+				3789CBDE2458A4D800387E51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

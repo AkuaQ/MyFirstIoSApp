@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import WatchConnectivity
 
 class RecipeDetailViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class RecipeDetailViewController: UIViewController {
     var username = ""
     let barButtonAppearance = UIBarButtonItem.appearance()
     let database = Firestore.firestore()
+    var session: WCSession?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class RecipeDetailViewController: UIViewController {
         }
         self.navigationItem.title = navbar
         self.navigationController?.navigationBar.topItem?.title = sideNavBar
+        self.configureWatchKitSesstion()
         //swiftlint:disable all
         database.collection("favourites").whereField("username", isEqualTo: username).whereField("title",
                                                                                                  isEqualTo: recipeTitle)
@@ -53,6 +56,14 @@ class RecipeDetailViewController: UIViewController {
             }
         }
         //swiftlint:enable all
+    }
+
+    func configureWatchKitSesstion() {
+        if WCSession.isSupported() {
+            session = WCSession.default
+            session?.delegate = self
+            session?.activate()
+        }
     }
 
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
@@ -82,10 +93,27 @@ class RecipeDetailViewController: UIViewController {
     }
 
     @IBAction func linkButtonTapped(_ sender: Any) {
+        let title = ["title": recipeTitle, "ingredients": recipeIngredients as Any]
+        session?.sendMessage(title, replyHandler: nil, errorHandler: {error in
+            print(error.localizedDescription)
+        })
         let webViewController = storyboard?.instantiateViewController(identifier:
         "WebViewController") as? WebViewController
         webViewController?.website = website
         webViewController?.navbar = "Instructions"
         self.navigationController?.pushViewController(webViewController!, animated: true)
+    }
+}
+
+extension RecipeDetailViewController: WCSessionDelegate {
+    func session(_ session: WCSession,
+                 activationDidCompleteWith activationState: WCSessionActivationState,
+                 error: Error?) {
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
     }
 }
