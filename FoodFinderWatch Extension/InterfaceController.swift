@@ -39,6 +39,5 @@ extension InterfaceController: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         titleLabel.setText(message["title"] as? String)
         ingredientsLabel.setText(message["ingredients"] as? String)
-        print("Recieved: \(message)")
     }
 }
