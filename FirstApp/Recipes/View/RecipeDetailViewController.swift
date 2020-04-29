@@ -26,6 +26,7 @@ class RecipeDetailViewController: UIViewController {
     let barButtonAppearance = UIBarButtonItem.appearance()
     let database = Firestore.firestore()
     var session: WCSession?
+    var alertHasBeenDisplayed = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +85,14 @@ class RecipeDetailViewController: UIViewController {
             //swiftlint:enable all
         } else {
             favouriteButton.setBackgroundImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
+            if alertHasBeenDisplayed == false {
+                alertHasBeenDisplayed = true
+            let alertController = UIAlertController(title: "New Favourite or Bookmark Added", message:
+                "Find on Profile page", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            present(alertController, animated: true, completion: nil)
+            }
             database.collection("favourites").addDocument(data: ["username": username,
                                                                  "title": recipeTitle,
                                                                  "thumbnail": image,

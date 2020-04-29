@@ -33,6 +33,8 @@ class APIUITests: XCTestCase {
         application.keys["more"].tap()
         application.buttons["Log in"].tap()
         sleep(8)
+        XCTAssertTrue(application.searchFields[
+            "Search for ingredients"].exists)
         application.searchFields[
             "Search for ingredients"].tap()
         snapshot("HomeScreen")
@@ -41,11 +43,15 @@ class APIUITests: XCTestCase {
             "Search"].tap()
         application.staticTexts["Fish"].tap()
         snapshot("HomeResultsScreen")
-       application.staticTexts["Delicious Fish Curry Recipe"].tap()
+        application.staticTexts["Delicious Fish Curry Recipe"].tap()
         sleep(2)
         snapshot("DetailScreen")
         application.buttons["View Instructions"].tap()
         sleep(8)
+        XCTAssertTrue(application.staticTexts["Delicious Fish Curry Recipe"].exists)
+        application.buttons["Recipe Details"].tap()
+        application.buttons["Home"].tap()
+        XCTAssertTrue(application.staticTexts["Delicious Fish Curry Recipe"].exists)
     }
 
     func testGivenCorrectRecipesSearchReturnSuccessfulDetailAndWebsite() {
@@ -62,6 +68,7 @@ class APIUITests: XCTestCase {
         application.buttons["Log in"].tap()
         sleep(8)
         application.tabBars.buttons["Recipe List"].tap()
+        XCTAssertTrue(application.searchFields["Search for recipes"].exists)
         application.searchFields[
             "Search for recipes"].tap()
         application.searchFields["Search for recipes"].typeText("Chocolate cake")
@@ -70,7 +77,13 @@ class APIUITests: XCTestCase {
         sleep(8)
        application.staticTexts["Tim and Tracy's Chocolate Cake (Boiled)"].tap()
         sleep(2)
+        XCTAssertTrue(application.buttons["View Instructions"].exists)
         application.buttons["View Instructions"].tap()
         sleep(8)
+        application.buttons["Recipe Details"].tap()
+        application.buttons["Recipe List"].tap()
+        application.swipeUp()
+        application.staticTexts["Delicious, Moist, and Tender Chocolate Cake"].tap()
+        XCTAssertTrue(application.buttons["View Instructions"].exists)
     }
 }

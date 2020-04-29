@@ -119,6 +119,11 @@ class SignUpUITests: XCTestCase {
     func testGivenCorrectCredsReturnSuccess() {
         application.launch()
         application.buttons["Sign up"].tap()
+        XCTAssertTrue(application.textFields["firstName"].exists)
+        XCTAssertTrue(application.textFields["lastName"].exists)
+        XCTAssertTrue(application.textFields["emailSignUp"].exists)
+        XCTAssertTrue(application.secureTextFields["passwordSignUp"].exists)
+        XCTAssertTrue(application.buttons["Create Account"].exists)
         application.textFields["firstName"].tap()
         application.tapKeys(text: "tester")
         application.keys["more"].tap()
