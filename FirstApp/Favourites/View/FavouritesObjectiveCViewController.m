@@ -32,7 +32,7 @@ UIImagePickerController *imagePicker;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.profileImageRepo = [[ProfileRepo alloc] init];
-    [self.navigationController.navigationBar.topItem setTitle:@"Favourites"];
+    [self.navigationController.navigationBar.topItem setTitle:@"Profile"];
     [AnalyticsRecipeRepo favouritePageTabTapped];
 }
 
