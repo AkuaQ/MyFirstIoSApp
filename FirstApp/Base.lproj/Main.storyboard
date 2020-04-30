@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n65-aw-Kn4">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -170,16 +170,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-Ni-dqS">
-                                <rect key="frame" x="50" y="235" width="314" height="332"/>
+                                <rect key="frame" x="50" y="235" width="314" height="357"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uI8-wK-pMH">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="124"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="134"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5jw-lV-Rg5">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-jG-N8P">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -188,7 +188,7 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xe4-od-6t8">
-                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="28" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="firstName"/>
@@ -206,10 +206,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-ml-vc3">
-                                                <rect key="frame" x="0.0" y="67" width="314" height="57"/>
+                                                <rect key="frame" x="0.0" y="72" width="314" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7D-Ng-QbY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -218,7 +218,7 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-Ec-AU5">
-                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="28" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="lastName"/>
@@ -241,13 +241,13 @@
                                         <variation key="heightClass=regular-widthClass=regular" spacing="10"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WAe-76-EJR">
-                                        <rect key="frame" x="0.0" y="134" width="314" height="124"/>
+                                        <rect key="frame" x="0.0" y="144" width="314" height="134"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="e25-z7-PZV">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giU-R0-WUk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -256,7 +256,7 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-W7-uuZ">
-                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="28" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="emailSignUp"/>
@@ -274,10 +274,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="BRc-Mh-WEQ">
-                                                <rect key="frame" x="0.0" y="67" width="314" height="57"/>
+                                                <rect key="frame" x="0.0" y="72" width="314" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-kv-2t1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -286,7 +286,7 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-mA-rxS">
-                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="28" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="passwordSignUp"/>
@@ -309,7 +309,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" spacing="10"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4A-p2-Pha">
-                                        <rect key="frame" x="0.0" y="268" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="288" width="314" height="34"/>
                                         <color key="backgroundColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="tpO-qd-XBb">
@@ -328,7 +328,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nav-VP-6Yc">
-                                        <rect key="frame" x="0.0" y="312" width="314" height="20"/>
+                                        <rect key="frame" x="0.0" y="332" width="314" height="25"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -391,7 +391,7 @@
                                 <rect key="frame" x="-39" y="88" width="492" height="808"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mj-O9-nsZ" userLabel="BackgroundView">
-                                <rect key="frame" x="22" y="208" width="370" height="199.66666666666663"/>
+                                <rect key="frame" x="22" y="208" width="370" height="214.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VPt-tn-oiC">
@@ -407,16 +407,16 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-uU-ok4">
-                                <rect key="frame" x="50" y="218" width="314" height="214"/>
+                                <rect key="frame" x="50" y="218" width="314" height="229"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-Ta-Tla">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="130"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xs8-zo-8JV">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbz-H0-UdV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -425,7 +425,7 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-5h-4tA">
-                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="28" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="emailLogin"/>
@@ -443,10 +443,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="d6u-aj-ReJ">
-                                                <rect key="frame" x="0.0" y="63" width="314" height="57"/>
+                                                <rect key="frame" x="0.0" y="68" width="314" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toT-X1-842">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
                                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                         <color key="textColor" name="Secondary Colour"/>
                                                         <nil key="highlightedColor"/>
@@ -455,7 +455,7 @@
                                                         </variation>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZV-4M-JeC">
-                                                        <rect key="frame" x="0.0" y="23" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="28" width="314" height="34"/>
                                                         <color key="backgroundColor" name="Primary Gray Colour"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="passwordLogin"/>
@@ -476,7 +476,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="10"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tL5-0a-vJ1">
-                                        <rect key="frame" x="0.0" y="140" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="150" width="314" height="34"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.53725490196078429" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Jww-KZ-r84">
@@ -505,7 +505,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P49-EI-itF">
-                                        <rect key="frame" x="0.0" y="194" width="314" height="20"/>
+                                        <rect key="frame" x="0.0" y="204" width="314" height="25"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -518,7 +518,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" spacing="10"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-d9-gqk">
-                                <rect key="frame" x="177" y="439" width="60" height="30"/>
+                                <rect key="frame" x="177" y="454" width="60" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-np-tTg">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -546,7 +546,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnL-6W-dar">
-                                <rect key="frame" x="41" y="468" width="332" height="20"/>
+                                <rect key="frame" x="41" y="483" width="332" height="25"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -662,10 +662,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L1i-ia-fsc">
-                                                    <rect key="frame" x="156" y="60" width="214" height="40"/>
+                                                    <rect key="frame" x="156" y="55" width="214" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUG-Ov-X6L">
-                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="25"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="17"/>
                                                             <color key="textColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -674,7 +674,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F2-WK-j4c">
-                                                            <rect key="frame" x="0.0" y="20" width="214" height="20"/>
+                                                            <rect key="frame" x="0.0" y="25" width="214" height="25"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -717,7 +717,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are your ingredients?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyK-dC-OLE">
-                                <rect key="frame" x="105.00000000000001" y="438" width="204.33333333333337" height="20"/>
+                                <rect key="frame" x="97.5" y="435.5" width="219.5" height="25"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -758,13 +758,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Favourites or Bookmarks:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-we-x9F">
-                                <rect key="frame" x="43" y="232" width="328.33333333333331" height="29.333333333333314"/>
+                                <rect key="frame" x="39" y="232" width="336.5" height="37"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nq0-OX-wob">
-                                <rect key="frame" x="0.0" y="271.33333333333331" width="414" height="541.66666666666674"/>
+                                <rect key="frame" x="0.0" y="279" width="414" height="534"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteCell" rowHeight="118" id="Pmd-xo-cSU" customClass="FavouriteTableViewCell">
@@ -787,10 +787,10 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-lC-L9p">
-                                                    <rect key="frame" x="145" y="39" width="255" height="40"/>
+                                                    <rect key="frame" x="145" y="34" width="255" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym7-iO-Bae">
-                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="25"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-Medium" family="Be Vietnam" pointSize="17"/>
                                                             <color key="textColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -799,7 +799,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-rm-Xhy">
-                                                            <rect key="frame" x="0.0" y="20" width="255" height="20"/>
+                                                            <rect key="frame" x="0.0" y="25" width="255" height="25"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -845,15 +845,15 @@
                                 <rect key="frame" x="75" y="99" width="264" height="111"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-e0-sWh">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="111"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="111"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s69-RL-spt">
-                                        <rect key="frame" x="152" y="39.666666666666657" width="112" height="32"/>
-                                        <color key="backgroundColor" name="PurplePink"/>
+                                        <rect key="frame" x="143" y="37" width="121" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                         <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Change Profile">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" name="PurplePink"/>
                                         </state>
                                         <connections>
                                             <action selector="profileImageButtonTapped:" destination="YMM-bB-84l" eventType="touchUpInside" id="ZD4-cD-Fzq"/>
@@ -914,7 +914,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYg-hh-Kdu">
-                                <rect key="frame" x="171" y="431.33333333333331" width="72.333333333333314" height="33.666666666666686"/>
+                                <rect key="frame" x="171" y="431" width="72.5" height="34"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -944,7 +944,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmj-jE-CVg">
-                                <rect key="frame" x="172.66666666666666" y="432" width="69" height="32"/>
+                                <rect key="frame" x="172.5" y="432" width="69" height="32"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1003,10 +1003,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jgj-Cc-8Vf">
-                                                    <rect key="frame" x="154" y="60" width="214" height="40"/>
+                                                    <rect key="frame" x="154" y="55" width="214" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-gy-qim">
-                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="25"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-SemiBold" family="Be Vietnam" pointSize="17"/>
                                                             <color key="textColor" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -1015,7 +1015,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzS-l5-q23">
-                                                            <rect key="frame" x="0.0" y="20" width="214" height="20"/>
+                                                            <rect key="frame" x="0.0" y="25" width="214" height="25"/>
                                                             <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1054,7 +1054,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in a recipe of interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz9-f9-fTX">
-                                <rect key="frame" x="107.33333333333333" y="438" width="199.33333333333337" height="20"/>
+                                <rect key="frame" x="101" y="435.5" width="212" height="25"/>
                                 <fontDescription key="fontDescription" name="BeVietnam-Regular" family="Be Vietnam" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1094,7 +1094,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-2a-L3L">
-                                <rect key="frame" x="36.666666666666657" y="191" width="341" height="514"/>
+                                <rect key="frame" x="36.5" y="191" width="341" height="514"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SlO-jn-XuM">
                                         <rect key="frame" x="0.0" y="0.0" width="341" height="315"/>
@@ -1144,13 +1144,13 @@
                                                 <rect key="frame" x="0.0" y="111" width="341" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulw-1g-lbp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.5" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-OF-QNH">
-                                                        <rect key="frame" x="154.33333333333334" y="0.33333333333333037" width="32" height="31.666666666666668"/>
+                                                        <rect key="frame" x="154.5" y="0.0" width="32" height="32"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="favouritesButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="32" id="VnW-hT-Hso"/>
@@ -1163,7 +1163,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lca-uj-hIz">
-                                                        <rect key="frame" x="186.33333333333337" y="0.0" width="154.66666666666663" height="32"/>
+                                                        <rect key="frame" x="186.5" y="0.0" width="154.5" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1239,7 +1239,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8sH-Rz-vIi">
-                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.79996631299999998" green="0.53672138579999995" blue="0.84267407660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1289,9 +1289,9 @@
     <resources>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="landing" width="259.66665649414062" height="463"/>
+        <image name="landing" width="389.5" height="694.5"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="profile" width="224.33332824707031" height="224.33332824707031"/>
+        <image name="profile" width="336.5" height="336.5"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="Primary Gray Colour">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
