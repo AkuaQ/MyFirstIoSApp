@@ -14,19 +14,19 @@ Launch Screen:
 
 Landing Page:
 
-![Image 2020-02-24 at 10 40](https://user-images.githubusercontent.com/60605300/75220266-aeadc480-57a7-11ea-8c68-faa2a3e1101d.jpeg)
+<img width="414" alt="iPhone 11-WelcomeScreen" src="https://user-images.githubusercontent.com/60605300/80665834-d1f03b00-8a9a-11ea-9484-5775fa708e4f.png">
 
 Login Page:
 
-<img width="454" alt="Screenshot 2020-02-24 at 10 40 28" src="https://user-images.githubusercontent.com/60605300/75220301-c127fe00-57a7-11ea-999d-cb3f378d24e0.png">
+<img width="414" alt="iPhone 11-LoginScreen" src="https://user-images.githubusercontent.com/60605300/80665952-2bf10080-8a9b-11ea-96e0-d1e5c3e3f6e8.png">
 
 Sign in Page:
 
-![Image 2020-02-24 at 10 40](https://user-images.githubusercontent.com/60605300/75220310-cdac5680-57a7-11ea-890f-df6a493cfc41.jpeg)
+<img width="414" alt="iPhone 11-SignInScreen" src="https://user-images.githubusercontent.com/60605300/80665991-47f4a200-8a9b-11ea-943b-64ba9bebc014.png">
 
 Home Page:
 
-![Image 2020-02-24 at 10 41](https://user-images.githubusercontent.com/60605300/75220318-d2710a80-57a7-11ea-943b-722cc426f03c.jpeg)
+![iPhone 11 Pro-HomeScreen](https://user-images.githubusercontent.com/60605300/80666121-9efa7700-8a9b-11ea-813e-6c004802a1d3.png)
 
 Results from Search example:
 
@@ -34,6 +34,10 @@ Results from Search example:
 
 Clicking on a table cell:
 
-![Image 2020-02-24 at 10 43](https://user-images.githubusercontent.com/60605300/75220517-47dcdb00-57a8-11ea-807b-88ca6809329e.jpeg)
+![Image 2020-04-30 at 04 39](https://user-images.githubusercontent.com/60605300/80666463-93f41680-8a9c-11ea-936c-6bf31f3cb947.jpeg)
+
+Profile Page:
+
+![Image 2020-04-30 at 04 46](https://user-images.githubusercontent.com/60605300/80666760-89864c80-8a9d-11ea-931d-98fb7b4595f7.jpeg)
 
 Lastly, the user can check for the instructions online
