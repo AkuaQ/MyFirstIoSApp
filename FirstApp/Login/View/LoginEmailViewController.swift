@@ -19,8 +19,7 @@ class LoginEmailViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
+
     @IBOutlet weak var errorLabel: UILabel!
 
     override func viewDidLoad() {
@@ -38,8 +37,6 @@ class LoginEmailViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
-        facebookButton.layer.cornerRadius = facebookButton.frame.width/2
-        googleButton.layer.cornerRadius = googleButton.frame.width/2
         Utilities.styleBackgroundView(backgroundView)
     }
 

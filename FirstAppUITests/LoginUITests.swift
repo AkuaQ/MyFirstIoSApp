@@ -20,6 +20,12 @@ class LoginUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testGivenButtonsAndLabelsExistsReturnSuccess() {
+        application.launch()
+        XCTAssertTrue(application.buttons["Login"].exists)
+        XCTAssertTrue(application.buttons["Sign up"].exists)
+    }
+
     func testGivenIncorrectUsernameCredsReturnFailure() {
         application.launch()
         application.buttons["Login"].tap()
@@ -91,6 +97,9 @@ class LoginUITests: XCTestCase {
         application.launch()
         snapshot("WelcomeScreen")
         application.buttons["Login"].tap()
+        XCTAssertTrue(application.textFields["emailLogin"].exists)
+        XCTAssertTrue(application.secureTextFields["passwordLogin"].exists)
+        XCTAssertTrue(application.buttons["Log in"].exists)
         application.textFields["emailLogin"].tap()
         application.tapKeys(text: "tester")
         application.keys["more"].tap()

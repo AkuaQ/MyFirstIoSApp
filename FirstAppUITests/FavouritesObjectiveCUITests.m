@@ -38,10 +38,10 @@
     XCUIElement* logInButton = application.buttons[@"Log in"];
     [logInButton tap];
     sleep(8);
-    XCUIElement* tabFavourites = application.tabBars.buttons[@"Favourites"];
+    XCUIElement* tabFavourites = application.tabBars.buttons[@"Profile"];
     [tabFavourites tap];
     sleep(2);
-    XCTAssertTrue(application.staticTexts[@"My Favourites:"].exists);
+    XCTAssertTrue(application.staticTexts[@"My Favourites or Bookmarks:"].exists);
 }
 
 - (void)testGivenFavouritesListAddRemoveFavouriteReturnSuccess {
@@ -67,22 +67,24 @@
     XCUIElement* search = application.buttons[@"search"];
     [search tap];
     sleep(8);
-    XCUIElement* recipe = application.staticTexts[@"Tim and Tracy's Chocolate Cake (Boiled)"];
+    XCUIElement* recipe = application.staticTexts[@"Darn Good Chocolate Cake ( Cake Mix Cake)"];
     [recipe tap];
     XCUIElement* favouriteButton = application.buttons[@"favouritesButton"];
     [favouriteButton tap];
     XCUIElement* backButton = application.buttons[@"Recipe List"];
     [backButton tap];
-    XCUIElement* tabFavourites = application.tabBars.buttons[@"Favourites"];
+    XCUIElement* tabFavourites = application.tabBars.buttons[@"Profile"];
     [tabFavourites tap];
     sleep(8);
+    XCTAssertTrue(application.staticTexts[@"Darn Good Chocolate Cake ( Cake Mix Cake)"].exists);
     [tabRecipes tap];
     [recipe tap];
     [favouriteButton tap];
     [backButton tap];
     [tabFavourites tap];
      sleep(8);
-    XCTAssertTrue(application.staticTexts[@"My Favourites:"].exists);
+    XCTAssertFalse(application.staticTexts[@"Darn Good Chocolate Cake ( Cake Mix Cake)"].exists);
+    XCTAssertTrue(application.staticTexts[@"My Favourites or Bookmarks:"].exists);
 }
 
 @end
