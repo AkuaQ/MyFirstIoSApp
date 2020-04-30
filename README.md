@@ -30,11 +30,11 @@ Home Page:
 
 Results from Search example:
 
-![Image 2020-02-24 at 10 42](https://user-images.githubusercontent.com/60605300/75220321-d56bfb00-57a7-11ea-8f23-ee9c5fc92cfa.jpeg)
+![Image 2020-04-30 at 04 39](https://user-images.githubusercontent.com/60605300/80666463-93f41680-8a9c-11ea-936c-6bf31f3cb947.jpeg)
 
 Clicking on a table cell:
 
-![Image 2020-04-30 at 04 39](https://user-images.githubusercontent.com/60605300/80666463-93f41680-8a9c-11ea-936c-6bf31f3cb947.jpeg)
+<img width="414" alt="iPhone 11-DetailScreen" src="https://user-images.githubusercontent.com/60605300/80666908-074a5800-8a9e-11ea-9705-86f2b424cd09.png">
 
 Profile Page:
 
